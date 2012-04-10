@@ -24,7 +24,7 @@ stack:
     include: [ ]
     components:
       - type: aws-sg
-        include: [ network  ]
+        include: [ network ]
   - name: Cache
     description: Provides caching services
     include: [ ]
@@ -47,9 +47,9 @@ stack:
     components:
       - type: aws-instance
         include: [ network, application, aws, server, puppet  ]
-        name: Rails
+        name: Node
         config:
-          server/hostname: rails
+          server/hostname: node
           server/build_script: build.sh
           server/deploy_script: deploy.app.sh
         output:
@@ -61,4 +61,4 @@ stack:
 publish:
   - name: Access URL
     description: URL used to access this service
-    template: http://%(network/access_host)s:%(network/access_port)d
+    template: http://%(network/access_host)s:%(network/access_port)s
