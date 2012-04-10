@@ -64,7 +64,7 @@ stack:
           server/deploy_script: deploy.sh
     monitor:
       protocol: tcp
-      port: 3000
+      port: 80
 publish:
   - name: Access URL
     description: URL used to access this service
