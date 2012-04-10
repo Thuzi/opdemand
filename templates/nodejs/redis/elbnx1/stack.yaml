@@ -31,7 +31,7 @@ stack:
         config:
           server/hostname: redis
           server/build_script: build.sh
-          server/deploy_script: deploy.db.sh
+          server/deploy_script: deploy.cache.sh
         output:
           cache/host: public_dns_name
     monitor:
