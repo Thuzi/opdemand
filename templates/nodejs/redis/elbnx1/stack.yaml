@@ -1,0 +1,71 @@
+# -*- test-case-name: c2server.tests.platform.NodejsRedisElbnx1Test -*-
+name: Node.js/Redis Nx1 with ELB
+description: >
+             Node.js environment consisting of a Key Pair, Security Group, an
+             AutoScaler and a load balancer. Installs the Redis key/val store
+             on one instance and the Node.js web framework on any
+             instances created by the autoscaler. Sets up the load balancer to
+             distribute traffic among all Node servers, listening at
+             80/tcp, powered by a configurable GitHub repository.
+path: nodejs/redis/elbnx1
+include: [ aws, base, network, server, puppet, cache, application, autoscaler]
+config:
+  network/access_port: 3000
+  network/admin_port: 22
+  application/repository_url: git://github.com/opdemand/c2-nodejs-helloworld.git
+  cache/password: changeme123.
+stack:
+  - name: Security
+    description: Provides security infrastructure
+    components:
+      - type: aws-keypair
+  - name: Network
+    description: Provides network infrastructure
+    components:
+      - type: aws-sg
+  - name: Cache
+    description: Provides caching services
+    components:
+      - type: aws-instance
+        name: Redis
+        config:
+          server/hostname: redis
+          server/build_script: build.sh
+          server/deploy_script: deploy.db.sh
+        output:
+          cache/host: public_dns_name
+    monitor:
+      protocol: tcp
+      port: 6379
+  - name: Load Balancing
+    description: Provides load balancing services
+    components:
+      - type: aws-elb
+        name: ELB
+        config:
+          lb/listeners: [ "(80, 3000, TCP)" ]
+          lb/target: HTTP:3000/
+        output:
+          network/access_host: dns_name
+          network/admin_host: dns_name
+          autoscaler/load_balancers: [lb_name]
+    #monitor:
+    #  protocol: tcp
+    #  port: 80
+    #  target: dns_name
+  - name: Autoscaler
+    description: Provides web services
+    components:
+      - type: aws-autoscaler
+        name: Node
+        config:
+          server/hostname: node
+          server/build_script: build.sh
+          server/deploy_script: deploy.sh
+    monitor:
+      protocol: tcp
+      port: 3000
+publish:
+  - name: Access URL
+    description: URL used to access this service
+    template: http://%(network/access_host)s

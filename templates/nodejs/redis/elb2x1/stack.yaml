@@ -1,4 +1,4 @@
-# -*- test-case-name: c2server.tests.platform.RailsPostgresqlElb2x1Test -*-
+# -*- test-case-name: c2server.tests.platform.NodejsRedisElb2x1Test -*-
 name: Node.js/Redis 2x1 with ELB
 description: >
              Node.js environment consisting of a Key Pair, Security Group, three
@@ -66,7 +66,7 @@ stack:
           lb/instances: [ instance_id ]
     monitor:
       protocol: tcp
-      port: 80
+      port: 3000
   - name: Load Balancing
     description: Provides load balancing services
     include: [ ] 

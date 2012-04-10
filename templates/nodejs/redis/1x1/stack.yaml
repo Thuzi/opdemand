@@ -1,4 +1,4 @@
-# -*- test-case-name: c2server.tests.platform.RailsPostgresql1x1Test -*-
+# -*- test-case-name: c2server.tests.platform.NodejsRedis1x1Test -*-
 name: Node.js/Redis 1x1
 description: >
              Node.js environment consisting of a Key Pair, Security Group, and
