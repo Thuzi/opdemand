@@ -6,7 +6,7 @@ description: >
              PHP via FastCGI, and the MySQL database.  The web server
              listens at 80/tcp and is powered by a configurable GitHub repository.
 path: php/mysql/1node
-include: [ aws, base, network, server, database, application ]
+include: [ aws, base, network, server, puppet, database, application ]
 config:
   network/access_port: 80
   network/admin_port: 22
@@ -30,7 +30,7 @@ stack:
     components:
       - type: aws-instance
         name: Nginx/MySQL
-        include: [ server, aws, database, application ] 
+        include: [ aws, server, puppet, database, application ] 
         config:
           server/hostname: server
           server/build_script: build.sh
