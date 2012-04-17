@@ -91,9 +91,3 @@ publish:
   - name: Access URL
     description: URL used to access this service
     template: http://%(network/access_host)s
-  - name: Database Admin URL
-    description: URL used to access the database service
-    template: ssh://ubuntu@%(database/host)s
-  - name: Application Admin URL
-    description: URL used to administer the application service
-    template: ssh://ubuntu@%(application/host)s
