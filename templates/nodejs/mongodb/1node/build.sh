@@ -20,7 +20,9 @@ export DEBIAN_FRONTEND=noninteractive
 
 # install puppet packages and gems
 apt-get install puppet rubygems -yq
-gem install puppet-module hiera hiera-json hiera-puppet
+# update rubygems to latest
+sudo gem install rubygems-update && update_rubygems
+gem install puppet-module hiera hiera-json hiera-puppet foreman
 
 # install hiera config file
 cat > /etc/puppet/hiera.yaml <<EOF
