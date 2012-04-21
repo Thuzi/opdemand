@@ -47,7 +47,7 @@ stack:
     components:
       - type: aws-instance
         include: [ network, application, aws, server, puppet  ]
-        name: Node
+        name: Node.js
         config:
           server/hostname: node
           server/build_script: build.sh

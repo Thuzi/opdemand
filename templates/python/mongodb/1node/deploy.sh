@@ -13,4 +13,4 @@ fi
 # execute puppet apply
 puppet apply $debug_flag -e '
 class {"opdemand::database::mongodb":} ->
-class {"opdemand::web::python":}'
+class {"opdemand::app::python":}'
