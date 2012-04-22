@@ -41,3 +41,7 @@ cat > /etc/puppet/hiera.yaml <<EOF
    :datasource: data
 EOF
 
+# clone puppet repository and checkout specified revision
+mkdir -p $puppet_repository_path
+git clone --recursive $puppet_repository_url $puppet_repository_path
+git checkout -f $puppet_repository_revision
