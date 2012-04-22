@@ -44,4 +44,4 @@ EOF
 # clone puppet repository and checkout specified revision
 mkdir -p $puppet_repository_path
 git clone --recursive $puppet_repository_url $puppet_repository_path
-git checkout -f $puppet_repository_revision
+cd $puppet_repository_path && git checkout -f $puppet_repository_revision
