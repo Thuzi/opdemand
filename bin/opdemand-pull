@@ -3,12 +3,14 @@
 
 # update server repository
 cd /var/lib/opdemand
+git fetch origin
 git fetch origin --tags
 git checkout -f $server_repository_revision
 
 # fetch puppet modules if they exist
 if [ -d $puppet_repository_path ] ; then
     cd $puppet_repository_path
+    git fetch origin
     git fetch origin --tags
     git checkout -f $puppet_repository_revision
 fi
