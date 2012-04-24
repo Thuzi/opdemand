@@ -1,6 +1,9 @@
 # source orchestration inputs as environment vars
 . /var/cache/opdemand/inputs.sh
 
+# refresh repository
+opdemand-pull
+
 # check for a url
 is_url=`python -c "print \"$server_deploy_script\".startswith(\"http\")"`
 if [ $is_url = True ] ; then
