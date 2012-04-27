@@ -3,7 +3,8 @@ name: Pyramid Web Development
 description: >
              Pyramid python web development environment consisting of a Key
              Pair, Security Group, and an EC2 instance. Installs an Ubuntu
-             Oneiric server with Pyramid, powered by a configurable GitHub repository.
+             Precise server with Pyramid, powered by a configurable
+             GitHub repository.
 path: pyramid/dev
 include: [ aws, base, network, server ]
 config:
