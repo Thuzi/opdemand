@@ -29,7 +29,7 @@ stack:
     components:
       - name: Python/MongoDB
         include: [ aws, server, puppet, database, application ]
-        description: EC2 instance that runs MongoDB and Python web application
+        description: EC2 instance that runs MongoDB and Python application
         type: aws-instance
         config:
           server/hostname: server
@@ -43,5 +43,5 @@ stack:
       port: 5000
 publish:
   - name: Access URL
-    description: Driver URL used to access this service
+    description: URL used to access this service
     template: http://%(network/access_host)s:%(network/access_port)s

@@ -14,15 +14,19 @@ export LC_ALL=en_US.UTF-8
 # prevent dpkg prompting
 export DEBIAN_FRONTEND=noninteractive
 
+# install and update rubygems
+apt-get install rubygems -yq
+gem install rubygems-update && update_rubygems
+
+# install required system gems
+gem install foreman
+
 #
 # puppet-specific bootstrapping
 #
 
-# install puppet packages and gems
-apt-get install puppet rubygems -yq
-# update rubygems to latest
-sudo gem install rubygems-update && update_rubygems
-gem install puppet-module hiera hiera-json hiera-puppet foreman
+# install puppet modules
+gem install puppet hiera hiera-json hiera-puppet 
 
 # install hiera config file
 cat > /etc/puppet/hiera.yaml <<EOF
