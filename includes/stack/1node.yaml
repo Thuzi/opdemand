@@ -1,0 +1,27 @@
+stack:
+  - name: Security
+    description: Provides security infrastructure
+    include: [ ]
+    components:
+      - type: aws-keypair
+        include: [ aws ]
+  - name: Network
+    description: Provides network infrastructure
+    include: [ ]
+    components:
+      - type: aws-sg
+        include: [ aws, network ]
+  - name: Service
+    description: Provides network accessible services
+    include: [ ]
+    components:
+      - name: Server
+        include: [ aws, server ]
+        description: EC2 instance that runs the platform service
+        type: aws-instance
+        output:
+          network/access_host: public_dns_name
+          network/admin_host: public_dns_name
+    monitor:
+      protocol: tcp
+      port: "%(network/access_port)s"

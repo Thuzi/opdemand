@@ -1,0 +1,11 @@
+doctype: keypair
+impl: c2mock.security.Keypair
+contents:
+  name: Key Pair
+  description: Provides SSH keys used for triggering automated deployments
+input:
+  region_name: aws/region_name
+  key_name: "%(platform/abbreviation)s-%(platform/short_id)s"
+output:
+  key_name: mock/key_name
+  key_material: mock/key_material

@@ -1,0 +1,53 @@
+# editable platform contents
+contents:
+  categories: [ lb ]
+# platform configuration
+config:
+  contents:
+    sections:
+      lb:
+        name: Load Balancer
+        description: Configuration for Load Balancers
+        fields:
+          lb/listeners:
+            name: Listener Config
+            description: Listener port / Instance port / Protocol
+            type: list
+            sort: 0
+            default: [ "(80, 80, HTTP)" ]
+          lb/target:
+            name: Health Check Target
+            description: Target to check for instance health
+            type: text
+            default: HTTP:80/
+            sort: 1
+          lb/interval:
+            name: Check Interval
+            description: Interval between health checks
+            type: text
+            default: 30
+            sort: 2
+          lb/timeout:
+            name: Instance Timeout
+            description: Connect timeout in seconds
+            type: text
+            default: 2
+            sort: 3
+          lb/healthy_threshold:
+            name: Healthy Threshold
+            description: Number of checks before instance determined healthy
+            type: text
+            default: 3
+            sort: 4
+          lb/unhealthy_threshold:
+            name: Unhealthy Threshold
+            description: Number of failed checks before instance removed from LB
+            type: text
+            default: 3
+            sort: 5
+          lb/cookie_name:
+            name: Cookie Name
+            description: Name of application cookie to use for session stickiness
+            type: text
+            default:
+            sort: 6

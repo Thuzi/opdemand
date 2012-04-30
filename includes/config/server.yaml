@@ -1,0 +1,116 @@
+# platform configuration
+config:
+  doctype: config
+  impl: c2core.resolve.Config
+  contents:
+    sections:
+      server:
+        name: Server
+        description: Server and instance specific configuration
+        fields:
+          server/instance_type:
+            name: Instance Type
+            description: EC2 Instance Type
+            type: instance
+            default: c1.medium
+            sort: 0
+            editable: [ none, destroyed ]
+          server/ssh_authorized_keys:
+            name: SSH Authorized Keys
+            description: SSH public key for server adminstrator
+            type: list
+            default: []
+            sort: 1
+          # deploy config
+          server/repository_url:
+            name: Repository URL
+            description: Git repository URL containing deployment code
+            type: repository-url
+            default: git://github.com/opdemand/opdemand-ubuntu.git
+            sort: 2
+          server/ssh_private_key:
+            name: SSH Private Key
+            description: Private key to use for outbound SSH connections
+            type: textarea
+            default:
+            sort: 3
+          server/repository_revision:
+            name: Repository Revision
+            description: Repository revision to pull latest code from 
+            type: text
+            default: origin/master
+            sort: 4
+          server/build_script:
+            name: Build Script
+            description: File or URL to run at build time
+            type: url
+            default: scripts/build_puppet.sh
+            sort: 5
+          server/build_addition:
+            name: Build Script Addition
+            description: Bash Script to be appended to Build Script
+            type: textarea
+            default: "# Build Script Additions"
+            sort: 6
+          server/deploy_script:
+            name: Deploy Script
+            description: File or URL to run at deployment time
+            type: url
+            default: scripts/deploy_puppet.py
+            sort: 7
+          server/deploy_addition:
+            name: Deploy Script Addition
+            description: Bash Script to be appended to Deploy Script
+            type: textarea
+            default: "# Deploy Script Additions"
+            sort: 8
+          # user settings
+          server/admin_user:
+            name: Admin User
+            description: Username of server administrator
+            type: text
+            default: ubuntu
+            editable: [ none, destroyed ]
+            sort: 9
+          server/admin_port:
+            name: Admin Port
+            description: Port used to administer this server
+            type: text
+            default: 22
+            sort: 10
+          server/access_port:
+            name: Access Port
+            description: Port used to access this server
+            type: text
+            default: 22
+            sort: 11
+          # advanced
+          server/hostname:
+            name: Hostname
+            description: Hostname of this server
+            type: text
+            default: "%(self/hostname)s" # use dynamically generated hostname
+            editable: [ none, destroyed ]
+            sort: 12
+          server/image_id:
+            name: Image ID
+            description: AWS Image ID (defaults to latest Ubuntu release)
+            type: text
+            default:
+            sort: 13
+            editable: [ none, destroyed ]
+          server/ssh_known_hosts:
+            name: SSH Known Hosts
+            description: Fingerprints for SSH known hosts
+            type: list
+            default:
+              # github known hosts
+              - "|1|gWjGztJGJJqofFJr+IbLqRXQv2M=|NjW0/CNJgYo58K1JXBZl/md55FI= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=="
+              - "|1|c7geHuPbgSFjBFvrLiDzj1Vk+ck=|fCcYgpcB7KHCEEC1putjjpL+ktw= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=="
+            sort: 14
+          server/debug:
+            name: Deploy Debugging
+            description: Produce debug output from deploy scripts
+            type: boolean
+            default: false
+            sort: 15

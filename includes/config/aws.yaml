@@ -1,0 +1,27 @@
+# editable platform contents
+contents:
+  categories: [ aws ]
+# platform configuration
+config:
+  doctype: config
+  impl: c2core.resolve.Config
+  contents:
+    sections:
+      aws:
+        name: Provider
+        description: Configuration specific to AWS
+        fields:
+          aws/region_name:
+            name: Region
+            description: Name of AWS region
+            type: clouds
+            default: us-east-1
+            sort: 0
+            editable: [ none, destroyed ]
+          aws/zone_name:
+            name: Zone
+            description: Name of AWS zone to use
+            type: zone
+            default:
+            sort: 1
+            editable: [ none, destroyed ]

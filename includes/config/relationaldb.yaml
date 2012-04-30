@@ -1,0 +1,46 @@
+# editable platform contents
+contents:
+  categories: [ database ]
+# platform configuration
+config:
+  doctype: config
+  impl: c2core.resolve.Config
+  contents:
+    sections:
+      database:
+        name: Database
+        description: Configuration for database components
+        fields:
+          rds/allocated_storage:
+            name: Allocated Storage
+            description:
+            type: text
+            default: 5
+            dynamic: true
+          rds/instance_class:
+            name: RDS Instance Class
+            description:
+            type: text
+            default: db.m1.small
+            dynamic: true
+          rds/engine:
+            name: Database Engine
+            description:
+            type: text
+            default: MySQL5.1
+          rds/master_username:
+            name: Database Username
+            description: Username used to access the database
+            type: text
+            default: mysql_root
+          rds/master_password:
+            name: Database Password
+            description: Password used to access the database
+            type: text
+            default: changeme123
+            dynamic: true
+          rds/access_port:
+            name: Database Port
+            description: Port used to access the database
+            type: text
+            default: 3306

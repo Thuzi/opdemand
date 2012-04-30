@@ -1,0 +1,34 @@
+# -*- test-case-name: c2server.tests.platform.PythonElbx2Test -*-
+name: Python 2-node with ELB
+description: >
+             Python application platform consisting of a Key Pair, Security
+             Group, two EC2 instances and an Elastic Load Balancer.
+             Installs Python application servers powered by a configurable GitHub repository.
+             Wires up application nodes to the load-balancer and performs HTTP health checks.
+path: python/elbx2
+stack: elbx2
+include: [ base, aws, network, server, lb, puppet, application ]
+config:
+  # application configuration
+  application/name: python
+  application/port: 8000
+  application/repository_url: git://github.com/opdemand/example-python-flask.git
+  # server/deploy configuration
+  server/repository_url: git://github.com/opdemand/opdemand-ubuntu.git
+  server/build_script: scripts/build_puppet.sh
+  server/deploy_script: scripts/deploy_puppet.py
+  # puppet configuration
+  puppet/classes: [ "opdemand::common", "opdemand::app::python", "opdemand::web::nginx" ]
+  # network configuration
+  network/access_cidr: 0.0.0.0/0
+  network/access_port: 80
+  network/admin_cidr: 0.0.0.0/0 # SECURITY: change to allow only trusted source networks
+  network/admin_port: 22
+  # load balancer configuration
+  lb/listeners: [ "(80, 80, HTTP)" ]
+  lb/target: HTTP:80/
+publish:
+  - name: Application URL
+    description: URL used to access this application
+    template: http://%(network/access_host)s
+    key: application/url

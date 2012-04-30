@@ -1,0 +1,81 @@
+# editable platform contents
+contents:
+  categories: [ autoscale ]
+# platform configuration
+config:
+  contents:
+    sections:
+      autoscaler:
+        name: AutoScaler
+        description: Configuration for AWS AutoScaler
+        fields:
+          autoscaler/availability_zones:
+            name: Availability Zones
+            description: List of zones in this region where the AutoScaler will be available
+            type: list
+            default: []
+            sort: 0
+          autoscaler/default_cooldown:
+            name: Default Cooldown
+            description: Number of seconds after a Scaling Activity completes before any further scaling activities can start
+            type: text
+            default:
+            sort: 1
+          autoscaler/desired_capacity: 
+            name: Desired Capacity
+            description: Initial desired capacity for AutoScaler
+            type: text
+            default: 2
+            sort: 2
+          autoscaler/health_check_period:
+            name: Health Check Period
+            description: Number of seconds after a new instance comes into service before Auto Scaling starts checking its health
+            type: text
+            default: 60
+            sort: 3
+          autoscaler/health_check_type:
+            name: Health Check Type
+            description: Type of health check to use, either "EC2" or "ELB"
+            type: text
+            default: EC2
+            sort: 4
+          autoscaler/max_size:
+            name: Maximum Instances
+            description: Maximim number of AutoScaler instances
+            type: text
+            default: 8
+            sort: 5
+          autoscaler/min_size:
+            name: Minimum Instances
+            description: Minimum number of AutoScaler instances
+            type: text
+            default: 1
+            sort: 6
+          #autoscaler/placement_group:
+          #  name: Placement Group
+          #  description: Physical location of your cluster placement group created in Amazon EC2
+          #  type: text
+          #  default:
+          #autoscaler/vpc_zone_identifier:
+          #  name: VPC Zone Identifier
+          #  description: The subnet identifier of the Virtual Private Cloud
+          #  type: text
+          #  default:
+          autoscaler/scale_up_formula:
+            name: Scale Up Formula
+            description: Forumla for triggering a scale-up event
+            type: text
+            default: +50%
+            sort: 7
+          autoscaler/scale_down_formula:
+            name: Scale Down Forumula
+            description: Formula for triggering a scale-down event
+            type: text
+            default: -1
+            sort: 8
+          autoscaler/load_balancers:
+            name: Load Balancers
+            description: Elastic network load balancing services
+            type: list
+            default: []
+            sort: 9

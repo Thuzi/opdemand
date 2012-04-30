@@ -1,0 +1,35 @@
+doctype: server
+impl: c2mock.server.Server
+input:
+  # cloud
+  region_name: mock/region_name
+  zone_name: mock/zone_name
+  # set dynamically
+  keypair_name: mock/key_name
+  security_groups: [ mock/security_group_name ]
+  # server
+  instance_type: server/instance_type
+  image_id: server/image_id
+  build_script: server/build_script
+  ssh_public_key: server/ssh_public_key
+contents:
+  description: Instance that runs the service
+  user_data: |
+    #cloud-config
+
+    apt_update: true
+    apt_upgrade: true
+    byobu_by_default: false
+
+    manage_etc_hosts: True
+    hostname: %(platform/abbreviation)s
+
+    ssh_authorized_keys:
+      - %(server/ssh_public_key)s
+      
+    # NOTE: called on first boot only
+    runcmd:
+     # create opdemand working/log directories
+     - mkdir -p /var/cache/opdemand
+     - mkdir -p /var/log/opdemand
+     - mkdir -p /var/lib/opdemand

@@ -1,0 +1,37 @@
+# editable platform contents
+contents:
+  categories: [ database ]
+# platform configuration
+config:
+  doctype: config
+  impl: c2core.resolve.Config
+  contents:
+    sections:
+      database:
+        name: Database
+        description: Configuration for database components
+        fields:
+          database/username:
+            name: Database Username
+            description: Username used to access the database
+            type: text
+            sort: 0
+            default: 
+          database/password:
+            name: Database Password
+            description: Password used to access the database
+            type: text
+            sort: 1
+            default:
+          database/type:
+            name: Database Type
+            description: Type of database (postgresql, mysql, etc)
+            type: text
+            sort: 3
+            default: 
+          database/port:
+            name: Database Port
+            description: Port used to access the database
+            type: text
+            sort: 4
+            default:  
