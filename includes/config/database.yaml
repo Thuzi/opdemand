@@ -11,17 +11,23 @@ config:
         name: Database
         description: Configuration for database components
         fields:
+          database/host:
+            name: Database Hostname
+            description: Hostname used to access the database
+            type: text
+            sort: 0
+            default:
           database/username:
             name: Database Username
             description: Username used to access the database
             type: text
-            sort: 0
+            sort: 1
             default: 
           database/password:
             name: Database Password
             description: Password used to access the database
             type: text
-            sort: 1
+            sort: 2
             default:
           database/type:
             name: Database Type

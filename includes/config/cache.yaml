@@ -11,17 +11,23 @@ config:
         name: Cache
         description: Configuration for cache components
         fields:
+          cache/host:
+            name: Cache Hostname
+            description: Hostname used to access the cache service
+            type: text
+            sort: 0
+            default: localhost
           cache/username:
             name: Cache Username
             description: Username used to access the cache
             type: text
-            sort: 0
+            sort: 1
             default: 
           cache/password:
             name: Cache Password
             description: Password used to access the cache
             type: text
-            sort: 1
+            sort: 2
             default:
           cache/type:
             name: Cache Type

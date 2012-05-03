@@ -15,7 +15,7 @@ stack:
     description: Provides network accessible services
     include: [ ]
     components:
-      - name: Server
+      - name: Instance
         include: [ aws, server ]
         description: EC2 instance that runs the platform service
         type: aws-instance

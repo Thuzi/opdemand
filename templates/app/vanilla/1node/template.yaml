@@ -1,0 +1,29 @@
+# -*- test-case-name: c2server.tests.platform.Vanilla1nodeTest -*-
+name: Vanilla 1-node
+description: >
+             Single server Ubuntu platform consisting of a Key Pair, Security
+             Group and an EC2 instance. Manages a configuable GitHub repository.
+             Further customization is done through build and deploy scripts.
+path: app/vanilla/1node
+stack: 1node
+include: [ base, aws, network, server, puppet, application, database ]
+config:
+  # application configuration
+  application/name: vanilla
+  application/port: 8000
+  application/repository_url: git://github.com/opdemand/example-vanilla-ubuntu.git
+  # server/deploy configuration
+  server/repository_url: git://github.com/opdemand/opdemand-ubuntu.git
+  server/build_script: scripts/build_puppet.sh
+  server/deploy_script: scripts/deploy_puppet.py
+  # puppet configuration
+  puppet/classes: [ "opdemand::common", "opdemand::app:vanilla", "opdemand::web::nginx" ]
+  # network configuration
+  network/access_cidr: 0.0.0.0/0
+  network/access_port: 80
+  network/admin_cidr: 0.0.0.0/0 # SECURITY: change to allow only trusted source networks
+  network/admin_port: 22
+publish:
+  - name: Access URL
+    description: URL used to access the application
+    template: http://%(network/access_host)s

@@ -1,0 +1,24 @@
+# -*- test-case-name: c2server.tests.platform.Mysql1nodeTest -*-
+name: PostgreSQL 1-node
+description: >
+             Single server PostgreSQL platform consisting of a Key Pair, Security
+             Group and an EC2 instance. Installs the PostgreSQL database service.
+path: db/postgresql/1node
+stack: 1node
+include: [ base, aws, network, server, puppet, database ]
+config:
+  # server/deploy configuration
+  server/repository_url: git://github.com/opdemand/opdemand-ubuntu.git
+  server/build_script: scripts/build_puppet.sh
+  server/deploy_script: scripts/deploy_puppet.py
+  # puppet configuration
+  puppet/classes: [ "opdemand::common", "opdemand::database::postgresql" ]
+  # network configuration
+  network/access_cidr: 0.0.0.0/0
+  network/access_port: 3306
+  network/admin_cidr: 0.0.0.0/0 # SECURITY: change to allow only trusted source networks
+  network/admin_port: 22
+publish:
+  - name: Database URL
+    description: URL used to access this database
+    template: postgresql://%(network/access_host)s:%(network/access_port)s
