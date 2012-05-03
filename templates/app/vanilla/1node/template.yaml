@@ -17,7 +17,7 @@ config:
   server/build_script: scripts/build_puppet.sh
   server/deploy_script: scripts/deploy_puppet.py
   # puppet configuration
-  puppet/classes: [ "opdemand::common", "opdemand::app:vanilla", "opdemand::web::nginx" ]
+  puppet/classes: [ "opdemand::common", "opdemand::app::vanilla", "opdemand::web::nginx" ]
   # network configuration
   network/access_cidr: 0.0.0.0/0
   network/access_port: 80
