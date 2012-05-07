@@ -1,0 +1,17 @@
+# default configuration values
+config:
+  # puppet configuration
+  puppet/classes: [ "opdemand::database::couchdb" ]
+  # database configuration
+  database/username: admin
+  database/password: changeme123.
+  database/port: 5984
+  database/type: couchdb
+  # network configuration
+  network/access_cidr: 0.0.0.0/0 # SECURITY: change to allow only trusted source networks
+  network/access_port: 5984
+# publish to platform consumers
+publish:
+  - name: Database Admin URL
+    description: URL used to administer the database
+    template: http://%(network/access_host)s:%(network/access_port)s/_utils

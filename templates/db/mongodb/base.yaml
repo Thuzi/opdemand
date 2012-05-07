@@ -1,0 +1,17 @@
+# default configuration values
+config:
+  # puppet configuration
+  puppet/classes: [ "opdemand::database::mongodb" ]
+  # database configuration
+  database/username: admin
+  database/password: changeme123.
+  database/port: 27017
+  database/type: mongodb
+  # network configuration
+  network/access_cidr: 0.0.0.0/0 # SECURITY: change to allow only trusted source networks
+  network/access_port: 27017
+# publish to platform consumers
+publish:
+  - name: Database URL
+    description: URL used to access this database
+    template: mongodb://%(network/access_host)s:%(network/access_port)s
