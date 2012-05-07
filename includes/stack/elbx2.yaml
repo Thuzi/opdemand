@@ -1,4 +1,5 @@
-stack:
+include: [ base, aws, network, server, lb ]
+tiers:
   - name: Security
     description: Provides security infrastructure
     include: [ ]
@@ -42,8 +43,3 @@ stack:
       protocol: tcp
       port: "%(network/access_port)s"
       target: dns_name
-publish:
-  - name: Access URL
-    description: URL used to access this service
-    template: http://%(network/access_host)s
-    key: application/url

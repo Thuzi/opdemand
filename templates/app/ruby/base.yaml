@@ -1,0 +1,11 @@
+# default configuration values
+config:
+  # application configuration
+  application/repository_url: git://github.com/opdemand/example-ruby-sinatra.git
+  # puppet configuration
+  puppet/classes: [ "opdemand::app::ruby", "opdemand::web::nginx" ]
+# publish to platform consumers
+publish:
+  - name: Application URL
+    description: URL used to access this application
+    template: http://%(network/access_host)s

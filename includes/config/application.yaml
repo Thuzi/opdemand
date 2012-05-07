@@ -43,7 +43,7 @@ config:
             name: Application Name
             description: Friendly name for this application
             type: text
-            default: app
+            default: "%(platform/abbreviation)s"
             sort: 4
           application/username:
             name: Application Username
