@@ -1,0 +1,14 @@
+# default config values
+config:
+  # server/deploy configuration
+  server/repository_url: git://github.com/opdemand/opdemand-ubuntu.git
+  server/build_script: scripts/build_puppet.sh
+  server/deploy_script: scripts/deploy_puppet.py
+  # puppet configuration
+  puppet/classes: [ "opdemand::common" ]  
+  puppet/repository_revision: origin/development # DEBUG
+  # network configuration
+  network/access_cidr: 0.0.0.0/0
+  network/access_port: 80
+  network/admin_cidr: 0.0.0.0/0 # SECURITY: change to allow only trusted source networks
+  network/admin_port: 22

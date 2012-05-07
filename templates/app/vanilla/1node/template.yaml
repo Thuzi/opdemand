@@ -2,6 +2,6 @@
 name: Vanilla Application (1-node)
 stack: 1node
 description: >
-             Single server Ubuntu platform consisting of a Key Pair, Security
+             Vanills Ubuntu platform consisting of a Key Pair, Security
              Group and an EC2 instance running Nginx.
-             Installs a generic application workers powered by a configuable GitHub repository.
+             Installs generic application workers powered by a configuable GitHub repository.
