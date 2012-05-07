@@ -1,6 +1,6 @@
 # -*- test-case-name: c2server.tests.platform.AppPython4nodeTest -*-
 name: Python Application (4-node with ELB)
-stack: elbx2
+stack: elbx4
 description: >
              Python platform consisting of a Key Pair, Security
              Group, four EC2 instances running Nginx with an Elastic Load Balancer in front.

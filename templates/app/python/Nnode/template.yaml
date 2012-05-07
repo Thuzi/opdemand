@@ -1,0 +1,7 @@
+# -*- test-case-name: c2server.tests.platform.AppPythonNnodeTest -*-
+name: Python Application (N-node with Auto Scaling)
+stack: elbxN
+description: >
+             Python platform consisting of a Key Pair, Security Group, and Autoscaling Group fronted
+             by an Elastic Load Balancer.
+             Installs Python application server workers powered by a configurable GitHub repository.
