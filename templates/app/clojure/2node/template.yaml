@@ -2,6 +2,6 @@
 name: Clojure Application (2-node with ELB)
 stack: elbx2
 description: >
-             Dual server Clojure platform consisting of a Key Pair, Security
+             Clojure platform consisting of a Key Pair, Security
              Group, two EC2 instances running Nginx with an Elastic Load Balancer in front.
              Installs Clojure application server workers powered by a configurable GitHub repository.
