@@ -2,6 +2,6 @@
 name: Node.js Application (Auto Scaling)
 stack: elbxN
 description: >
-             Node.js platform consisting of a Key Pair, Security Group, and Autoscaling Group fronted
-             by an Elastic Load Balancer.
+             Node.js platform consisting of a Key Pair, Security Group, and Autoscaling Group
+             with an Elastic Load Balancer in front.
              Installs Node.js application server workers powered by a configurable GitHub repository.

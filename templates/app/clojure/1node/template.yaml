@@ -1,7 +1,6 @@
 # -*- test-case-name: c2server.tests.platform.AppClojure1nodeTest -*-
 name: Clojure Application (1-node)
 description: >
-             Clojure application platform consisting of a Key Pair, Security
-             Group and an EC2 instance running Nginx. 
+             Clojure platform consisting of a Key Pair, Security Group and an EC2 instance running Nginx.
              Installs Clojure application workers powered by a configurable GitHub repository.
 stack: 1node

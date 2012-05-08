@@ -2,6 +2,6 @@
 name: Clojure Application (Auto Scaling)
 stack: elbxN
 description: >
-             Clojure platform consisting of a Key Pair, Security Group, and Autoscaling Group fronted
-             by an Elastic Load Balancer.
+             Clojure platform consisting of a Key Pair, Security Group, and Autoscaling Group
+             with an Elastic Load Balancer in front.
              Installs Clojure application server workers powered by a configurable GitHub repository.
