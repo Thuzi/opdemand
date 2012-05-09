@@ -47,3 +47,9 @@ config:
             type: text
             default: git
             sort: 5
+          puppet/debug:
+            name: Puppet Debugging
+            description: Debug flag for puppet runs
+            type: boolean
+            default: false
+            sort: 6
