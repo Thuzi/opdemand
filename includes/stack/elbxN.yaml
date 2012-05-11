@@ -26,4 +26,4 @@ tiers:
     monitor:
       protocol: tcp
       port: "%(network/access_port)s"
-      target: dns_name
+      target: public_dns_name
