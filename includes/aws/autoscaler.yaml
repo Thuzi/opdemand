@@ -14,7 +14,7 @@ input:
   desired_capacity: autoscaler/desired_capacity
   health_check_period: autoscaler/health_check_period
   health_check_type: autoscaler/health_check_type
-  load_balancers: autoscaler/load_balancers
+  load_balancers: [ lb/name ]
   max_size: autoscaler/max_size
   min_size: autoscaler/min_size
   #placement_group: autoscaler/placement_group
