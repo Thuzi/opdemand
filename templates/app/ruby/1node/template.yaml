@@ -1,0 +1,7 @@
+# -*- test-case-name: c2server.tests.platform.AppRuby1nodeTest -*-
+name: Ruby Application (1-node)
+stack: 1node
+description: >
+             Ruby platform consisting of a Key Pair, Security Group and an EC2 instance running Nginx. 
+             Installs Ruby application workers powered by a configurable GitHub repository.
+

@@ -1,0 +1,48 @@
+# default configuration for all platforms
+config:
+  doctype: config
+  impl: c2core.resolve.Config
+  contents:
+    sections:
+      network:
+        name: Networking
+        description: Configuration for network access and network administration
+        fields:
+          # access config
+          network/access_cidr:
+            name: Access Network
+            description: Network mask for accessing this Platform's services
+            type: text
+            default: 0.0.0.0/0
+            sort: 0
+          network/access_protocol:
+            name: Access Protocol
+            description: Protocol for accessing this platform's service
+            type: text
+            default: http
+            sort: 1
+          network/access_port:
+            name: Access Port
+            description: TCP port for accessing this platform's service
+            type: text
+            default: 80
+            sort: 2
+          # admin config
+          network/admin_cidr:
+            name: Admin Network
+            description: Network mask for administering this Platform's services
+            type: text
+            default: 0.0.0.0/0
+            sort: 3
+          network/admin_protocol:
+            name: Admin Protocol
+            description: Protocol for administering this platform's service
+            type: text
+            default: ssh
+            sort: 4
+          network/admin_port:
+            name: Access Port
+            description: TCP port for accessing this platform's service
+            type: text
+            default: 22
+            sort: 5

@@ -1,0 +1,33 @@
+# editable platform contents
+contents:
+  categories: [ mock ]
+# default configuration for all platforms
+config:
+  doctype: config
+  impl: c2core.resolve.Config
+  contents:
+    sections:
+      mock:
+        name: Cloud Provider
+        description: Provider specific configuration info
+        fields:
+          mock/region_name:
+            name: Region
+            description: Name of AWS region
+            type: clouds
+            default: us-east-1
+            editable: [ none, destroyed ]
+            sort: 0
+          mock/zone_name:
+            name: Zone
+            description: Name of specific AWS zone to use
+            type: zone
+            default:
+            editable: [ none, destroyed ]
+            sort: 1
+          mock/instance_type:
+            name: Instance Type
+            description: EC2 Instance Type
+            type: text
+            default: c1.medium
+            sort: 2

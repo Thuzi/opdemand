@@ -1,0 +1,11 @@
+doctype: keypair
+impl: c2aws.ec2.KeyPair
+contents:
+  name: Key Pair
+  description: Provides SSH keys used for triggering automated deployments
+input:
+  region_name: aws/region_name
+  key_name: "%(platform/abbreviation)s-%(platform/short_id)s"
+output:
+  aws/key_name: key_name
+  aws/key_material: key_material

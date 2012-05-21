@@ -1,0 +1,15 @@
+doctype: relationaldb
+impl: c2mock.database.DB
+input:
+  # aws
+  region_name: aws/region_name
+  zone_name: aws/zone_name
+  # set dynamically
+  keypair_name: aws/key_name
+  security_groups: [ aws/security_group_name ]
+  # server
+  instance_type: server/instance_type
+  image_id: server/image_id
+  ssh_public_key: server/ssh_public_key
+contents:
+  description: RDS database instance

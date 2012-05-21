@@ -1,0 +1,12 @@
+doctype: relationaldb
+impl: c2aws.database.Database
+input:
+  # aws
+  region_name: aws/region_name
+  zone_name: aws/zone_name
+  # set dynamically
+  keypair_name: aws/key_name
+  security_groups: [ rds/security_group_name ]
+  rds_name: "%(platform/abbreviation)s-%(platform/short_id)s"
+contents:
+  description: RDS database instance

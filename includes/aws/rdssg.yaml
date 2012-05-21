@@ -1,0 +1,14 @@
+doctype: firewall
+impl: c2aws.database.DBSecurityGroup
+contents:
+  name: RDS Security Group
+  description: Provides a network firewall within an Amazon RDS region
+  cidr_ips: []
+input:
+  region_name: aws/region_name
+  sg_name: "%(platform/abbreviation)s-%(platform/short_id)s"
+  sg_description: "%(platform/abbreviation)s ingress"
+  ec2_groups: []
+  cidr_ips: [ network/admin_cidr, network/access_cidr ]
+output:
+  rds/security_group_name: sg_name

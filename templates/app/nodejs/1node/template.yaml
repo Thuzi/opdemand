@@ -1,0 +1,6 @@
+# -*- test-case-name: c2server.tests.platform.AppNodejs1nodeTest -*-
+name: Node.js Application (1-node)
+stack: 1node
+description: >
+             Node.js platform consisting of a Key Pair, Security Group and an EC2 instance running Nginx.
+             Installs Node.js application workers powered by a configurable GitHub repository.

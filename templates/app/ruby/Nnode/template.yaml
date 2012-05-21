@@ -1,0 +1,7 @@
+# -*- test-case-name: c2server.tests.platform.AppRubyNnodeTest -*-
+name: Ruby Application (Auto Scaling)
+stack: elbxN
+description: >
+             Ruby platform consisting of a Key Pair, Security Group, and Autoscaling Group
+             with an Elastic Load Balancer in front.
+             Installs Ruby application server workers powered by a configurable GitHub repository.

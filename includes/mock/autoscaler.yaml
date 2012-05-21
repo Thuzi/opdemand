@@ -1,0 +1,49 @@
+doctype: autoscaler
+impl: c2mock.network.AutoScaler
+contents:
+  name: AutoScaler
+  description: Creates and terminates instances in response to load
+input:
+  # name
+  name: as-%(platform/short_id)s
+  # aws
+  region_name: aws/region_name
+  zone_name: aws/zone_name
+  availability_zones: autoscaler/availability_zones
+  default_cooldown: autoscaler/default_cooldown
+  desired_capacity: autoscaler/desired_capacity
+  health_check_period: autoscaler/health_check_period
+  health_check_type: autoscaler/health_check_type
+  max_size: autoscaler/max_size
+  min_size: autoscaler/min_size
+  #placement_group: autoscaler/placement_group
+  #vpc_zone_identifier: autoscaler/vpc_zone_identifier
+  scale_up_formula: autoscaler/scale_up_formula
+  scale_down_formula: autoscaler/scale_down_formula
+  # set dynamically
+  keypair_name: aws/key_name
+  security_groups: [ aws/security_group_name ]
+  # server
+  instance_type: server/instance_type
+  image_id: server/image_id
+output:
+  autoscaler/arn: autoscaling_group_arn
+  user_data: |
+    #cloud-config
+
+    apt_update: true
+    apt_upgrade: true
+    byobu_by_default: false
+
+    manage_etc_hosts: True
+    hostname: %(platform/abbreviation)s
+
+    ssh_authorized_keys:
+      - %(server/ssh_public_key)s
+      
+    # NOTE: called on first boot only
+    runcmd:
+     # create opdemand working/log directories
+     - mkdir -p /var/cache/opdemand
+     - mkdir -p /var/log/opdemand
+     - mkdir -p /var/lib/opdemand

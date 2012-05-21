@@ -1,0 +1,24 @@
+# platform configuration
+config:
+  doctype: config
+  impl: c2core.resolve.Config
+  contents:
+    sections:
+      platform:
+        name: Platform
+        description: Basic Platform configuration fields
+        fields:
+          platform/abbreviation:
+            name: Platform Abbreviation
+            description: Abbreviation for this platform used in AWS names
+            type: text
+            default: base
+            sort: 0
+            editable: [ none, destroyed ]
+          platform/path:
+            name: Platform Path
+            description: Path to this platform in the deployment repository
+            type: text
+            default:
+            sort: 1
+            editable: [ none, destroyed ]

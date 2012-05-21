@@ -1,0 +1,7 @@
+# -*- test-case-name: c2server.tests.platform.AppVanillaNnodeTest -*-
+name: Vanilla Application (Auto Scaling)
+stack: elbxN
+description: >
+             Vanilla Ubuntu platform consisting of a Key Pair, Security Group, and Autoscaling Group
+             with an Elastic Load Balancer in front.
+             Installs generic application server workers powered by a configurable GitHub repository.

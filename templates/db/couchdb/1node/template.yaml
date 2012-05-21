@@ -1,0 +1,7 @@
+# -*- test-case-name: c2server.tests.platform.DbCouchdb1nodeTest -*-
+name: CouchDB Database (1-node)
+stack: 1node
+description: >
+             CouchDB platform consisting of a Key Pair, Security
+             Group and an EC2 instance. Installs the latest stable version of CouchDB
+             managed using an open-source Puppet module hosted on GitHub.

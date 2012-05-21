@@ -1,0 +1,55 @@
+# editable platform contents
+contents:
+  categories: [ puppet ]
+# platform configuration
+config:
+  doctype: config
+  impl: c2core.resolve.Config
+  contents:
+    sections:
+      puppet:
+        name: Puppet
+        description: Repository settings for Puppet configuration management
+        fields:
+          puppet/classes:
+            name: Puppet Classes
+            description: List of Puppet classes to apply
+            type: list
+            default: [ "opdemand::common" ]
+            sort: 0
+          puppet/repository_url:
+            name: Repository URL
+            description: Repository URL containing Puppet code
+            type: repository-url
+            default: git://github.com/opdemand/puppet-modules.git
+            sort: 1
+          puppet/repository_key:
+            name: Repository Key
+            description: SSH private key to access the repository
+            type: textarea
+            default:
+            sort: 2
+          puppet/repository_path:
+            name: Repository Path
+            description: Path to local copy of repository
+            type: text
+            default: /usr/share/puppet/modules
+            sort: 3
+          puppet/repository_revision:
+            name: Repository Revision
+            description: Repository revision to pull latest code from 
+            type: text
+            default: origin/master
+            sort: 4
+          puppet/repository_provider:
+            name: Repository Provider
+            description: Provider type for this repository
+            type: text
+            default: git
+            sort: 5
+          puppet/debug:
+            name: Puppet Debugging
+            description: Debug flag for puppet runs
+            type: boolean
+            default: false
+            sort: 6

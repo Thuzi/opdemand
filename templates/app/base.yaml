@@ -1,0 +1,2 @@
+# config sections to include
+include: [ puppet, application, database ]

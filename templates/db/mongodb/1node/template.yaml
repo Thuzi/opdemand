@@ -1,0 +1,7 @@
+# -*- test-case-name: c2server.tests.platform.DbMongodb1nodeTest -*-
+name: MongoDB Database (1-node)
+stack: 1node
+description: >
+             Single server MongoDB platform consisting of a Key Pair, Security
+             Group and an EC2 instance. Installs the MongoDB database service
+             managed using an open-source Puppet module hosted on GitHub.

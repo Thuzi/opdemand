@@ -1,0 +1,6 @@
+# -*- test-case-name: c2server.tests.platform.Vanilla1nodeTest -*-
+name: Vanilla Application (1-node)
+stack: 1node
+description: >
+             Vanilla Ubuntu platform consisting of a Key Pair, Security Group and an EC2 instance running Nginx.
+             Installs generic application workers powered by a configuable GitHub repository.

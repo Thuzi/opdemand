@@ -1,0 +1,17 @@
+# default configuration values
+config:
+  # puppet configuration
+  puppet/classes: [ "opdemand::database::postgresql" ]
+  # database configuration
+  database/username: admin
+  database/password: changeme123.
+  database/port: 5432
+  database/type: postgresql
+  # network configuration
+  network/access_cidr: 0.0.0.0/0 # SECURITY: change to allow only trusted source networks
+  network/access_port: 5432
+# publish to platform consumers
+publish:
+  - name: Database URL
+    description: URL used to access this database
+    template: postgresql://%(network/access_host)s:%(network/access_port)s

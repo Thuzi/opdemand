@@ -1,0 +1,7 @@
+# -*- test-case-name: c2server.tests.platform.AppNodejsNnodeTest -*-
+name: Node.js Application (Auto Scaling)
+stack: elbxN
+description: >
+             Node.js platform consisting of a Key Pair, Security Group, and Autoscaling Group
+             with an Elastic Load Balancer in front.
+             Installs Node.js application server workers powered by a configurable GitHub repository.

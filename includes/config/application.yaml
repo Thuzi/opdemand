@@ -1,0 +1,87 @@
+# editable platform contents
+contents:
+  categories: [ application ]
+# platform configuration
+config:
+  doctype: config
+  impl: c2core.resolve.Config
+  contents:
+    sections:
+      application:
+        name: Application
+        description: Configuration for application components
+        fields:
+          application/repository_url:
+            name: Repository URL
+            description: Repository URL containing application code
+            type: repository-url
+            default: 
+            sort: 0
+            editable: [ none, destroyed ]
+          application/repository_key:
+            name: Repository Key
+            description: SSH private key to access the repository
+            type: textarea
+            default:
+            sort: 1
+            editable: [ none, destroyed ]
+          application/repository_revision:
+            name: Repository Revision
+            description: Repository branch/revision to pull latest code from
+            type: text
+            default: origin/master
+            sort: 2
+            editable: [ none, destroyed ]
+          application/repository_provider:
+            name: Repository Provider
+            description: Provider type for this repository
+            type: text
+            default: git
+            sort: 3
+            editable: [ none, destroyed ]
+          application/name:
+            name: Application Name
+            description: Friendly name for this application
+            type: text
+            default: "%(platform/abbreviation)s"
+            sort: 4
+          application/username:
+            name: Application Username
+            description: User who owns this application
+            type: text
+            default: ubuntu
+            sort: 5
+            editable: [ none, destroyed ]
+          application/group:
+            name: Application Group
+            description: Group who own this application
+            type: text
+            default: ubuntu
+            sort: 6
+            editable: [ none, destroyed ]
+          application/repository_path:
+            name: Repository Path
+            description: Path to local copy of repository
+            type: text
+            default: /home/ubuntu/repo
+            sort: 7
+            editable: [ none, destroyed ]
+          application/mode:
+            name: Application Mode
+            description: Application mode (production, development, etc)
+            type: text
+            default: production # default to production
+            sort: 8
+          # network config
+          application/port:
+            name: Application Port
+            description: First port this application listener
+            type: text
+            default: 5000
+            sort: 9
+          application/listeners:
+            name: Application Listeners
+            description: Number of listeners for this application
+            type: int
+            default: 1
+            sort: 10

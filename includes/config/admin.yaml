@@ -1,0 +1,37 @@
+# editable platform contents
+contents:
+  categories: [ admin ]
+# platform configuration
+config:
+  doctype: config
+  impl: c2core.resolve.Config
+  contents:
+    sections:
+      admin:
+        name: Admin
+        description: Configuration for application administration
+        fields:
+          admin/name:
+            name: Admin Name
+            description: Name of the application administrator
+            type: text
+            default: Administrator
+            sort: 0
+          admin/email:
+            name: Admin Email
+            description: Email address of application administrator
+            type: text
+            default:
+            sort: 1
+          admin/username:
+            name: Admin Username
+            description: Username of the application administrator
+            type: text
+            default: admin
+            sort: 2
+          admin/password:
+            name: Admin Password
+            description: Password of the application administrator
+            type: text
+            default: changeme123
+            sort: 3
