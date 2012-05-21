@@ -6,7 +6,7 @@ config:
   server/deploy_script: scripts/deploy_puppet.py
   # puppet configuration
   puppet/classes: [ "opdemand::common" ]  
-  puppet/repository_revision: origin/development # DEBUG
+  puppet/repository_revision: origin/master
   # network configuration
   network/access_cidr: 0.0.0.0/0
   network/access_port: 80
