@@ -1,0 +1,7 @@
+# -*- test-case-name: c2server.tests.platform.ServiceGeneric1nodeTest -*-
+name: Generic Service (1-node)
+description: >
+             Generic service consisting of a Key Pair, Security Group and an EC2 instance.
+             Triggers fully customizable build and deploy scripts that can be used
+             to create any service.
+stack: 1node
