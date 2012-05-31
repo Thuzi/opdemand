@@ -1,7 +1,7 @@
 # platform configuration
 config:
   doctype: config
-  impl: c2core.resolve.Config
+  impl: c2core.logical.config.Config
   contents:
     sections:
       platform:

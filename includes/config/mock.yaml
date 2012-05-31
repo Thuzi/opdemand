@@ -4,7 +4,7 @@ contents:
 # default configuration for all platforms
 config:
   doctype: config
-  impl: c2core.resolve.Config
+  impl: c2core.logical.config.Config
   contents:
     sections:
       mock:
