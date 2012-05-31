@@ -15,3 +15,10 @@ publish:
   - name: Database Admin URL
     description: URL used to administer the database
     template: http://%(network/access_host)s:%(network/access_port)s/_utils
+export:
+  - name: DB Host
+    key: database/host
+    template: "%(network/admin_host)s"
+  - name: DB Port
+    key: database/port
+    template:  "%(network/admin_port)s"

@@ -15,3 +15,10 @@ publish:
   - name: Database URL
     description: URL used to access this database
     template: mongodb://%(network/access_host)s:%(network/access_port)s
+export:
+  - name: DB Host
+    key: database/host
+    template: "%(network/admin_host)s"
+  - name: DB Port
+    key: database/port
+    template:  "%(network/admin_port)s"
