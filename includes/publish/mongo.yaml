@@ -1,0 +1,4 @@
+publish:
+  - name: Included Database URL
+    description: URL used to access this database
+    template: mongodb://%(network/access_host)s:%(network/access_port)s
