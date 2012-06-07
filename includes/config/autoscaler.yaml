@@ -1,7 +1,7 @@
-# editable platform contents
+# editable service contents
 contents:
   categories: [ autoscale ]
-# platform configuration
+# service configuration
 config:
   contents:
     sections:

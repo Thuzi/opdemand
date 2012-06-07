@@ -1,7 +1,7 @@
-# editable platform contents
+# editable service contents
 contents:
   categories: [ aws ]
-# platform configuration
+# service configuration
 config:
   doctype: config
   impl: c2core.logical.config.Config

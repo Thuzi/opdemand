@@ -5,8 +5,8 @@ contents:
   description: Provides a network firewall within an Amazon EC2 region
 input:
   region_name: aws/region_name
-  sg_name: "%(platform/abbreviation)s-%(platform/short_id)s"
-  sg_description: "%(platform/abbreviation)s ingress"
+  sg_name: "%(service/abbreviation)s-%(service/short_id)s"
+  sg_description: "%(service/abbreviation)s ingress"
 output:
   aws/security_group_name: sg_name
 components:

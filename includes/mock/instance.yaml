@@ -22,7 +22,7 @@ contents:
     byobu_by_default: false
 
     manage_etc_hosts: True
-    hostname: %(platform/abbreviation)s
+    hostname: %(service/abbreviation)s
 
     ssh_authorized_keys:
       - %(server/ssh_public_key)s

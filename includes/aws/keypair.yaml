@@ -5,7 +5,7 @@ contents:
   description: Provides SSH keys used for triggering automated deployments
 input:
   region_name: aws/region_name
-  key_name: "%(platform/abbreviation)s-%(platform/short_id)s"
+  key_name: "%(service/abbreviation)s-%(service/short_id)s"
 output:
   aws/key_name: key_name
   aws/key_material: key_material

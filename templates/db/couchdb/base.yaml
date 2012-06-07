@@ -10,7 +10,7 @@ config:
   # network configuration
   network/access_cidr: 0.0.0.0/0 # SECURITY: change to allow only trusted source networks
   network/access_port: 5984
-# publish to platform consumers
+# publish to service consumers
 publish:
   - name: Database Admin URL
     description: URL used to administer the database

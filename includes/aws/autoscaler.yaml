@@ -5,7 +5,7 @@ contents:
   description: Creates and terminates instances in response to load
 input:
   # name
-  as_name: as-%(platform/short_id)s
+  as_name: as-%(service/short_id)s
   # aws
   region_name: aws/region_name
   zone_name: aws/zone_name

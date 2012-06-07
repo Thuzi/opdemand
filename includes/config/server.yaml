@@ -1,4 +1,4 @@
-# platform configuration
+# service configuration
 config:
   doctype: config
   impl: c2core.logical.config.Config

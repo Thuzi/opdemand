@@ -10,7 +10,7 @@ config:
   # network configuration
   network/access_cidr: 0.0.0.0/0 # SECURITY: change to allow only trusted source networks
   network/access_port: 27017
-# publish to platform consumers
+# publish to service consumers
 publish:
   - name: Database URL
     description: URL used to access this database
