@@ -1,0 +1,7 @@
+# -*- test-case-name: c2server.tests.service.CacheRedis1nodeTest -*-
+name: Redis Cache (1-node)
+stack: 1node
+description: >
+             Redis cache service consisting of a Key Pair, Security
+             Group and an EC2 instance. Installs the latest stable version of Redis
+             managed using an open-source Puppet module hosted on GitHub.
