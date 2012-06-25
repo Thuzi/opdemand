@@ -1,9 +1,9 @@
 # default configuration values
 config:
   # application configuration
-  application/repository_url: git://github.com/opdemand/example-vanilla-ubuntu.git
+  application/repository_url: git://github.com/opdemand/example-custom-ubuntu.git
   # puppet configuration
-  puppet/classes: [ "opdemand::app::vanilla", "opdemand::web::nginx" ]
+  puppet/classes: [ "opdemand::app::custom", "opdemand::web::nginx" ]
 # publish to service consumers
 publish:
   - name: Application URL
