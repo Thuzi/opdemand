@@ -1,7 +1,7 @@
-# -*- test-case-name: c2server.tests.service.AppVanillaNnodeTest -*-
-name: Vanilla Application (Auto Scaling)
+# -*- test-case-name: c2server.tests.service.AppCustomNnodeTest -*-
+name: Custom Application (Auto Scaling)
 stack: elbxN
 description: >
-             Vanilla Ubuntu service consisting of a Key Pair, Security Group, and Autoscaling Group
+             Custom Ubuntu service consisting of a Key Pair, Security Group, and Autoscaling Group
              with an Elastic Load Balancer in front.
-             Installs generic application server workers powered by a configurable GitHub repository.
+             Installs custom application server workers powered by a configurable GitHub repository.
