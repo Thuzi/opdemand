@@ -1,7 +1,7 @@
-# default configuration for all platforms
+# default configuration for all services
 config:
   doctype: config
-  impl: c2core.resolve.Config
+  impl: c2core.logical.config.Config
   contents:
     sections:
       network:
@@ -11,38 +11,38 @@ config:
           # access config
           network/access_cidr:
             name: Access Network
-            description: Network mask for accessing this Platform's services
+            description: Network mask for accessing this services
             type: text
             default: 0.0.0.0/0
             sort: 0
           network/access_protocol:
             name: Access Protocol
-            description: Protocol for accessing this platform's service
+            description: Protocol for accessing this service
             type: text
             default: http
             sort: 1
           network/access_port:
             name: Access Port
-            description: TCP port for accessing this platform's service
+            description: TCP port for accessing this service
             type: text
             default: 80
             sort: 2
           # admin config
           network/admin_cidr:
             name: Admin Network
-            description: Network mask for administering this Platform's services
+            description: Network mask for administering this service
             type: text
             default: 0.0.0.0/0
             sort: 3
           network/admin_protocol:
             name: Admin Protocol
-            description: Protocol for administering this platform's service
+            description: Protocol for administering this service
             type: text
             default: ssh
             sort: 4
           network/admin_port:
             name: Access Port
-            description: TCP port for accessing this platform's service
+            description: TCP port for accessing this service
             type: text
             default: 22
             sort: 5

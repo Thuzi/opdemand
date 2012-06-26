@@ -19,7 +19,7 @@ tiers:
           network/access_host: dns_name
           network/admin_host: dns_name
   - name: Autoscaler
-    description: Provides services that power this platform
+    description: Provides services that power this service
     components:
       - type: aws-autoscaler
         name: Autoscaling Group

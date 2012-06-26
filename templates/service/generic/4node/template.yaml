@@ -1,4 +1,4 @@
-# -*- test-case-name: c2server.tests.platform.ServiceGeneric4nodeTest -*-
+# -*- test-case-name: c2server.tests.service.ServiceGeneric4nodeTest -*-
 name: Generic Service (4-node)
 description: >
              Generic service consisting of a Key Pair, Security Group and four EC2 

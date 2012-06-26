@@ -5,7 +5,7 @@ contents:
   description: Creates and terminates instances in response to load
 input:
   # name
-  name: as-%(platform/short_id)s
+  name: as-%(service/short_id)s
   # aws
   region_name: aws/region_name
   zone_name: aws/zone_name
@@ -36,7 +36,7 @@ output:
     byobu_by_default: false
 
     manage_etc_hosts: True
-    hostname: %(platform/abbreviation)s
+    hostname: %(service/abbreviation)s
 
     ssh_authorized_keys:
       - %(server/ssh_public_key)s

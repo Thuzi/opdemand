@@ -1,10 +1,10 @@
-# editable platform contents
+# editable service contents
 contents:
   categories: [ puppet ]
-# platform configuration
+# service configuration
 config:
   doctype: config
-  impl: c2core.resolve.Config
+  impl: c2core.logical.config.Config
   contents:
     sections:
       puppet:

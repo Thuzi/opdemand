@@ -1,7 +1,7 @@
-# -*- test-case-name: c2server.tests.platform.AppClojureNnodeTest -*-
+# -*- test-case-name: c2server.tests.service.AppClojureNnodeTest -*-
 name: Clojure Application (Auto Scaling)
 stack: elbxN
 description: >
-             Clojure platform consisting of a Key Pair, Security Group, and Autoscaling Group
+             Clojure service consisting of a Key Pair, Security Group, and Autoscaling Group
              with an Elastic Load Balancer in front.
              Installs Clojure application server workers powered by a configurable GitHub repository.

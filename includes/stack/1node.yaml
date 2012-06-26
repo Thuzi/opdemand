@@ -18,7 +18,7 @@ tiers:
     components:
       - name: Instance
         include: [ aws, server ]
-        description: EC2 instance that runs the platform service
+        description: EC2 instance that runs the service service
         type: aws-instance
         output:
           network/access_host: public_dns_name

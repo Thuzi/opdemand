@@ -2,7 +2,7 @@ doctype: load_balancer
 impl: c2mock.network.LB
 input:
   # name
-  lb_name: lb-%(platform/short_id)s
+  lb_name: lb-%(service/short_id)s
   # aws
   region_name: mock/region_name
   zone_name: mock/zone_name

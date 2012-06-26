@@ -1,10 +1,10 @@
-# editable platform contents
+# editable service contents
 contents:
   categories: [ mock ]
-# default configuration for all platforms
+# default configuration for all services
 config:
   doctype: config
-  impl: c2core.resolve.Config
+  impl: c2core.logical.config.Config
   contents:
     sections:
       mock:
