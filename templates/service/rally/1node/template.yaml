@@ -1,0 +1,7 @@
+# -*- test-case-name: c2server.tests.service.ServiceRally1nodeTest -*-
+name: Rally EC2 Service (1-node)
+description: >
+             Rally-customized EC2 service consisting of a Key Pair, Security Group and an EC2 instance.
+             Triggers fully customizable build and deploy scripts that can be used
+             to create any service.
+stack: 1node
