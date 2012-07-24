@@ -3,8 +3,6 @@ contents:
   categories: [ cache ]
 # service configuration
 config:
-  doctype: config
-  impl: c2core.logical.config.Config
   contents:
     sections:
       cache:

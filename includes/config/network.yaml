@@ -1,7 +1,5 @@
 # default configuration for all services
 config:
-  doctype: config
-  impl: c2core.logical.config.Config
   contents:
     sections:
       network:
