@@ -8,41 +8,47 @@ config:
         name: Networking
         description: Configuration for network access and network administration
         fields:
+          network/security_group_name:
+            name: Security Group Name
+            description: Name of EC2 security group
+            type: text
+            default:
+            sort: 0
           # access config
           network/access_cidr:
             name: Access Network
             description: Network mask for accessing this services
             type: text
             default: 0.0.0.0/0
-            sort: 0
+            sort: 1
           network/access_protocol:
             name: Access Protocol
             description: Protocol for accessing this service
             type: text
             default: http
-            sort: 1
+            sort: 2
           network/access_port:
             name: Access Port
             description: TCP port for accessing this service
             type: text
             default: 80
-            sort: 2
+            sort: 3
           # admin config
           network/admin_cidr:
             name: Admin Network
             description: Network mask for administering this service
             type: text
             default: 0.0.0.0/0
-            sort: 3
+            sort: 4
           network/admin_protocol:
             name: Admin Protocol
             description: Protocol for administering this service
             type: text
             default: ssh
-            sort: 4
+            sort: 5
           network/admin_port:
             name: Access Port
             description: TCP port for accessing this service
             type: text
             default: 22
-            sort: 5
+            sort: 6
