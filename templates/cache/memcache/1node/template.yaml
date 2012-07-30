@@ -1,0 +1,7 @@
+# -*- test-case-name: c2server.tests.service.CacheMemcache1nodeTest -*-
+name: Memcache Server (1-node)
+stack: 1node
+description: >
+             Memcache cache service consisting of a Key Pair, Security
+             Group and an EC2 instance. Installs the latest stable version of Memcached
+             managed using an open-source Puppet module hosted on GitHub.

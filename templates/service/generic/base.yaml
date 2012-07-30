@@ -13,4 +13,4 @@ config:
 publish:
   - name: Access URL
     description: URL used to access this service
-    template: "%(network/access_protocol)s://%(network/access_host)s:%(network/access_port)s"
+    template: "%(network/access_protocol)s://%(server/admin_user)s@%(network/access_host)s:%(network/access_port)s"
