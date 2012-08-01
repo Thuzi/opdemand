@@ -1,0 +1,8 @@
+include: [ base, aws, network ]
+tiers:
+  - name: Security
+    description: Provides security infrastructure
+    include: [ ]
+    components:
+      - type: aws-keypair
+        include: [ aws ]

@@ -1,0 +1,3 @@
+name: SecurityGroup
+stack: sg
+description: Generic Security Group

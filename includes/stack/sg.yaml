@@ -1,0 +1,8 @@
+include: [ base, aws, network ]
+tiers:
+  - name: Network
+    description: Provides network infrastructure
+    include: [ ]
+    components:
+      - type: aws-sg
+        include: [ aws, network ]
