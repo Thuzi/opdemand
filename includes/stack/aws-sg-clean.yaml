@@ -3,8 +3,10 @@ impl: c2aws.ec2.SecurityGroup
 contents:
   name: Security Group
   description: Provides a network firewall within an Amazon EC2 region
-output:
-  aws/security_group_name: sg_name
+input:
+  region_name: aws/region_name
+  sg_name: "%(service/abbreviation)s-%(service/short_id)s"
+  sg_description: "%(service/abbreviation)s ingress"
 components:
   rules:
     - doctype: firewall_rule
