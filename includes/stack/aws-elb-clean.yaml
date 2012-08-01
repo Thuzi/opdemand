@@ -1,0 +1,6 @@
+doctype: load_balancer
+impl: c2aws.loadbalancer.LoadBalancer
+output:
+  lb/name: lb_name
+  network/access_host: dns_name
+  network/admin_host: dns_name

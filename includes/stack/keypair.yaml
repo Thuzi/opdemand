@@ -4,5 +4,5 @@ tiers:
     description: Provides security infrastructure
     include: [ ]
     components:
-      - type: aws-keypair
+      - type: aws-keypair-clean
         include: [ aws ]

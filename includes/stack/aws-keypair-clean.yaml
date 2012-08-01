@@ -1,0 +1,8 @@
+doctype: keypair
+impl: c2aws.ec2.KeyPair
+contents:
+  name: Key Pair
+  description: Provides SSH keys used for triggering automated deployments
+output:
+  aws/key_name: key_name
+  aws/key_material: key_material

@@ -1,16 +1,13 @@
 include: [ base, aws, network, server ]
 tiers:
-  - name: Service
-    description: Provides network accessible services
+  - name: AWS RDS Instance
+    description: Provides database service
     include: [ ]
     components:
       - name: Instance
         include: [ aws, server ]
         description: EC2 instance that runs the service service
-        type: aws-instance-clean
-        output:
-          network/access_host: public_dns_name
-          network/admin_host: public_dns_name
+        type: aws-rdsinstance
     monitor:
       protocol: tcp
       port: "%(network/access_port)s"

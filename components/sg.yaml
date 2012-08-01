@@ -1,3 +1,3 @@
-name: SecurityGroup
+name: Security Group
 stack: sg
 description: Generic Security Group
