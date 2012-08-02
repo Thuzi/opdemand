@@ -1,5 +1,0 @@
-doctype: ip
-impl: c2aws.ec2.ElasticIP
-contents:
-  name: Elastic IP
-  description: Provides a static IP address within an Amazon EC2 region

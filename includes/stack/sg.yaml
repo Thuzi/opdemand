@@ -4,5 +4,6 @@ tiers:
     description: Provides network infrastructure
     include: [ ]
     components:
-      - type: aws-sg-clean
+      - type: aws-sg
         include: [ aws, network ]
+export_include: [ sg ] 

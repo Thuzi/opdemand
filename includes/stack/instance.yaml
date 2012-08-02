@@ -1,4 +1,6 @@
 include: [ base, aws, network, server ]
+config:
+  network/access_port: 22
 tiers:
   - name: Service
     description: Provides network accessible services
@@ -7,7 +9,7 @@ tiers:
       - name: Instance
         include: [ aws, server ]
         description: EC2 instance that runs the service service
-        type: aws-instance-clean
+        type: aws-instance
         output:
           network/access_host: public_dns_name
           network/admin_host: public_dns_name

@@ -1,0 +1,8 @@
+export:
+    contents: 
+        fields:
+            - name: Security Group Name
+              key: network/security_group_name
+              template: "%(aws/security_group_name)s"
+
+
