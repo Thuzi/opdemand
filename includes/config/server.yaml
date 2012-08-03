@@ -112,3 +112,10 @@ config:
             type: boolean
             default: false
             sort: 15
+          server/instance_id:
+            name: Instance ID
+            description: AWS Instance ID (to use existing instance)
+            type: text
+            default:
+            sort: 16
+            editable: [ none, destroyed ]
