@@ -1,0 +1,9 @@
+publish:
+    contents:
+        fields:
+            - name: Key Pair Name
+              description: Name associated with this keypair
+              template: "%(aws/key_name)s"
+            - name: Key Pair Material
+              description: Key Pair Material 
+              template: "%(aws/key_material)s"

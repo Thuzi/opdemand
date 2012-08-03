@@ -1,3 +1,8 @@
 name: Security Group
 stack: sg
 description: Generic Security Group
+config:
+  network/access_cidr: 0.0.0.0/0
+  network/access_port: 80
+  network/admin_cidr: 0.0.0.0/0 # SECURITY: change to allow only trusted source networks
+  network/admin_port: 22

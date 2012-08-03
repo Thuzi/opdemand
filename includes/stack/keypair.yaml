@@ -7,3 +7,4 @@ tiers:
       - type: aws-keypair
         include: [ aws ]
 export_include: [ keypair ]
+publish_include: [ keypair ]
