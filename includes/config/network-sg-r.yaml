@@ -1,0 +1,15 @@
+# default configuration for all services
+config:
+  contents:
+    sections:
+      network:
+        name: Networking
+        description: Configuration for network access and network administration
+        fields:
+          network/security_group_name:
+            name: Security Group Name
+            required: True
+            description: Name of EC2 security group
+            type: text
+            default:
+            sort: 0

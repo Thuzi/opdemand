@@ -1,4 +1,4 @@
-include: [ base, aws, network, server ]
+include: [ base, aws, aws-kp-r, network-sg-r, network, server ]
 config:
   network/access_port: 22
 tiers:

@@ -1,10 +1,10 @@
-include: [ base, aws, network ]
+include: [ base, aws, network, network-sg ]
 tiers:
   - name: Network
     description: Provides network infrastructure
     include: [ ]
     components:
       - type: aws-sg
-        include: [ aws, network ]
+        include: [ aws, network, network-sg ]
 export_include: [ sg ] 
 publish_include: [ sg ] 
