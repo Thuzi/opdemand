@@ -1,6 +1,7 @@
 name: Security Group
 stack: sg
 description: Generic Security Group
+path: service/aws/sg
 config:
   network/access_cidr: 0.0.0.0/0
   network/access_port: 80

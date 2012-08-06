@@ -1,3 +1,4 @@
 name: Instance
 stack: instance
+path: service/aws/instance
 description: Generic Instance Template
