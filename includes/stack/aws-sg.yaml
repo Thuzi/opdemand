@@ -20,9 +20,9 @@ components:
     - doctype: firewall_rule
       impl: c2aws.ec2.SecurityGroupRule
       input:
-        cidr_ip: network/admin_cidr
-        from_port: network/admin_port
-        to_port: network/admin_port
+        cidr_ip: network/access_cidr
+        from_port: network/access_port
+        to_port: network/access_port
     - doctype: firewall_rule
       impl: c2aws.ec2.SecurityGroupRule
       contents:
