@@ -1,5 +1,5 @@
 doctype: autoscaler
-impl: c2mock.network.AutoScaler
+impl: c2mock.network.Autoscaler
 contents:
   name: AutoScaler
   description: Creates and terminates instances in response to load
