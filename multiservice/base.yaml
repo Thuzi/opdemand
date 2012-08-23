@@ -1,0 +1,7 @@
+name: Instance with SG and KeyPair
+stack: instance
+path: service/aws/instance
+description: Full Instance Template
+required_services: 
+    - components/sg 
+    - components/keypair

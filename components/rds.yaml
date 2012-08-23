@@ -1,4 +1,3 @@
 name: AWS Relational Database Service
 stack: rds 
-path: service/aws/rds
 description: Relational DB Service
