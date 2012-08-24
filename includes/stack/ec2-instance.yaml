@@ -1,0 +1,5 @@
+doctype: server
+impl: c2aws_sync.tx.TxInstance
+tags:
+  name: EC2 Instance
+  description: EC2 Instance managed by OpDemand

@@ -1,0 +1,10 @@
+include: [ base, ec2-instance, ssh-client, deploy ]
+tiers:
+  - name: Service
+    description: Provides network accessible services
+    include: [ ]
+    components:
+      - name: Instance
+        include: [ aws, server ]
+        description: EC2 instance that runs the service service
+        type: ec2-instance

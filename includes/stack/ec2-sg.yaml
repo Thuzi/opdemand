@@ -1,0 +1,5 @@
+doctype: firewall
+impl: c2aws_sync.tx.TxSecurityGroup
+tags:
+  name: EC2 Security Group
+  description: EC2 Security Group managed by OpDemand

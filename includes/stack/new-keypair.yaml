@@ -1,0 +1,6 @@
+include: [ base, ec2-keypair ]
+tiers:
+  - name: Service
+    description: Provides network accessible services
+    components:
+      - type: ec2-keypair
