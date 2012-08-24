@@ -1,3 +1,8 @@
 name: Key Pair
+<<<<<<< HEAD
 stack: keypair 
+=======
+stack: new-keypair
+path: service/aws/keypair
+>>>>>>> add new component-based templates
 description: Generic Key Pair
