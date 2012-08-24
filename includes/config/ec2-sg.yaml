@@ -1,0 +1,42 @@
+config:
+  contents:
+    sections:
+      ec2-sg:
+        name: EC2 Security Group
+        description: Configuration for EC2 security groups
+        fields:
+          ec2-sg/region_name:
+            name: Region
+            description: Name of AWS region
+            type: clouds
+            default: us-east-1
+            sort: 0
+            editable: [ none, destroyed ]
+          ec2-sg/name:
+            name: Name
+            description: Name of EC2 Security Group
+            type: text
+            default: default
+            sort: 1
+            editable: [ none, destroyed ]
+          ec2-sg/description:
+            name: Description
+            description: Description of EC2 Security Group
+            type: text
+            default:
+            sort: 2
+            editable: [ none, destroyed ]
+          ec2-sg/rules:
+            name: Rules
+            description: Security group rules
+            type: list
+            default: []
+            sort: 3
+            editable: [ none, destroyed ]
+          ec2-sg/id:
+            name: Group ID
+            description: ID of EC2 Security Group
+            type: text
+            default:
+            sort: 4
+            editable: [ none, destroyed ]

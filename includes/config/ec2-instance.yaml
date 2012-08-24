@@ -1,0 +1,148 @@
+config:
+  contents:
+    sections:
+      ec2-instance:
+        name: EC2 Instance
+        description: Configuration for EC2 instances
+        fields:
+          # aws settings
+          ec2-instance/region_name:
+            name: Region
+            description: Name of AWS region
+            type: clouds
+            default: us-east-1
+            sort: 1
+            editable: [ none, destroyed ]
+          ec2-instance/zone_name:
+            name: Zone
+            description: Name of AWS zone to use
+            type: zone
+            default:
+            sort: 2
+            editable: [ none, destroyed ]
+          ec2-instance/id:
+            name: Instance ID
+            description: EC2 Instance ID (to use existing instance)
+            type: text
+            default:
+            sort: 3
+            editable: [ none, destroyed ]
+          ec2-instance/instance_type:
+            name: Instance Type
+            description: EC2 Instance Type
+            type: instance
+            default: c1.medium
+            sort: 4
+            editable: [ none, destroyed ]
+          ec2-instance/image_id:
+            name: Image ID
+            description: AMI ID (defaults to latest Ubuntu release)
+            type: text
+            default:
+            sort: 5
+            editable: [ none, destroyed ]
+          ec2-instance/key_name:
+            name: Key Name
+            description: Name of Key Pair to use for SSH access
+            type: text
+            default:
+            sort: 6
+            editable: [ none, destroyed ]
+          ec2-instance/security_groups:
+            name: Security Groups
+            description: List of security groups to restrict inbound access
+            type: list
+            default: [ 'default' ]
+            sort: 7
+            editable: [ none, destroyed ]
+          ec2-instance/monitored:
+            name: Kernel ID
+            description: ID of Kernel to use
+            type: boolean
+            default: false
+            sort: 8
+            editable: [ none, destroyed ]
+          ec2-instance/kernel:
+            name: Kernel ID
+            description: ID of Kernel to use
+            type: text
+            default:
+            sort: 9
+            editable: [ none, destroyed ]
+          ec2-instance/user_data:
+            name: User Data
+            description: User Data to pass to instance on boot
+            type: textarea
+            sort: 10
+            editable: [ none, destroyed ]
+            default: |
+              #cloud-config
+
+              apt_update: true
+              apt_upgrade: true
+              byobu_by_default: false
+
+              manage_etc_hosts: True
+              hostname: %(server/hostname)s
+
+              packages: [ git-core ]
+
+              # NOTE: called on first boot only
+              runcmd:
+               # create working/log directories
+               - mkdir -p /var/cache/opdemand
+               - mkdir -p /var/log/opdemand
+               # write out bootstrap script
+               - |
+                 cat > /var/cache/opdemand/ssh-bootstrap <<EOF
+                 #!/usr/bin/env python
+                 import json
+                 import re
+                 import os
+                 import subprocess
+
+                 # setup ssh variables
+                 ssh_auth_keys = json.loads(r"""%(json_ssh_authorized_keys)s""")
+                 ssh_known_hosts = json.loads(r"""%(json_ssh_known_hosts)s""")
+                 ssh_private_key = json.loads(r"""%(json_ssh_private_key)s""")
+
+                 # prepare ssh data
+                 ssh_data = []
+                 try:
+                   if ssh_auth_keys:
+                     keys = "\n".join(ssh_auth_keys)+"\n"
+                     ssh_data.append( ("%(server/admin_user)s", "/home/%(server/admin_user)s/.ssh/authorized_keys", keys) )
+                   if ssh_known_hosts:
+                     fingerprints = "\n".join(ssh_known_hosts)+"\n"
+                     ssh_data.append( ("%(server/admin_user)s", "/home/%(server/admin_user)s/.ssh/known_hosts", fingerprints) )
+                     ssh_data.append( ("root", "/root/.ssh/known_hosts", fingerprints) )
+                   if ssh_private_key and str(ssh_private_key[0]).find('--BEGIN') > 0:
+                       ssh_private_key = ssh_private_key[0]
+                       key_type = re.findall("^-----BEGIN (...) PRIVATE KEY", ssh_private_key)[0].lower()
+                       ssh_data.append( ("%(server/admin_user)s", "/home/%(server/admin_user)s/.ssh/id_"+key_type, ssh_private_key))
+                       ssh_data.append( ("root", "/root/.ssh/id_"+key_type, ssh_private_key))
+                 except:
+                   pass # write what we have
+
+                 # iterate over ssh data and append it to disk
+                 for user, path, data in ssh_data:
+                   with open(path, "a") as f:
+                     if isinstance(data, list):
+                       for d in data:
+                         f.write(d)
+                     else:
+                       f.write(data)
+                     subprocess.check_call(["chown", user+":"+user, path])
+                     subprocess.check_call(["chmod", "0600", path])
+                 EOF
+               - chmod +x /var/cache/opdemand/ssh-bootstrap
+               - /var/cache/opdemand/ssh-bootstrap
+               # clone server repository
+               - git clone --recursive %(server/repository_url)s /var/lib/opdemand
+               - cd /var/lib/opdemand && git checkout -f %(server/repository_revision)s
+               - |
+                 for script in `ls /var/lib/opdemand/bin`; do
+                   ln -fs /var/lib/opdemand/bin/$script /usr/local/bin/$script
+                 done
+               # disable ssh requiretty
+               - sed -r -e 's/^(Defaults[ ]+requiretty)$/# \1/' -i /etc/sudoers

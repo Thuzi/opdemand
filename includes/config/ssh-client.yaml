@@ -1,0 +1,34 @@
+config:
+  contents:
+    sections:
+      ssh-client:
+        name: SSH Client
+        description: SSH client configuration options
+        fields:
+          ssh-client/authorized_keys:
+            name: SSH Authorized Keys
+            description: SSH public key for server adminstrator
+            type: list
+            default: []
+            sort: 1
+          ssh-client/known_hosts:
+            name: SSH Known Hosts
+            description: Fingerprints for SSH known hosts
+            type: list
+            default:
+              # github known hosts
+              - "|1|gWjGztJGJJqofFJr+IbLqRXQv2M=|NjW0/CNJgYo58K1JXBZl/md55FI= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=="
+              - "|1|c7geHuPbgSFjBFvrLiDzj1Vk+ck=|fCcYgpcB7KHCEEC1putjjpL+ktw= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=="
+            sort: 2
+          ssh-client/private_key:
+            name: SSH Private Key
+            description: Private key to use for outbound SSH connections
+            type: textarea
+            default:
+            sort: 3
+          ssh-client/port:
+            name: SSH Port
+            description: Port used for outbound SSH access
+            type: text
+            default: 22
+            sort: 4

@@ -1,0 +1,28 @@
+config:
+  contents:
+    sections:
+      ec2-keypair:
+        name: EC2 Key Pair
+        description: Configuration for EC2 key pairs
+        fields:
+          ec2-keypair/region_name:
+            name: Region
+            description: Name of AWS region
+            type: clouds
+            default: us-east-1
+            sort: 0
+            editable: [ none, destroyed ]
+          ec2-keypair/name:
+            name: Name
+            description: Name of EC2 Key Pair
+            type: text
+            default: default
+            sort: 1
+            editable: [ none, destroyed ]
+          ec2-keypair/material:
+            name: Key Material
+            description: Private Key Material
+            type: textarea
+            default:
+            sort: 2
+            editable: [ none, destroyed ]
