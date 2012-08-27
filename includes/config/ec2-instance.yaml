@@ -4,6 +4,7 @@ config:
       ec2-instance:
         name: EC2 Instance
         description: Configuration for EC2 instances
+        sort: 8
         fields:
           # aws settings
           ec2-instance/region_name:

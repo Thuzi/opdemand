@@ -4,6 +4,7 @@ config:
       ssh-client:
         name: SSH Client
         description: SSH client configuration options
+        sort: 11
         fields:
           ssh-client/authorized_keys:
             name: SSH Authorized Keys

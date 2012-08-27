@@ -8,6 +8,7 @@ config:
       mock:
         name: Cloud Provider
         description: Provider specific configuration info
+        sort: 17
         fields:
           mock/region_name:
             name: Region

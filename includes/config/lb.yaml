@@ -8,6 +8,7 @@ config:
       lb:
         name: Load Balancer
         description: Configuration for Load Balancers
+        sort: 16
         fields:
           lb/listeners:
             name: Listener Config

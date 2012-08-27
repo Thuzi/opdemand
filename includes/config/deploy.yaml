@@ -5,6 +5,7 @@ config:
       ec2-deploy:
         name: EC2 Deployment
         description: Configuration for EC2 Instance deployments
+        sort: 9
         fields:
           # deploy config
           ec2-deploy/mechanism:

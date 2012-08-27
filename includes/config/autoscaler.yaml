@@ -8,6 +8,7 @@ config:
       autoscaler:
         name: AutoScaler
         description: Configuration for AWS AutoScaler
+        sort: 15
         fields:
           autoscaler/availability_zones:
             name: Availability Zones

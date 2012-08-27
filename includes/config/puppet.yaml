@@ -8,6 +8,7 @@ config:
       puppet:
         name: Puppet
         description: Repository settings for Puppet configuration management
+        sort: 12
         fields:
           puppet/classes:
             name: Puppet Classes

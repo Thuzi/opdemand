@@ -8,6 +8,7 @@ config:
       cache:
         name: Cache
         description: Configuration for cache components
+        sort: 14
         fields:
           cache/host:
             name: Cache Hostname

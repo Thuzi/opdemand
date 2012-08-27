@@ -4,6 +4,7 @@ config:
       ec2-sg:
         name: EC2 Security Group
         description: Configuration for EC2 security groups
+        sort: 6
         fields:
           ec2-sg/region_name:
             name: Region

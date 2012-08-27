@@ -4,6 +4,7 @@ config:
       ec2-keypair:
         name: EC2 Key Pair
         description: Configuration for EC2 key pairs
+        sort: 5
         fields:
           ec2-keypair/region_name:
             name: Region

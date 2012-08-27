@@ -5,6 +5,7 @@ config:
       network:
         name: Networking
         description: Configuration for network access and network administration
+        sort: 3
         fields:
           network/security_group_name:
             name: Security Group Name

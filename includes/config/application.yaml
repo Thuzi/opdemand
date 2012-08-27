@@ -8,6 +8,7 @@ config:
       application:
         name: Application
         description: Configuration for application components
+        sort: 10
         fields:
           application/repository_url:
             name: Repository URL

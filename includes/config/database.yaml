@@ -8,6 +8,7 @@ config:
       database:
         name: Database
         description: Configuration for database components
+        sort: 13
         fields:
           database/username:
             name: Database Username

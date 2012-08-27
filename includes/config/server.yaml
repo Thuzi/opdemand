@@ -5,6 +5,7 @@ config:
       server:
         name: Server
         description: Server and instance specific configuration
+        sort: 7
         fields:
           server/instance_type:
             name: Instance Type

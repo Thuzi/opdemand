@@ -8,6 +8,7 @@ config:
       aws:
         name: Provider
         description: Configuration specific to AWS
+        sort: 2
         fields:
           aws/region_name:
             name: Region
