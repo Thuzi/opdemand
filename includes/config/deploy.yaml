@@ -7,46 +7,51 @@ config:
         description: Configuration for EC2 Instance deployments
         sort: 9
         fields:
-          # deploy config
           ec2-deploy/mechanism:
             name: Deploy Mechanism
             description: Mechanism for triggering deployments
             type: text
             default: ssh
             sort: 1
-          ec2-deploy/user:
-            name: Deploy User
-            description: User used to trigger deployment commands
+          ec2-deploy/username:
+            name: Deploy Username
+            description: Username used to trigger deployment commands
             type:
             default: ubuntu
             sort: 2
+          ec2-deploy/key:
+            name: Deploy Key
+            description: Private key used to trigger deployment commands
+            type:
+            default:
+            sort: 3
           ec2-deploy/command:
             name: Deploy Command
             description: Command to run when triggering a deploy
             type: url
             default: /var/lib/opdemand/scripts/deploy_puppet.py
-            sort: 3
+            sort: 4
           ec2-deploy/repository_url:
             name: Repository URL
             description: Git repository URL containing deployment code
             type: repository-url
             default: git://github.com/opdemand/opdemand-ubuntu.git
-            sort: 4
+            sort: 5
           ec2-deploy/repository_revision:
             name: Repository Revision
             description: Repository revision to pull latest code from
             type: text
             default: origin/master
-            sort: 5
+            sort: 6
           ec2-deploy/repository_path:
             name: Repository Path
             description: Path to place deployment repository
             type: text
             default: /var/lib/opdemand
-            sort: 6
+            sort: 7
           ec2-deploy/debug:
             name: Deploy Debugging
             description: Produce debug output from deploy scripts
             type: boolean
             default: false
-            sort: 7
+            sort: 8
