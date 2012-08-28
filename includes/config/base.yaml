@@ -7,7 +7,7 @@ config:
       service:
         name: Service
         description: Basic Service configuration fields
-        sort: 1
+        sort: 100
         fields:
           service/abbreviation:
             name: Service Abbreviation
