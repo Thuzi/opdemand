@@ -4,3 +4,4 @@ tiers:
     description: Provides network accessible services
     components:
       - type: ec2-keypair
+export_include: [ new-keypair ]
