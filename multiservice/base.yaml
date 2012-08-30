@@ -1,6 +1,5 @@
 name: Instance with SG and KeyPair
-stack: instance
-path: service/aws/instance
+stack: new-instance
 description: Full Instance Template
 required_services: 
     - components/sg 
