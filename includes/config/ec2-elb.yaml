@@ -1,0 +1,80 @@
+config:
+  contents:
+    sections:
+      ec2-elb:
+        name: Elastic Load Balancer
+        description: Configuration for ELBs
+        sort: 9
+        fields:
+          # aws settings
+          ec2-elb/region_name:
+            name: Region
+            description: Name of AWS region
+            type: clouds
+            default: us-east-1
+            sort: 1
+            editable: [ none, destroyed ]
+          ec2-elb/name:
+            name: ELB Name
+            description: Unique name identifier for ELB
+            type: text
+            default: opdemand-elb
+            sort: 2
+            editable: [ none, destroyed ]
+          ec2-elb/listeners:
+            name: Listeners
+            description: ELB Listeners
+            type: list
+            default: [ "80,80,HTTP" ]
+            sort: 3
+          ec2-elb/instances:
+            name: Instances
+            description: Instances attached to this ELB
+            type: list
+            default: []
+            sort: 4
+          ec2-elb/availability_zones:
+            name: Availability Zones
+            description: Name of AWS zones to use
+            type: list
+            default: []
+            sort: 5
+            editable: [ none, destroyed ]
+          ec2-elb/source_security_group:
+            name: Source Security Group
+            description: Name of source security group for ELB traffic
+            type: text
+            default:
+            sort: 6
+            editable: [ none, destroyed ]
+          ec2-elb/health_check_target:
+            name: Health Check Target
+            description: Target for ELB health check
+            type: text
+            default: "HTTP:80/"
+            sort: 7
+          ec2-elb/health_check_interval:
+            name: Health Check Interval
+            description: Interval in seconds between health checks
+            type: text
+            default: 20
+            sort: 8
+          ec2-elb/health_check_timeout:
+            name: Health Check Timeout
+            description: Seconds after which no response means a failed health probe
+            type: text
+            default: 10
+            sort: 9
+          ec2-elb/health_check_healthy_threshold:
+            name: Healthy Threshold
+            description: Number of health probe successes required to move the instance to Healthy
+            type: text
+            default: 2
+            sort: 10
+          ec2-elb/health_check_unhealthy_threshold:
+            name: Unhealthy Threshold
+            description: Number of health probe failures required to move the instance to Unhealthy
+            type: text
+            default: 2
+            sort: 11
+

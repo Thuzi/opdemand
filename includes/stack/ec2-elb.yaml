@@ -1,0 +1,5 @@
+doctype: loadbalancer
+impl: c2aws_sync.tx.TxELB
+tags:
+  name: ELB
+  description: ELB managed by OpDemand
