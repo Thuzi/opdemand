@@ -18,6 +18,7 @@ config:
             description: Name of EC2 Key Pair
             type: text
             default: default
+            #required: true
             sort: 1
             editable: [ none, destroyed ]
           ec2-keypair/material:

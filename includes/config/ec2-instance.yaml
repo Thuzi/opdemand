@@ -12,6 +12,7 @@ config:
             description: Name of AWS region
             type: clouds
             default: us-east-1
+            #required: true
             sort: 1
             editable: [ none, destroyed ]
           ec2-instance/zone_name:
@@ -33,6 +34,7 @@ config:
             description: EC2 Instance Type
             type: instance
             default: c1.medium
+            #required: true
             sort: 4
             editable: [ none, destroyed ]
           ec2-instance/image_id:
@@ -53,28 +55,32 @@ config:
             name: Security Groups
             description: List of security groups to restrict inbound access
             type: list
-            default: [ 'default' ]
+            default: []
             sort: 7
             editable: [ none, destroyed ]
-          ec2-instance/monitored:
-            name: Kernel ID
-            description: ID of Kernel to use
-            type: boolean
-            default: false
+          ec2-instance/volumes:
+            name: Volumes
+            description: List of volumes (EBS & Ephemeral)
+            type: list
+            default: []
             sort: 8
-            editable: [ none, destroyed ]
+          ec2-instance/elastic_ip:
+            name: Elastic IP
+            description: Elastic IP address to use
+            type: text
+            default:
+            sort: 9
           ec2-instance/kernel:
             name: Kernel ID
             description: ID of Kernel to use
             type: text
             default:
-            sort: 9
-            editable: [ none, destroyed ]
+            sort: 10
           ec2-instance/user_data:
             name: User Data
             description: User Data to pass to instance on boot
             type: textarea
-            sort: 10
+            sort: 11
             editable: [ none, destroyed ]
             default: |
               #cloud-config

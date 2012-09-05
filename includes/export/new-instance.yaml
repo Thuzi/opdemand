@@ -1,0 +1,6 @@
+export:
+    contents: 
+        fields:
+            - name: ELB Instance
+              key: ec2-elb/instances
+              template: "%(ec2-instance/id)s"
