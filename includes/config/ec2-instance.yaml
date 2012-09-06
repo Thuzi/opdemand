@@ -11,8 +11,8 @@ config:
             name: Region
             description: Name of AWS region
             type: clouds
-            default: us-east-1
-            #required: true
+            default: #us-east-1
+            required: true
             sort: 1
             editable: [ none, destroyed ]
           ec2-instance/zone_name:
@@ -33,8 +33,8 @@ config:
             name: Instance Type
             description: EC2 Instance Type
             type: instance
-            default: c1.medium
-            #required: true
+            default: #c1.medium
+            required: true
             sort: 4
             editable: [ none, destroyed ]
           ec2-instance/image_id:
@@ -49,6 +49,7 @@ config:
             description: Name of Key Pair to use for SSH access
             type: text
             default:
+            required: true
             sort: 6
             editable: [ none, destroyed ]
           ec2-instance/security_groups:
@@ -56,6 +57,7 @@ config:
             description: List of security groups to restrict inbound access
             type: list
             default: []
+            required: true
             sort: 7
             editable: [ none, destroyed ]
           ec2-instance/volumes:

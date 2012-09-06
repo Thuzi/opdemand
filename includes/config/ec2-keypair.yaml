@@ -10,21 +10,22 @@ config:
             name: Region
             description: Name of AWS region
             type: clouds
-            default: us-east-1
-            sort: 0
+            default:
+            required: true
+            sort: 1
             editable: [ none, destroyed ]
           ec2-keypair/name:
             name: Name
             description: Name of EC2 Key Pair
             type: text
-            default: default
-            #required: true
-            sort: 1
+            default:
+            required: true
+            sort: 2
             editable: [ none, destroyed ]
           ec2-keypair/material:
             name: Key Material
             description: Private Key Material
             type: textarea
             default:
-            sort: 2
+            sort: 3
             editable: [ none, destroyed ]

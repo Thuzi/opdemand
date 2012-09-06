@@ -10,35 +10,36 @@ config:
             name: Region
             description: Name of AWS region
             type: clouds
-            default: us-east-1
-            sort: 0
+            default:
+            required: true
+            sort: 1
             editable: [ none, destroyed ]
           ec2-sg/name:
             name: Name
             description: Name of EC2 Security Group
             type: text
-            default: default
-            #required: true
-            sort: 1
+            default:
+            required: true
+            sort: 2
             editable: [ none, destroyed ]
           ec2-sg/description:
             name: Description
             description: Description of EC2 Security Group
             type: text
-            default:
-            sort: 2
+            default: Managed by OpDemand
+            sort: 3
             editable: [ none, destroyed ]
           ec2-sg/rules:
             name: Rules
             description: Security group rules
             type: list
-            default: []
-            sort: 3
+            default: [ "0.0.0.0/0,tcp,22,22" ]
+            sort: 4
             editable: [ none, destroyed ]
           ec2-sg/id:
             name: Group ID
             description: ID of EC2 Security Group
             type: text
             default:
-            sort: 4
+            sort: 5
             editable: [ none, destroyed ]
