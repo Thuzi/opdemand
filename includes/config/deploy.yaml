@@ -21,11 +21,14 @@ config:
             default: ubuntu
             sort: 2
             env_key: DEPLOY_USERNAME
-          ec2-deploy/command:
-            name: Deploy Command
-            description: Command to run when triggering a deploy
-            type: url
-            default: source .opdemand && sudo apt-get update && sudo apt-get dist-upgrade -yq
+          ec2-deploy/script:
+            name: Deploy Script
+            description: Script to run when triggering a deploy
+            type: textarea
+            default: |
+             source .opdemand
+             sudo apt-get update
+             sudo apt-get dist-upgrade -yq
             sort: 3
           ec2-deploy/key:
             name: Deploy Key
