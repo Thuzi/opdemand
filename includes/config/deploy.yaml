@@ -34,7 +34,6 @@ config:
             type: url
             default: /var/lib/opdemand/scripts/deploy_puppet.py
             sort: 4
-            env_key: DEPLOY_COMMAND
           ec2-deploy/repository_url:
             name: Repository URL
             description: Git repository URL containing deployment code
