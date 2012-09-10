@@ -16,21 +16,25 @@ config:
             type: text
             default: Administrator
             sort: 0
+            env_key: ADMIN_NAME
           admin/email:
             name: Admin Email
             description: Email address of application administrator
             type: text
             default:
             sort: 1
+            env_key: ADMIN_EMAIL
           admin/username:
             name: Admin Username
             description: Username of the application administrator
             type: text
             default: admin
             sort: 2
+            env_key: ADMIN_USERNAME
           admin/password:
             name: Admin Password
             description: Password of the application administrator
             type: text
             default: changeme123
             sort: 3
+            env_key: ADMIN_PASSWORD

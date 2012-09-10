@@ -15,6 +15,7 @@ config:
             required: true
             sort: 1
             editable: [ none, destroyed ]
+            env_key: EC2_REGION_NAME
           ec2-instance/zone_name:
             name: Zone
             description: Name of AWS zone to use
@@ -22,6 +23,7 @@ config:
             default:
             sort: 2
             editable: [ none, destroyed ]
+            env_key: EC2_ZONE_NAME
           ec2-instance/id:
             name: Instance ID
             description: EC2 Instance ID (to use existing instance)
@@ -29,6 +31,7 @@ config:
             default:
             sort: 3
             editable: [ none, destroyed ]
+            env_key: EC2_INSTANCE_ID
           ec2-instance/instance_type:
             name: Instance Type
             description: EC2 Instance Type
@@ -37,6 +40,7 @@ config:
             required: true
             sort: 4
             editable: [ none, destroyed ]
+            env_key: EC2_INSTANCE_TYPE
           ec2-instance/image_id:
             name: Image ID
             description: AMI ID (defaults to latest Ubuntu release)

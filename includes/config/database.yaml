@@ -15,28 +15,33 @@ config:
             description: Username used to access the database
             type: text
             sort: 0
-            default: 
+            default:
+            env_key: DATABASE_USERNAME              
           database/password:
             name: Database Password
             description: Password used to access the database
             type: text
             sort: 1
             default:
+            env_key: DATABASE_PASSWORD              
           database/type:
             name: Database Type
             description: Type of database (postgresql, mysql, etc)
             type: text
             sort: 2
             default: 
+            env_key: DATABASE_TYPE
           database/host:
             name: Database Hostname
             description: Hostname used to access the database
             type: text
             sort: 3
             default:
+            env_key: DATABASE_HOST              
           database/port:
             name: Database Port
             description: Port used to access the database
             type: text
             sort: 4
-            default:  
+            default:
+            env_key: DATABASE_PORT  
