@@ -21,19 +21,19 @@ config:
             default: ubuntu
             sort: 2
             env_key: DEPLOY_USERNAME
+          ec2-deploy/command:
+            name: Deploy Command
+            description: Command to run when triggering a deploy
+            type: url
+            default: source .opdemand && sudo apt-get update && sudo apt-get dist-upgrade -yq
+            sort: 3
           ec2-deploy/key:
             name: Deploy Key
             description: Private key used to trigger deployment commands
             type:
             default:
-            sort: 3
-            env_key: DEPLOY_KEY
-          ec2-deploy/command:
-            name: Deploy Command
-            description: Command to run when triggering a deploy
-            type: url
-            default: /var/lib/opdemand/scripts/deploy_puppet.py
             sort: 4
+            env_key: DEPLOY_KEY
           ec2-deploy/repository_url:
             name: Repository URL
             description: Git repository URL containing deployment code
