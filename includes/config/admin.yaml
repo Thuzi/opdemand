@@ -8,7 +8,7 @@ config:
       admin:
         name: Admin
         description: Configuration for application administration
-        sort: 4
+        sort: 20
         fields:
           admin/name:
             name: Admin Name
