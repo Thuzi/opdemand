@@ -1,19 +1,20 @@
 config:
   contents:
     sections:
-      ssh-client:
+      ssh:
         name: SSH Client
         description: SSH client configuration options
         sort: 11
         fields:
-          ssh-client/authorized_keys:
+          ssh/authorized_keys:
             name: SSH Authorized Keys
             description: SSH public key for server adminstrator
             type: list
-            default: []
+            default: #[]
+              - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEA8weYqCsg1dYu4i0j+xsm/faUiNsNKJ7OmAauyWgnWYdTn+45iwAgD9Zcxd6g3y3HPlfakP7NPTlYHYKIKaa04Q3vvzAAuUuQBRZaipCIWr9TKEqgTxKtzhHMyZ4N8V+dRNyAuuiwfYRIZ+1iZ9pYcbIMJG+t2b5ltTzTShdU8fKP02CRDqyT1abO7dZ3R+WUbanDMH0zlB4EIuMMIXjhU2u7OYuqFWI2xqLzmir4WqnJz9hdvYF9aJt43XpPfp/gFZ41x4VKA0PaB3rjFnW2W1wJ8df1ROYxk9Q0M8trFor8jk21pvUfQsBq9TPvJlsYD4ey6UIsBl5TguLW0eCwhHaue9D9idHrs+iZZMGOmvFI3Ne8fXRRjxd1nKvriCEG4ElpwORvF+YGQXEWj0ga013bITNeZTb2v2ILCD6q/IAaaJc7M0tDU713NYp0juDI5vl94mZQjoKMpYC+xSdHZxUB4UfZVFXF7H9m+udJjg6Ax28teh6h8haYNaarYlA+cHZWUQ32t54a2d+8cPokWtf4Gtt0se+RKIsB6o66eK9H88QALanH5uQLbmf+aJ3NJCF2SdkRacs1TDxhfHXXFIOlLDhv3u+FcZTeHM0LMzXOpBvp2R8Lppeebcf8rVMTe8DsmWNs++/G1xsl0uO+R/PJbjSIeahasls/ak5kPss= gabriel@gamma.local
             sort: 1
             env_key: SSH_AUTHORIZED_KEYS
-          ssh-client/known_hosts:
+          ssh/known_hosts:
             name: SSH Known Hosts
             description: Fingerprints for SSH known hosts
             type: list
@@ -23,14 +24,14 @@ config:
               - "|1|c7geHuPbgSFjBFvrLiDzj1Vk+ck=|fCcYgpcB7KHCEEC1putjjpL+ktw= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=="
             sort: 2
             env_key: SSH_KNOWN_HOSTS
-          ssh-client/private_key:
+          ssh/private_key:
             name: SSH Private Key
             description: Private key to use for outbound SSH connections
             type: textarea
             default:
             sort: 3
             env_key: SSH_PRIVATE_KEY
-          ssh-client/port:
+          ssh/port:
             name: SSH Port
             description: Port used for outbound SSH access
             type: text
