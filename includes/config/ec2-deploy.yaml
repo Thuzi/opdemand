@@ -65,8 +65,8 @@ config:
               source .opdemand
               # install basic packages
               export DEBIAN_FRONTEND=noninteractive
-              sudo -E apt-get update -yq
-              sudo -E apt-get install git-core -yq
+              #sudo -E apt-get update -yq
+              sudo -E apt-get install git -yq || sudo -E apt-get install git-core -yq
               # create required directories and fix perms
               sudo mkdir -p /var/cache/opdemand
               sudo mkdir -p /var/log/opdemand       
