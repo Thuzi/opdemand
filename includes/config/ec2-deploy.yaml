@@ -1,0 +1,96 @@
+# service configuration
+config:
+  contents:
+    sections:
+      ec2-deploy:
+        name: EC2 Deployment
+        description: Configuration for EC2 Instance deployments
+        sort: 9
+        fields:
+          ec2-deploy/mechanism:
+            name: Deploy Mechanism
+            description: Mechanism for triggering deployments
+            type: text
+            default: ssh
+            sort: 1
+            env_key: DEPLOY_MECHANISM
+          ec2-deploy/username:
+            name: Deploy Username
+            description: Username used to trigger deployment commands
+            type:
+            default: ubuntu
+            sort: 2
+            env_key: DEPLOY_USERNAME
+          ec2-deploy/key:
+            name: Deploy Key
+            description: Private key used to trigger deployment commands
+            type:
+            default:
+            sort: 3
+            env_key: DEPLOY_KEY
+          ec2-deploy/build_path:
+            name: Build Script Path
+            description: Relative path of script run on first build
+            type: text
+            default: scripts/build_puppet.sh
+            sort: 4
+            env_key: BUILD_SCRIPT_PATH            
+          ec2-deploy/deploy_path:
+            name: Deploy Script Path
+            description: Relative path to script run on each deploy of instance
+            type: text
+            default: scripts/deploy_puppet.sh
+            sort: 5
+            env_key: DEPLOY_SCRIPT_PATH
+          ec2-deploy/repository_url:
+            name: Repository URL
+            description: Git repository URL containing deployment code
+            type: repository-url
+            default: git://github.com/opdemand/opdemand-ubuntu.git
+            sort: 6
+            env_key: DEPLOY_REPOSITORY_URL
+          ec2-deploy/repository_revision:
+            name: Repository Revision
+            description: Repository revision to pull latest code from
+            type: text
+            default: origin/unstable
+            sort: 7
+            env_key: DEPLOY_REPOSITORY_REVISION
+          ec2-deploy/build_command:
+            name: Build Command
+            description: Command to trigger initial instance build
+            type: textarea
+            default: |
+              set -e # stop on error
+              source .opdemand
+              # install basic packages
+              export DEBIAN_FRONTEND=noninteractive
+              sudo -E apt-get update -yq
+              sudo -E apt-get install git-core -yq
+              # create required directories and fix perms
+              sudo mkdir -p /var/cache/opdemand
+              sudo mkdir -p /var/log/opdemand       
+              # clone the deployment repository
+              sudo git clone $DEPLOY_REPOSITORY_URL /var/lib/opdemand
+              cd /var/lib/opdemand && sudo git checkout -q -f $DEPLOY_REPOSITORY_REVISION
+              # fix permissions
+              sudo chown -R ubuntu:ubuntu /var/lib/opdemand /var/cache/opdemand /var/log/opdemand
+              # disable ssh requiretty (needed for some distros)
+              sudo sed -r -e 's/^(Defaults[ ]+requiretty)$/# \1/' -i /etc/sudoers
+              exec sudo -E /var/lib/opdemand/$BUILD_SCRIPT_PATH
+            sort: 8
+          ec2-deploy/deploy_command:
+            name: Deploy Command
+            description: Command to trigger each instance deploy
+            type: textarea
+            default: |
+             source .opdemand
+             exec /var/lib/opdemand/$DEPLOY_SCRIPT_PATH
+            sort: 9 
+          ec2-deploy/debug:
+            name: Deploy Debugging
+            description: Produce debug output from deploy scripts
+            type: boolean
+            default: false
+            sort: 10
+            env_key: DEPLOY_DEBUG
