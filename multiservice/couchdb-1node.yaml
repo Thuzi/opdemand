@@ -1,0 +1,9 @@
+name: CouchDB 1-node
+stack: new-instance
+description: Single node CouchDB service including an EC2 Instance, Security Group and Key Pair
+required_services: 
+    - components/sg 
+    - components/keypair
+include: [ puppet, database ]
+config:
+  puppet/classes: [ "opdemand::common", "opdemand::database::couchdb" ]
