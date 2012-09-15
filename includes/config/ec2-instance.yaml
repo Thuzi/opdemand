@@ -97,6 +97,8 @@ config:
               manage_etc_hosts: True
               # NOTE: called on first boot only
               runcmd:
+               # create required directories
+               - mkdir -p /var/cache/opdemand
                # Early install of SSH keys to assist with Puppet/Chef troubleshooting.
                # NOTE: Puppet will typically take over management of these SSH files
                - |
