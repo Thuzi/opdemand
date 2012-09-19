@@ -1,6 +1,0 @@
-name: Instance with SG and KeyPair
-stack: new-instance
-description: Full Instance Template
-required_services: 
-    - components/sg 
-    - components/keypair

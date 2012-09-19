@@ -1,0 +1,13 @@
+name: Clojure Application 1-node
+stack: new-instance
+description: Single node Clojure application including an EC2 Instance, Security Group and Key Pair
+include: [ puppet, application ]
+publish_include: [ nginx ]
+config:
+  puppet/classes: [ "opdemand::common", "opdemand::app::clojure", "opdemand::web::nginx" ]
+  application/repository_url: git://github.com/opdemand/example-clojure-ring.git
+  application/name: clojure
+required_services:
+  components/keypair: 
+  components/sg:
+    ec2-sg/rules: [ "0.0.0.0/0,tcp,80,80" ] 
