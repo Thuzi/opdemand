@@ -87,7 +87,7 @@ config:
             type: text
             default: 5000
             sort: 9
-            env_key: PORT
+            env_key: APPLICATION_PORT
           application/listeners:
             name: Application Listeners
             description: Number of listeners for this application

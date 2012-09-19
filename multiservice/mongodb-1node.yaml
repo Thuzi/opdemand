@@ -1,0 +1,14 @@
+name: MongoDB 1-node
+stack: new-instance
+description: Single node MongoDB service including an EC2 Instance, Security Group and Key Pair
+include: [ puppet, database ]
+publish_include: [ mongodb ]
+config:
+  puppet/classes: [ "opdemand::common", "opdemand::database::mongodb" ]
+  database/port: 27017
+  database/type: mongodb
+required_services:
+  components/keypair: 
+  components/sg:
+    ec2-sg/rules: [ "0.0.0.0/0,tcp,27017,27017" ] 
+    

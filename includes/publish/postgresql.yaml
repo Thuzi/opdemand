@@ -1,0 +1,6 @@
+publish:
+    contents:
+        fields:
+            - name: PostgreSQL URL
+              description: URL used to access the PostgreSQL database
+              template: postgresql://%(public_dns_name)s:%(database/port)s
