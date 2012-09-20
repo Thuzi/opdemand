@@ -1,0 +1,14 @@
+name: Memcache 1-node
+stack: new-instance
+description: Single node Memcache including an EC2 Instance, Security Group and Key Pair
+include: [ puppet, cache ]
+config:
+  puppet/classes: [ "opdemand::common", "opdemand::cache::memcache" ]
+  cache/username: memcache
+  cache/port: 11211
+  cache/type: memcache
+  cache/size: 256
+required_services:
+  components/keypair: 
+  components/sg:
+    ec2-sg/rules: [ "0.0.0.0/0,tcp,11211,11211" ] 
