@@ -1,6 +1,0 @@
-publish:
-    contents:
-        fields:
-            - name: MongoDB URL
-              description: URL used to access the MongoDB database
-              template: mongodb://%(public_dns_name)s:%(database/port)s

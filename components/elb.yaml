@@ -1,3 +1,0 @@
-name: Elastic Load Balancer
-stack: new-elb
-description: Generic ELB Template

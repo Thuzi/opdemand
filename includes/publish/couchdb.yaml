@@ -3,7 +3,4 @@ publish:
         fields:
             - name: CouchDB Admin URL
               description: URL used to administer the CouchDB database
-              template: http://%(public_dns_name)s:%(database/port)s/_utils   
-            - name: CouchDB URL
-              description: URL used to access the CouchDB database
-              template: http://%(public_dns_name)s:%(database/port)s
+              template: http://%(public_dns_name)s:%(database/port)s/_utils

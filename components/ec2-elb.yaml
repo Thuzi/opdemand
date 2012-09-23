@@ -1,0 +1,3 @@
+name: Elastic Load Balancer
+stack: new-elb
+description: Elastic Load Balancer to distribute traffic across EC2 Instances

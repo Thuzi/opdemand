@@ -1,7 +1,8 @@
-include: [ base, ec2-keypair ]
+include: 
+  config: [ base, ec2-keypair ]
+  export: [ ec2-keypair ]
 tiers:
   - name: Service
     description: Provides network accessible services
     components:
       - type: ec2-keypair
-export_include: [ new-keypair ]

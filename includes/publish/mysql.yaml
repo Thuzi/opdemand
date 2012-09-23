@@ -1,6 +1,0 @@
-publish:
-    contents:
-        fields:
-            - name: MySQL URL
-              description: URL used to access the MySQL database
-              template: mysql://%(public_dns_name)s:%(database/port)s

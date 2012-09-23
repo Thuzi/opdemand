@@ -1,0 +1,3 @@
+name: Key Pair
+stack: new-keypair
+description: Cryptographic Key Pair used to access EC2 Instancess

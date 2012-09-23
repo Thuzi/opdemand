@@ -1,11 +1,9 @@
 export:
     contents: 
         fields:
-            - name: Key Material
+            - name: Deploy Key Material
               key: ec2-deploy/key
               template: "%(ec2-keypair/material)s"
             - name: Key Name
               key: ec2-instance/key_name
               template: "%(ec2-keypair/name)s"
-
-

@@ -1,10 +1,10 @@
-include: [ base, ec2-instance, ec2-deploy, ssh ]
+include:
+  config: [ base, ec2-instance, ec2-deploy, ssh ]
+  export: [ ec2-instance ]
 tiers:
   - name: Service
     description: Provides network accessible services
-    include: [ ]
     components:
       - name: Instance
         description: EC2 instance that runs the service service
         type: ec2-instance
-export_include: [ new-instance ]

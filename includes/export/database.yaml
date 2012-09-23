@@ -1,0 +1,15 @@
+export:
+    contents: 
+        fields:
+            - name: Database Hostname
+              key: database/host
+              template: "%(public_dns_name)s"
+            - name: Database Port
+              key: database/port
+              template: "%(database/port)s"
+            - name: Database Username
+              key: database/username
+              template: "%(database/username)s"
+            - name: Database Password
+              key: database/password
+              template: "%(database/password)s"

@@ -4,6 +4,6 @@ export:
             - name: Cache Host
               key: cache/host
               template: "%(network/access_host)s"
-            - name: DB Port
-              key: database/port
-              template:  "%(network/access_port)s"
+            - name: Cache Port
+              key: cache/port            
+              template: "%(network/access_port)s"

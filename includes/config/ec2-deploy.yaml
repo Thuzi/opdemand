@@ -61,12 +61,12 @@ config:
             description: Command to trigger initial instance build
             type: textarea
             default: |
-              set -e # stop on error
+              #set -e # stop on error
               source .opdemand
               # install basic packages
               export DEBIAN_FRONTEND=noninteractive
-              #sudo -E apt-get update -yq
-              sudo -E apt-get install git -yq || sudo -E apt-get install git-core -yq
+              sudo -E apt-get update -yq --fix-missing
+              sudo -E apt-get install git -yq # || sudo -E apt-get install git-core -yq
               # create required directories and fix perms
               sudo mkdir -p /var/cache/opdemand
               sudo mkdir -p /var/log/opdemand       
@@ -77,7 +77,8 @@ config:
               sudo chown -R ubuntu:ubuntu /var/lib/opdemand /var/cache/opdemand /var/log/opdemand
               # disable ssh requiretty (needed for some distros)
               sudo sed -r -e 's/^(Defaults[ ]+requiretty)$/# \1/' -i /etc/sudoers
-              exec sudo -E /var/lib/opdemand/$BUILD_SCRIPT_PATH
+              # run build script
+              sudo -E /var/lib/opdemand/$BUILD_SCRIPT_PATH
             sort: 8
           ec2-deploy/deploy_command:
             name: Deploy Command

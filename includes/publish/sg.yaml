@@ -1,6 +1,0 @@
-publish:
-    contents:
-        fields:
-            - name: Security Group Name
-              description: Name associated with Security Group
-              template: "%(aws/security_group_name)s"
