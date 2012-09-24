@@ -3,4 +3,4 @@ publish:
         fields:
             - name: Application URL
               description: URL used to access the application
-              template: http://%(dns_name)s
+              template: http://%(public_dns_name)s
