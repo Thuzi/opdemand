@@ -63,13 +63,18 @@ config:
             default: |
               #set -e # stop on error
               source .opdemand
+              # # wait for cloud-init to finish
+              echo "Waiting for Ubuntu cloud-init to finish"
+              while [ ! -z "`ps auxw |grep cloud-init | grep -v grep`" ] ; do
+                sleep 1
+              done
+              echo "Ubuntu cloud-init complete"
               # install basic packages
               export DEBIAN_FRONTEND=noninteractive
-              #sudo -E apt-get update -yq --fix-missing
-              sudo -E apt-get install git -yq || sudo -E apt-get install git-core -yq
+              sudo apt-get install -yq git
               # create required directories and fix perms
               sudo mkdir -p /var/cache/opdemand
-              sudo mkdir -p /var/log/opdemand       
+              sudo mkdir -p /var/log/opdemand
               # clone the deployment repository
               sudo git clone $DEPLOY_REPOSITORY_URL /var/lib/opdemand
               cd /var/lib/opdemand && sudo git checkout -q -f $DEPLOY_REPOSITORY_REVISION
