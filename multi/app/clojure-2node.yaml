@@ -3,7 +3,8 @@ stack: multi
 description: Clojure application including 2 EC2 Instances, a Security Group and Key Pair
 components:
   - component: ec2-elb
-    publish: [ http ]
+    include:
+      publish: [ http ]
   - component: ec2-instance
     include: 
       config: [ puppet, application ]
