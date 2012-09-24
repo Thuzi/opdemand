@@ -95,10 +95,12 @@ config:
               #cloud-config
               byobu_by_default: false
               manage_etc_hosts: True
+              apt_upgrade: true
               # NOTE: called on first boot only
               runcmd:
                # create required directories
                - mkdir -p /var/cache/opdemand
+               - chown -R ubuntu:ubuntu /var/cache/opdemand
                # Early install of SSH keys to assist with Puppet/Chef troubleshooting.
                # NOTE: Puppet will typically take over management of these SSH files
                - |
