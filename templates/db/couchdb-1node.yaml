@@ -1,0 +1,17 @@
+name: CouchDB
+stack: multi
+description: CouchDB database including an EC2 Instance, a Security Group and Key Pair
+components:
+  - component: ec2-instance
+    include: 
+      config: [ puppet, database ]
+      export: [ database ]
+      publish: [ couchdb ]
+    configure:
+      puppet/classes: [ "opdemand::common", "opdemand::database::couchdb" ]
+      database/port: 5984
+      database/type: couchdb
+  - component: ec2-sg
+    configure:
+      ec2-sg/rules: [ "0.0.0.0/0,tcp,5984,5984" ] 
+  - component: ec2-keypair
