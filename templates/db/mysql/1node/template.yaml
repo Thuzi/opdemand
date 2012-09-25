@@ -1,7 +1,0 @@
-# -*- test-case-name: c2server.tests.service.Mysql1nodeTest -*-
-name: MySQL Database (1-node)
-stack: 1node
-description: >
-             Single server MySQL service consisting of a Key Pair, Security
-             Group and an EC2 instance. Installs the MySQL database service
-             managed using an open-source Puppet module hosted on GitHub.

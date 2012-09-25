@@ -1,7 +1,0 @@
-# -*- test-case-name: c2server.tests.service.AppNodejs4nodeTest -*-
-name: Node.js Application (4-node with ELB)
-stack: elbx4
-description: >
-             Node.js service consisting of a Key Pair, Security
-             Group, four EC2 instances running Nginx with an Elastic Load Balancer in front.
-             Installs Node.js application workers powered by a configurable GitHub repository.

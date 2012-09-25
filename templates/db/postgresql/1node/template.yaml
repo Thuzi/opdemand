@@ -1,7 +1,0 @@
-# -*- test-case-name: c2server.tests.service.DbPostgresql1nodeTest -*-
-name: PostgreSQL Database (1-node)
-stack: 1node
-description: >
-             Single server PostgreSQL service consisting of a Key Pair, Security
-             Group and an EC2 instance. Installs the PostgreSQL database service
-             managed using an open-source Puppet module hosted on GitHub.

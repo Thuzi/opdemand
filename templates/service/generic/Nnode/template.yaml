@@ -1,8 +1,0 @@
-# -*- test-case-name: c2server.tests.service.ServiceGenericNnodeTest -*-
-name: Generic Service (Auto Scaling)
-description: >
-             Generic service consisting of a Key Pair, Security Group and an Autoscaling Group
-             with an Elastic Load Balancer in front.
-             Triggers fully customizable build and deploy scripts that can be used
-             to create any service.
-stack: elbxN

@@ -1,6 +1,0 @@
-# -*- test-case-name: c2server.tests.service.AppPython1nodeTest -*-
-name: Python Application (1-node)
-stack: 1node
-description: >
-             Python service consisting of a Key Pair, Security Group and an EC2 instance running Nginx. 
-             Installs Python application workers powered by a configurable GitHub repository.

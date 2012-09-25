@@ -1,7 +1,0 @@
-# -*- test-case-name: c2server.tests.service.AppPythonNnodeTest -*-
-name: Python Application (Auto Scaling)
-stack: elbxN
-description: >
-             Python service consisting of a Key Pair, Security Group, and Autoscaling Group
-             with an Elastic Load Balancer in front.
-             Installs Python application server workers powered by a configurable GitHub repository.

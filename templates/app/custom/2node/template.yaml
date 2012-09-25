@@ -1,7 +1,0 @@
-# -*- test-case-name: c2server.tests.service.AppCustom2nodeTest -*-
-name: Custom Application (2-node with ELB)
-stack: elbx2
-description: >
-             Custom Ubuntu service consisting of a Key Pair, Security
-             Group, two EC2 instances running Nginx with an Elastic Load Balancer in front.
-             Installs custom application workers powered by a configuable GitHub repository.
