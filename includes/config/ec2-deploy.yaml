@@ -56,19 +56,23 @@ config:
             default: origin/unstable
             sort: 7
             env_key: DEPLOY_REPOSITORY_REVISION
+          ec2-deploy/ready_port:
+            name: Ready Port
+            description: TCP port to monitor for service readiness
+            type: text
+            default: 80
+            sort: 8
           ec2-deploy/build_command:
             name: Build Command
             description: Command to trigger initial instance build
             type: textarea
             default: |
-              #set -e # stop on error
               source .opdemand
-              # # wait for cloud-init to finish
               echo "Waiting for Ubuntu cloud-init to finish"
               while [ ! -z "`ps auxw |grep cloud-init | grep -v grep`" ] ; do
                 sleep 1
               done
-              echo "Ubuntu cloud-init complete"
+              echo "Ubuntu cloud-init complete, continuing OpDemand build..."
               # install basic packages
               export DEBIAN_FRONTEND=noninteractive
               sudo apt-get install -yq git
@@ -84,7 +88,7 @@ config:
               sudo sed -r -e 's/^(Defaults[ ]+requiretty)$/# \1/' -i /etc/sudoers
               # run build script
               sudo -E /var/lib/opdemand/$BUILD_SCRIPT_PATH
-            sort: 8
+            sort: 9
           ec2-deploy/deploy_command:
             name: Deploy Command
             description: Command to trigger each instance deploy
@@ -92,11 +96,11 @@ config:
             default: |
              source .opdemand
              exec /var/lib/opdemand/$DEPLOY_SCRIPT_PATH
-            sort: 9 
+            sort: 10
           ec2-deploy/debug:
             name: Deploy Debugging
             description: Produce debug output from deploy scripts
             type: boolean
             default: false
-            sort: 10
+            sort: 11
             env_key: DEPLOY_DEBUG

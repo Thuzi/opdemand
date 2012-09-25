@@ -11,6 +11,7 @@ components:
       puppet/classes: [ "opdemand::common", "opdemand::database::couchdb" ]
       database/port: 5984
       database/type: couchdb
+      ec2-deploy/ready_port: 5984      
   - component: ec2-sg
     configure:
       ec2-sg/rules: [ "0.0.0.0/0,tcp,5984,5984" ] 

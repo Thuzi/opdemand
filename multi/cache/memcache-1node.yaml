@@ -12,6 +12,7 @@ components:
       cache/port: 11211
       cache/type: memcache
       cache/size: 256
+      ec2-deploy/ready_port: 11211
   - component: ec2-sg
     configure:
       ec2-sg/rules: [ "0.0.0.0/0,tcp,11211,11211" ] 
