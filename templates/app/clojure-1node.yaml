@@ -5,7 +5,7 @@ components:
   - component: ec2-instance
     include: 
       config: [ puppet, application ]
-      publish: [ http-instance ]
+      publish: [ http ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::app::clojure", "opdemand::web::nginx" ]
       application/repository_url: git://github.com/opdemand/example-clojure-ring.git
