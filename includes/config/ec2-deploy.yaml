@@ -56,12 +56,6 @@ config:
             default: origin/unstable
             sort: 7
             env_key: DEPLOY_REPOSITORY_REVISION
-          ec2-deploy/listen_port:
-            name: Listen Port
-            description: TCP port to monitor for service readiness
-            type: text
-            default: 80
-            sort: 8
           ec2-deploy/build_command:
             name: Build Command
             description: Command to trigger initial instance build
@@ -88,7 +82,7 @@ config:
               sudo sed -r -e 's/^(Defaults[ ]+requiretty)$/# \1/' -i /etc/sudoers
               # run build script
               sudo -E /var/lib/opdemand/$BUILD_SCRIPT_PATH
-            sort: 9
+            sort: 8
           ec2-deploy/deploy_command:
             name: Deploy Command
             description: Command to trigger each instance deploy
@@ -96,11 +90,11 @@ config:
             default: |
              source .opdemand
              exec /var/lib/opdemand/$DEPLOY_SCRIPT_PATH
-            sort: 10
+            sort: 9
           ec2-deploy/debug:
             name: Deploy Debugging
             description: Produce debug output from deploy scripts
             type: boolean
             default: false
-            sort: 11
+            sort: 10
             env_key: DEPLOY_DEBUG
