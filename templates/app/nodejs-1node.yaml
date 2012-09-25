@@ -8,7 +8,7 @@ components:
       publish: [ http ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::app::nodejs", "opdemand::web::nginx" ]
-      application/repository_url: git://github.com/opdemand/example-nodejs-expres.git
+      application/repository_url: git://github.com/opdemand/example-nodejs-express.git
       application/name: nodejs
   - component: ec2-sg
     configure:
