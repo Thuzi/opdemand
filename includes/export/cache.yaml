@@ -3,7 +3,13 @@ export:
         fields:
             - name: Cache Host
               key: cache/host
-              template: "%(network/access_host)s"
+              template: "%(public_dns_name)s"
             - name: Cache Port
               key: cache/port            
-              template: "%(network/access_port)s"
+              template: "%(cache/port)s"
+            - name: Cache Username
+              key: cache/username
+              template: "%(cache/username)s"
+            - name: Cache Password
+              key: cache/password
+              template: "%(cache/password)s"
