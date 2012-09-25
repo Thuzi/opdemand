@@ -3,7 +3,8 @@ stack: multi
 description: Clojure application including 2 EC2 Instances, a Security Group and Key Pair
 components:
   - component: ec2-elb
-    publish: [ http ]
+    include:
+      publish: [ http ]
   - component: ec2-instance
     include: 
       config: [ puppet, application ]
@@ -14,7 +15,6 @@ components:
   - component: ec2-instance
     include: 
       config: [ puppet, application ]
-      publish: [ http ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::app::clojure", "opdemand::web::nginx" ]
       application/repository_url: git://github.com/opdemand/example-clojure-ring.git

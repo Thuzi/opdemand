@@ -1,6 +1,6 @@
-name: Python Application
+name: Ruby Application
 stack: multi
-description: Python application including an EC2 Instance, a Security Group and Key Pair
+description: Ruby application including an EC2 Instance, a Security Group and Key Pair
 components:
   - component: ec2-instance
     include: 
