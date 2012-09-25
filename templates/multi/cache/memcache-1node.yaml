@@ -1,0 +1,19 @@
+name: Memcache
+stack: multi
+description: Memcache service including an EC2 Instance, a Security Group and Key Pair
+components:
+  - component: ec2-instance
+    include: 
+      config: [ puppet, cache ]
+      export: [ cache ]
+    configure:
+      puppet/classes: [ "opdemand::common", "opdemand::cache::memcache" ]
+      cache/username: memcache
+      cache/port: 11211
+      cache/type: memcache
+      cache/size: 256
+      ec2-deploy/ready_port: 11211
+  - component: ec2-sg
+    configure:
+      ec2-sg/rules: [ "0.0.0.0/0,tcp,11211,11211" ] 
+  - component: ec2-keypair

@@ -1,0 +1,19 @@
+name: Redis
+stack: multi
+description: Redis cache service including an EC2 Instance, a Security Group and Key Pair
+components:
+  - component: ec2-instance
+    include: 
+      config: [ puppet, cache ]
+      export: [ cache ]
+    configure:
+      puppet/classes: [ "opdemand::common", "opdemand::cache::redis" ]
+      cache/username: admin
+      cache/password: changeme123.
+      cache/port: 6379
+      cache/type: redis
+      ec2-deploy/ready_port: 6379      
+  - component: ec2-sg
+    configure:
+      ec2-sg/rules: [ "0.0.0.0/0,tcp,6379,6379" ] 
+  - component: ec2-keypair

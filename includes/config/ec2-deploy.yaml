@@ -56,8 +56,8 @@ config:
             default: origin/unstable
             sort: 7
             env_key: DEPLOY_REPOSITORY_REVISION
-          ec2-deploy/ready_port:
-            name: Ready Port
+          ec2-deploy/listen_port:
+            name: Listen Port
             description: TCP port to monitor for service readiness
             type: text
             default: 80

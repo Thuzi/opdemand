@@ -1,0 +1,17 @@
+name: PostgreSQL
+stack: multi
+description: PostgreSQL database including an EC2 Instance, a Security Group and Key Pair
+components:
+  - component: ec2-instance
+    include: 
+      config: [ puppet, database ]
+      export: [ database ]
+    configure:
+      puppet/classes: [ "opdemand::common", "opdemand::database::postgresql" ]
+      database/port: 5432
+      database/type: postgresql
+      ec2-deploy/ready_port: 5432      
+  - component: ec2-sg
+    configure:
+      ec2-sg/rules: [ "0.0.0.0/0,tcp,5432,5432" ] 
+  - component: ec2-keypair
