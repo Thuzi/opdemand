@@ -4,7 +4,7 @@ description: MongoDB database including an EC2 Instance, a Security Group and Ke
 components:
   - component: ec2-instance
     include: 
-      config: [ ec2-deploy, ssh, puppet, database ]
+      config: [ ec2-deploy, git-deploy, ssh, puppet, application ]
       export: [ database ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::database::mongodb" ]
