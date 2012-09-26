@@ -1,5 +1,5 @@
 include:
-  config: [ base, ec2-instance, ec2-deploy, ssh ]
+  config: [ base, ec2-instance ]
   export: [ ec2-instance ]
 tiers:
   - name: Service
