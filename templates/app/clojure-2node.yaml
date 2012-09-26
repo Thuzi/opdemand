@@ -7,14 +7,14 @@ components:
       publish: [ http ]
   - component: ec2-instance
     include: 
-      config: [ puppet, application ]
+      config: [ ec2-deploy, ssh, puppet, application ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::app::clojure", "opdemand::web::nginx" ]
       application/repository_url: git://github.com/opdemand/example-clojure-ring.git
       application/name: clojure
   - component: ec2-instance
     include: 
-      config: [ puppet, application ]
+      config: [ ec2-deploy, ssh, puppet, application ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::app::clojure", "opdemand::web::nginx" ]
       application/repository_url: git://github.com/opdemand/example-clojure-ring.git

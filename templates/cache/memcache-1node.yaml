@@ -4,7 +4,7 @@ description: Memcache service including an EC2 Instance, a Security Group and Ke
 components:
   - component: ec2-instance
     include: 
-      config: [ puppet, cache ]
+      config: [ ec2-deploy, ssh, puppet, cache ]
       export: [ cache ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::cache::memcache" ]
