@@ -31,10 +31,3 @@ config:
             default:
             sort: 3
             env_key: SSH_PRIVATE_KEY
-          ssh/port:
-            name: SSH Port
-            description: Port used for outbound SSH access
-            type: text
-            default: 22
-            sort: 4
-            env_key: SSH_PORT
