@@ -1,0 +1,44 @@
+# service configuration
+config:
+  contents:
+    sections:
+      git-deploy:
+        name: Git Deployment
+        description: Configuration for Git-style deployment repositories
+        sort: 10
+        fields:
+          git-deploy/repository_url:
+            name: Repository URL
+            description: Git repository URL containing deployment code
+            type: repository-url
+            default: git://github.com/opdemand/opdemand-ubuntu.git
+            sort: 1
+            env_key: DEPLOY_REPOSITORY_URL
+          ec2-deploy/repository_revision:
+            name: Repository Revision
+            description: Repository revision to pull latest code from
+            type: text
+            default: origin/unstable
+            sort: 2
+            env_key: DEPLOY_REPOSITORY_REVISION     
+          git-deploy/build_path:
+            name: Build Script Path
+            description: Relative path of script run on first build
+            type: text
+            default: scripts/build_puppet.sh
+            sort: 3
+            env_key: BUILD_SCRIPT_PATH
+          git-deploy/deploy_path:
+            name: Deploy Script Path
+            description: Relative path to script run on each deploy of instance
+            type: text
+            default: scripts/deploy_puppet.sh
+            sort: 4
+            env_key: DEPLOY_SCRIPT_PATH
+          git-deploy/key:
+            name: Deploy Key
+            description: Private key used to trigger deployment commands
+            type:
+            default:
+            sort: 5
+            env_key: DEPLOY_KEY
