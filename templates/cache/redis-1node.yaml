@@ -4,7 +4,7 @@ description: Redis cache service including an EC2 Instance, a Security Group and
 components:
   - component: ec2-instance
     include: 
-      config: [ ec2-deploy, git-deploy, ssh, puppet, application ]
+      config: [ ec2-deploy, git-deploy, ssh, puppet, cache ]
       export: [ cache ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::cache::redis" ]
