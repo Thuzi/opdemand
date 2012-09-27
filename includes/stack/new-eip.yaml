@@ -1,0 +1,8 @@
+include: 
+  config: [ base, ec2-eip ]
+  export: [ ec2-eip ]
+tiers:
+  - name: Service
+    description: Provides network accessible services
+    components:
+      - type: ec2-eip

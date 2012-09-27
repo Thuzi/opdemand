@@ -1,0 +1,3 @@
+name: EC2 Elastic IP
+stack: new-eip
+description: Elastic IP address within an EC2 region

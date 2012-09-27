@@ -1,0 +1,8 @@
+doctype: ip
+impl: c2aws_sync.tx.TxElasticIP
+tags:
+  name: EC2 Elastic IP
+  description: EC2 Elastic IP managed by OpDemand
+output:
+  public_ip: public_ip
+  dns_name: dns_name

@@ -1,0 +1,6 @@
+export:
+    contents: 
+        fields:
+            - name: Elastic IP
+              key: ec2-instance/elastic_ip
+              template: "%(public_ip)s"

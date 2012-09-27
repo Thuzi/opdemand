@@ -1,0 +1,16 @@
+config:
+  contents:
+    sections:
+      ec2-eip:
+        name: EC2 Elastic IP
+        description: Configuration for EC2 key pairs
+        sort: 5
+        fields:
+          ec2-eip/region_name:
+            name: Region
+            description: Name of AWS region
+            type: clouds
+            default:
+            required: true
+            sort: 1
+            editable: [ none, destroyed ]
