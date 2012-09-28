@@ -27,7 +27,6 @@ config:
             type: textarea
             default: |
               source .opdemand
-              echo "Executing SSH deploy of $EC2_INSTANCE_ID"
               # if git-deploy environment variables exist, use them
               if [ ! -z $DEPLOY_REPOSITORY_URL ]; then              
                 # run build on first deploy, only if necessary
