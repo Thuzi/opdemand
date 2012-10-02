@@ -1,0 +1,11 @@
+monitor:
+    contents:
+        policies:
+            - type: refresh
+              interval: 300
+              retries: 0
+              timeout: 0
+              healthyafter: 0
+              url: ""
+              port: 80
+
