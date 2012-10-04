@@ -1,5 +1,4 @@
 name: Clojure Application
-stack: multi
 description: Clojure application including an EC2 Instance, a Security Group and Key Pair
 components:
   - component: ec2-instance
