@@ -1,9 +1,0 @@
-include: 
-  config: [ base, ec2-elb ]
-tiers:
-  - name: Service
-    description: Provides network accessible services
-    components:
-      - name: Elastic Load Balancer
-        description: Elastic Load Balancer that distributes traffic across EC2 instances
-        type: ec2-elb

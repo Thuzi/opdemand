@@ -1,5 +1,0 @@
-doctype: keypair
-impl: c2aws_sync.tx.TxKeyPair
-tags:
-  name: EC2 Key Pair
-  description: EC2 Key Pair managed by OpDemand

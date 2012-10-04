@@ -1,8 +1,0 @@
-include: 
-  config: [ base, ec2-sg ]
-  export: [ ec2-sg ]
-tiers:
-  - name: Service
-    description: Provides network accessible services
-    components:
-      - type: ec2-sg

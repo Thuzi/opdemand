@@ -1,7 +1,0 @@
-doctype: loadbalancer
-impl: c2aws_sync.tx.TxELB
-output:
-  public_dns_name: dns_name
-tags:
-  name: ELB
-  description: ELB managed by OpDemand

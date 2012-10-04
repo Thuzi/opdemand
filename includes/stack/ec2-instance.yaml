@@ -1,7 +1,0 @@
-doctype: server
-impl: c2aws_sync.tx.TxInstance
-output:
-  public_dns_name: public_dns_name
-tags:
-  name: EC2 Instance
-  description: EC2 Instance managed by OpDemand
