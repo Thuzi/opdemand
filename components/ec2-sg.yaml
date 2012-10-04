@@ -1,3 +1,6 @@
 name: EC2 Security Group
-stack: new-sg
 description: Virtual firewall within an EC2 region
+provider: ec2-sg
+include:
+  config: [ base, ec2-sg ]
+  export: [ ec2-sg ]

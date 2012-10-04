@@ -1,3 +1,6 @@
 name: EC2 Instance
-stack: new-instance
 description: Amazon EC2 Instance
+provider: ec2-instance
+include:
+  config: [ base, ec2-instance ]
+  export: [ ec2-instance ]

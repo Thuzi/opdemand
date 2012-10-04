@@ -1,3 +1,6 @@
 name: EC2 Elastic IP
-stack: new-eip
 description: Elastic IP address within an EC2 region
+provider: ec2-eip
+include:
+  config: [ base, ec2-eip ]
+  export: [ ec2-eip ]

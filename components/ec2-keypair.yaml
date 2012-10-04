@@ -1,3 +1,6 @@
 name: EC2 Key Pair
-stack: new-keypair
 description: Cryptographic Key Pair used to access EC2 Instancess
+provider: ec2-keypair
+include:
+  config: [ base, ec2-keypair ]
+  export: [ ec2-keypair ]
