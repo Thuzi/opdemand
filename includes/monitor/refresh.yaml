@@ -8,4 +8,3 @@ monitor:
               healthyafter: 0
               url: ""
               port: 80
-
