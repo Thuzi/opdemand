@@ -13,5 +13,5 @@ components:
       cache/type: redis
   - component: ec2-sg
     configure:
-      ec2-sg/rules: [ "0.0.0.0/0,tcp,6379,6379" ] 
+      ec2-sg/rules: [ "0.0.0.0/0,tcp,22,22", "0.0.0.0/0,tcp,6379,6379" ]
   - component: ec2-keypair

@@ -11,5 +11,5 @@ components:
       database/type: postgresql
   - component: ec2-sg
     configure:
-      ec2-sg/rules: [ "0.0.0.0/0,tcp,5432,5432" ] 
+      ec2-sg/rules: [ "0.0.0.0/0,tcp,22,22", "0.0.0.0/0,tcp,5432,5432" ]
   - component: ec2-keypair

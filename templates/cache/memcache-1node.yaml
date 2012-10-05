@@ -13,5 +13,5 @@ components:
       cache/size: 256
   - component: ec2-sg
     configure:
-      ec2-sg/rules: [ "0.0.0.0/0,tcp,11211,11211" ] 
+      ec2-sg/rules: [ "0.0.0.0/0,tcp,22,22", "0.0.0.0/0,tcp,11211,11211" ]
   - component: ec2-keypair

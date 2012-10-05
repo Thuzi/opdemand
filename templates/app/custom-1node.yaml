@@ -11,5 +11,5 @@ components:
       application/name: custom
   - component: ec2-sg
     configure:
-      ec2-sg/rules: [ "0.0.0.0/0,tcp,80,80" ] 
+      ec2-sg/rules: [ "0.0.0.0/0,tcp,22,22", "0.0.0.0/0,tcp,80,80" ]
   - component: ec2-keypair
