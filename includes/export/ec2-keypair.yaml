@@ -4,6 +4,7 @@ export:
             - name: Deploy Key Material
               key: ec2-deploy/key
               template: "%(material)s"
+              write_once: true
             - name: Key Name
               key: ec2-instance/key_name
               template: "%(name)s"
