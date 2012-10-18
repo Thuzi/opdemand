@@ -1,0 +1,11 @@
+publish:
+    contents:
+        fields:
+            - name: Application URL
+              description: URL used to access the application
+              template: http://%(public_dns_name)s
+              type: http
+              timeout: 10 
+              port: 80 
+              healthyafter: 5
+
