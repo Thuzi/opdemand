@@ -10,8 +10,7 @@ config:
             name: SSH Authorized Keys
             description: SSH public key for server adminstrator
             type: list
-            default: #[]
-              - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEA8weYqCsg1dYu4i0j+xsm/faUiNsNKJ7OmAauyWgnWYdTn+45iwAgD9Zcxd6g3y3HPlfakP7NPTlYHYKIKaa04Q3vvzAAuUuQBRZaipCIWr9TKEqgTxKtzhHMyZ4N8V+dRNyAuuiwfYRIZ+1iZ9pYcbIMJG+t2b5ltTzTShdU8fKP02CRDqyT1abO7dZ3R+WUbanDMH0zlB4EIuMMIXjhU2u7OYuqFWI2xqLzmir4WqnJz9hdvYF9aJt43XpPfp/gFZ41x4VKA0PaB3rjFnW2W1wJ8df1ROYxk9Q0M8trFor8jk21pvUfQsBq9TPvJlsYD4ey6UIsBl5TguLW0eCwhHaue9D9idHrs+iZZMGOmvFI3Ne8fXRRjxd1nKvriCEG4ElpwORvF+YGQXEWj0ga013bITNeZTb2v2ILCD6q/IAaaJc7M0tDU713NYp0juDI5vl94mZQjoKMpYC+xSdHZxUB4UfZVFXF7H9m+udJjg6Ax28teh6h8haYNaarYlA+cHZWUQ32t54a2d+8cPokWtf4Gtt0se+RKIsB6o66eK9H88QALanH5uQLbmf+aJ3NJCF2SdkRacs1TDxhfHXXFIOlLDhv3u+FcZTeHM0LMzXOpBvp2R8Lppeebcf8rVMTe8DsmWNs++/G1xsl0uO+R/PJbjSIeahasls/ak5kPss= gabriel@gamma.local
+            default: []
             sort: 1
             env_key: SSH_AUTHORIZED_KEYS
           ssh/known_hosts:
