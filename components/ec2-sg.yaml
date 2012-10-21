@@ -4,3 +4,4 @@ provider: ec2-sg
 include:
   config: [ base, ec2-sg ]
   export: [ ec2-sg ]
+  monitor: [ refresh ]  

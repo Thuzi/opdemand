@@ -4,3 +4,4 @@ provider: ec2-instance
 include:
   config: [ base, ec2-instance ]
   export: [ ec2-instance ]
+  monitor: [ refresh ]

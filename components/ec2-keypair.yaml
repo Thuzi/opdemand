@@ -4,3 +4,4 @@ provider: ec2-keypair
 include:
   config: [ base, ec2-keypair ]
   export: [ ec2-keypair ]
+  monitor: [ refresh ]

@@ -4,3 +4,4 @@ provider: ec2-eip
 include:
   config: [ base, ec2-eip ]
   export: [ ec2-eip ]
+  monitor: [ refresh ]

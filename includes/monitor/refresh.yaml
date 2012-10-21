@@ -2,7 +2,7 @@ monitor:
     contents:
         policies:
             - type: refresh
-              interval: 300
+              interval: 60
               retries: 0
               timeout: 0
               healthyafter: 0
