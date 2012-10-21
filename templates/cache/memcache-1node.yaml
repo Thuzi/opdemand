@@ -2,7 +2,7 @@ name: Memcache
 description: Memcache service including an EC2 Instance, a Security Group and Key Pair
 components:
   - component: ec2-instance
-    include: 
+    modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, cache ]
       export: [ cache ]
     configure:

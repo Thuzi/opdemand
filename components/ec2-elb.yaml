@@ -1,6 +1,6 @@
 name: Elastic Load Balancer
 description: Elastic Load Balancer to distribute traffic across EC2 Instances
 provider: ec2-elb
-include:
+modules:
   config: [ base, ec2-elb ]
   monitor: [ refresh ]

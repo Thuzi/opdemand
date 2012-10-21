@@ -2,17 +2,17 @@ name: Clojure Application
 description: Clojure application including 2 EC2 Instances, a Security Group and Key Pair
 components:
   - component: ec2-elb
-    include:
+    modules:
       publish: [ http ]
   - component: ec2-instance
-    include: 
+    modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, application ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::app::clojure", "opdemand::web::nginx" ]
       application/repository_url: git://github.com/opdemand/example-clojure-ring.git
       application/name: clojure
   - component: ec2-instance
-    include: 
+    modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, application ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::app::clojure", "opdemand::web::nginx" ]

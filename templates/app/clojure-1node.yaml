@@ -2,7 +2,7 @@ name: Clojure Application
 description: Clojure application including an EC2 Instance, a Security Group and Key Pair
 components:
   - component: ec2-instance
-    include: 
+    modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, application ]
       publish: [ http ]
     configure:
