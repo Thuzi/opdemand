@@ -6,14 +6,14 @@ config:
         description: Configuration for ELBs
         sort: 9
         fields:
-          # aws settings
           ec2-elb/region_name:
             name: Region
             description: Name of AWS region
             type: clouds
-            default: us-east-1
+            default:
             sort: 1
             editable: [ none, destroyed ]
+            required: true
           ec2-elb/name:
             name: ELB Name
             description: Unique name identifier for ELB
