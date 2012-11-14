@@ -14,7 +14,7 @@ config:
             default: git://github.com/opdemand/opdemand-ubuntu.git
             sort: 1
             env_key: DEPLOY_REPOSITORY_URL
-          ec2-deploy/repository_revision:
+          git-deploy/repository_revision:
             name: Repository Revision
             description: Repository revision to pull latest code from
             type: text
