@@ -1,0 +1,13 @@
+name: RabbitMQ
+description: RabbitMQ message bus including an EC2 Instance, a Security Group and Key Pair
+components:
+  - component: ec2-instance
+    modules: 
+      config: [ ec2-deploy, git-deploy, ssh, puppet ]
+      publish: [ http ]
+    configure:
+      puppet/classes: [ "opdemand::common", "opdemand::mq::rabbitmq" ]
+  - component: ec2-sg
+    configure:
+      ec2-sg/rules: [ "0.0.0.0/0,tcp,22,22" ]
+  - component: ec2-keypair
