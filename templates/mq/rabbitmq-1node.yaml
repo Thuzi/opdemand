@@ -4,7 +4,6 @@ components:
   - component: ec2-instance
     modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet ]
-      publish: [ http ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::mq::rabbitmq" ]
   - component: ec2-sg
