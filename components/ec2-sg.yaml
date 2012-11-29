@@ -2,6 +2,6 @@ name: EC2 Security Group
 description: Virtual firewall within an EC2 region
 provider: ec2-sg
 modules:
-  config: [ base, ec2-sg ]
+  config: [ service, ec2-sg ]
   export: [ ec2-sg ]
   monitor: [ refresh ]  

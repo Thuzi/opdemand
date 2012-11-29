@@ -2,6 +2,6 @@ name: EC2 Instance
 description: Amazon EC2 Instance
 provider: ec2-instance
 modules:
-  config: [ base, ec2-instance ]
+  config: [ service, ec2-instance ]
   export: [ ec2-instance ]
   monitor: [ refresh ]

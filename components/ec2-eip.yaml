@@ -2,6 +2,6 @@ name: EC2 Elastic IP
 description: Elastic IP address within an EC2 region
 provider: ec2-eip
 modules:
-  config: [ base, ec2-eip ]
+  config: [ service, ec2-eip ]
   export: [ ec2-eip ]
   monitor: [ refresh ]

@@ -2,6 +2,6 @@ name: EC2 Key Pair
 description: Cryptographic Key Pair used to access EC2 Instancess
 provider: ec2-keypair
 modules:
-  config: [ base, ec2-keypair ]
+  config: [ service, ec2-keypair ]
   export: [ ec2-keypair ]
   monitor: [ refresh ]
