@@ -1,6 +1,7 @@
 # editable service contents
 contents:
   categories: [ cache ]
+  description: Configuration for cache components  
 # service configuration
 config:
   contents:

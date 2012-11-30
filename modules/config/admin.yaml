@@ -1,6 +1,7 @@
 # editable service contents
 contents:
   categories: [ admin ]
+  description: Configuration for application administration  
 # service configuration
 config:
   contents:

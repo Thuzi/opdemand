@@ -1,3 +1,5 @@
+contents:
+  description: Configuration for EC2 key pairs  
 config:
   contents:
     sections:

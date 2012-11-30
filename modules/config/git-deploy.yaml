@@ -1,3 +1,5 @@
+contents:
+  description: Configuration for Git-style deployment repositories  
 # service configuration
 config:
   contents:

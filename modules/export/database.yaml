@@ -1,5 +1,7 @@
+contents:
+  description: Export database configuration from this service
 export:
-    contents: 
+    contents:       
         fields:
             - name: Database Hostname
               key: database/host

@@ -1,3 +1,5 @@
+contents:
+  description: Basic Service configuration fields  
 # service configuration
 config:
   doctype: config

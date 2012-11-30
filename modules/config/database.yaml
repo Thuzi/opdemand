@@ -1,6 +1,7 @@
 # editable service contents
 contents:
   categories: [ database ]
+  description: Configuration for database components
 # service configuration
 config:
   contents:

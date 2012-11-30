@@ -1,6 +1,7 @@
 # editable service contents
 contents:
   categories: [ application ]
+  description: Configuration for application components  
 # service configuration
 config:
   contents:

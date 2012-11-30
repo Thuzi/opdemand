@@ -1,5 +1,7 @@
+contents:
+  description: Export cache configuration from this service  
 export:
-    contents: 
+    contents:
         fields:
             - name: Cache Host
               key: cache/host

@@ -1,6 +1,7 @@
 # editable service contents
 contents:
   categories: [ puppet ]
+  description: Repository settings for Puppet configuration management
 # service configuration
 config:
   contents:
