@@ -5,7 +5,7 @@ publish:
         fields:
             - name: Application URL
               description: URL used to access the application
-              template: https://%(dns_name)s
+              template: https://%(public_dns_name)s
               timeout: 10 
               healthyafter: 3
               interval: 30
