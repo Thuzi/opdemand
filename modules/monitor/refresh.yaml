@@ -6,5 +6,4 @@ monitor:
               retries: 0
               timeout: 0
               healthyafter: 0
-              url: ""
               port: 80
