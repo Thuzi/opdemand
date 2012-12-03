@@ -34,13 +34,29 @@ config:
             sort: 3
             editable: [ none, destroyed ]
             env_key: EC2_INSTANCE_ID
+          ec2-instance/public_dns_name:
+            name: Public DNS Name
+            description: Public DNS hostname to access this EC2 Instance
+            type: text
+            default:
+            sort: 4
+            editable: [ none, destroyed ]
+            env_key: EC2_PUBLIC_DNS
+          ec2-instance/private_dns_name:
+            name: Private DNS Name
+            description: Private DNS hostname to access this EC2 Instance
+            type: text
+            default:
+            sort: 5
+            editable: [ none, destroyed ]
+            env_key: EC2_PRIVATE_DNS
           ec2-instance/instance_type:
             name: Instance Type
             description: EC2 Instance Type
             type: instance
             default: #c1.medium
             required: true
-            sort: 4
+            sort: 6
             editable: [ none, destroyed ]
             env_key: EC2_INSTANCE_TYPE
           ec2-instance/image_id:
@@ -48,7 +64,7 @@ config:
             description: AMI ID (defaults to latest Ubuntu release)
             type: text
             default:
-            sort: 5
+            sort: 7
             editable: [ none, destroyed ]
           ec2-instance/key_name:
             name: Key Name
@@ -56,7 +72,7 @@ config:
             type: text
             default:
             required: true
-            sort: 6
+            sort: 8
             editable: [ none, destroyed ]
           ec2-instance/security_groups:
             name: Security Groups
@@ -64,31 +80,31 @@ config:
             type: list
             default: []
             required: true
-            sort: 7
+            sort: 9
             editable: [ none, destroyed ]
           ec2-instance/volumes:
             name: Volumes
             description: List of volumes (EBS & Ephemeral)
             type: list
             default: []
-            sort: 8
+            sort: 10
           ec2-instance/elastic_ip:
             name: Elastic IP
             description: Elastic IP address to use
             type: text
             default:
-            sort: 9
+            sort: 11
           ec2-instance/kernel:
             name: Kernel ID
             description: ID of Kernel to use
             type: text
             default:
-            sort: 10
+            sort: 12
           ec2-instance/user_data:
             name: User Data
             description: User Data to pass to instance on boot
             type: textarea
-            sort: 11
+            sort: 13
             editable: [ none, destroyed ]
             #
             # NOTE: default cloud-init provided to optimize instance build
