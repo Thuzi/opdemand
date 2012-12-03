@@ -6,4 +6,3 @@ monitor:
               retries: 0
               timeout: 0
               healthyafter: 0
-              port: 80
