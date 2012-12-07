@@ -1,0 +1,11 @@
+contents:
+  description: MongoDB Port Access
+publish:
+    contents:
+        fields:
+            - name: MongoDB Port
+              description: TCP Port used to access MongoDB database services
+              template: tcp://%(public_dns_name)s:%(mongodb-server/port)s
+              timeout: 10 
+              healthyafter: 3
+              interval: 30

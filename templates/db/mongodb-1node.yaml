@@ -4,8 +4,9 @@ components:
   - component: ec2-instance
     consumes: [ keypair, sg ]
     modules: 
-      config: [ ec2-deploy, git-deploy, ssh, puppet, database ]
-      export: [ database ]
+      config: [ ec2-deploy, git-deploy, ssh, puppet, mongodb-server ]
+      export: [ mongodb-client ]
+      publish: [ mongodb ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::database::mongodb" ]
       database/port: 27017

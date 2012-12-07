@@ -28,6 +28,7 @@ components:
     modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, mongodb-server ]
       export: [ mongodb-client ]
+      publish: [ mongodb ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::database::mongodb" ]
       mongodb-server/replset: rs0
@@ -37,6 +38,7 @@ components:
     modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, mongodb-server ]
       export: [ mongodb-client ]
+      publish: [ mongodb ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::database::mongodb" ]
       mongodb-server/replset: rs0
@@ -46,6 +48,7 @@ components:
     modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, mongodb-server ]
       export: [ mongodb-client ]
+      publish: [ mongodb ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::database::mongodb" ]
       mongodb-server/replset: rs0
