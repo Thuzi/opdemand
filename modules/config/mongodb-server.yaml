@@ -1,0 +1,55 @@
+# editable service contents
+contents:
+  categories: [ database, mongodb ]
+  description: Configuration for MongoDB database
+# service configuration
+config:
+  contents:
+    sections:
+      mongodb-server:
+        name: MongoDB
+        description: Configuration for MongoDB database
+        sort: 16
+        fields:
+          mongodb-server/username:
+            name: MongoDB Username
+            description: Username for auto-created database user
+            type: text
+            sort: 1
+            default:
+            env_key: MONGODB_SERVER_USERNAME
+          mongodb-server/password:
+            name: MongoDB Password
+            description: Password for auto-created database user
+            type: text
+            sort: 2
+            default:
+            env_key: MONGODB_SERVER_PASSWORD
+          mongodb-server/port:
+            name: MongoDB Server Port
+            description: Port for database listener
+            type: text
+            sort: 3
+            default:
+            env_key: MONGODB_SERVER_PORT
+          mongodb-server/bind:
+            name: MongoDB Bind Address
+            description: Bind address for the server listener
+            type: text
+            sort: 4
+            default: 0.0.0.0
+            env_key: MONGODB_SERVER_BIND
+          mongodb-server/replset:
+            name: Replica Set Name
+            description: Name of MongoDB Replica Set
+            type: text
+            sort: 5
+            default: 
+            env_key: MONGODB_SERVER_REPLSET
+          mongodb-server/members:
+            name: Replica Set Members
+            description: Hostname used to access the database
+            type: list
+            sort: 6
+            default: []
+            env_key: MONGODB_SERVER_MEMBERS

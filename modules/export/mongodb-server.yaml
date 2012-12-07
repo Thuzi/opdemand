@@ -1,0 +1,8 @@
+contents:
+  description: Export MongoDB server configuration
+export:
+    contents:       
+        fields:
+            - name: MongoDB Replica Members
+              key: mongodb-server/members
+              template: "%(public_dns_name)s"

@@ -1,0 +1,17 @@
+contents:
+  description: Export MongoDB client configuration
+export:
+    contents:       
+        fields:
+            - name: MongoDB Hostname
+              key: mongodb-client/host
+              template: "%(public_dns_name)s"
+            - name: MongoDB Port
+              key: mongodb-client/port
+              template: "%(mongodb-server/port)s"
+            - name: MongoDB Username
+              key: mongodb-client/username
+              template: "%(mongodb-server/username)s"
+            - name: MongoDB Password
+              key: mongodb-client/password
+              template: "%(mongodb-server/password)s"

@@ -1,0 +1,52 @@
+name: MongoDB
+description: MongoDB replica set including 3 EC2 Instances, a Security Group and Key Pair
+components:
+  - component: ec2-keypair
+    id: keypair
+    configure:
+      ec2-keypair/name: mongodb
+  - component: ec2-sg
+    id: sg
+    configure:
+      ec2-sg/name: mongodb
+      ec2-sg/rules: [ "0.0.0.0/0,tcp,22,22", "0.0.0.0/0,tcp,27017,27017" ]
+  - component: ec2-eip
+    id: eip1
+    modules:
+      export: [ ec2-eip, mongodb-server ]
+  - component: ec2-eip
+    id: eip2
+    modules:
+      export: [ ec2-eip, mongodb-server ]
+  - component: ec2-eip
+    id: eip3
+    modules:
+      export: [ ec2-eip, mongodb-server ]
+  - component: ec2-instance
+    id: instance1
+    consumes: [ keypair, sg, eip1, eip2/mongodb-server/members, eip3/mongodb-server/members ]
+    modules: 
+      config: [ ec2-deploy, git-deploy, ssh, puppet, mongodb-server ]
+      export: [ mongodb-client ]
+    configure:
+      puppet/classes: [ "opdemand::common", "opdemand::database::mongodb" ]
+      mongodb-server/replset: rs0
+  - component: ec2-instance
+    id: instance2
+    consumes: [ keypair, sg, eip2, eip1/mongodb-server/members, eip3/mongodb-server/members ]
+    modules: 
+      config: [ ec2-deploy, git-deploy, ssh, puppet, mongodb-server ]
+      export: [ mongodb-client ]
+    configure:
+      puppet/classes: [ "opdemand::common", "opdemand::database::mongodb" ]
+      mongodb-server/replset: rs0
+  - component: ec2-instance
+    id: instance3
+    consumes: [ keypair, sg, eip3, eip1/mongodb-server/members, eip2/mongodb-server/members ]
+    modules: 
+      config: [ ec2-deploy, git-deploy, ssh, puppet, mongodb-server ]
+      export: [ mongodb-client ]
+    configure:
+      puppet/classes: [ "opdemand::common", "opdemand::database::mongodb" ]
+      mongodb-server/replset: rs0
+      
