@@ -2,9 +2,12 @@ name: Clojure Application
 description: Clojure application including 2 EC2 Instances, a Security Group and Key Pair
 components:
   - component: ec2-elb
+    consumes: [ instance1, instance2 ]
     modules:
       publish: [ http ]
   - component: ec2-instance
+    id: instance1
+    consumes: [ keypair, sg ]
     modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, application ]
     configure:
@@ -12,6 +15,8 @@ components:
       application/repository_url: git://github.com/opdemand/example-clojure-ring.git
       application/name: clojure
   - component: ec2-instance
+    id: instance2
+    consumes: [ instance1, instance2 ]
     modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, application ]
     configure:
@@ -19,6 +24,8 @@ components:
       application/repository_url: git://github.com/opdemand/example-clojure-ring.git
       application/name: clojure
   - component: ec2-sg
+    id: sg
     configure:
       ec2-sg/rules: [ "0.0.0.0/0,tcp,22,22", "0.0.0.0/0,tcp,80,80" ]
   - component: ec2-keypair
+    id: keypair
