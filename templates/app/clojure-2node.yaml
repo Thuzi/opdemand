@@ -16,7 +16,7 @@ components:
       application/name: clojure
   - component: ec2-instance
     id: instance2
-    consumes: [ instance1, instance2 ]
+    consumes: [ keypair, sg ]
     modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, application ]
     configure:
