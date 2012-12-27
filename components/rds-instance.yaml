@@ -1,0 +1,7 @@
+name: RDS Instance
+description: RDS Database Instance
+provider: rds-instance
+modules:
+  config: [ service, rds-instance ]
+  export: [ mysql-client ]
+  monitor: [ refresh ]

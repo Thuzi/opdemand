@@ -1,0 +1,17 @@
+contents:
+  description: Export MySQL client configuration
+export:
+    contents:       
+        fields:
+            - name: MySQL Hostname
+              key: mysql-client/host
+              template: "%(public_dns_name)s"
+            - name: MySQL Port
+              key: mysql-client/port
+              template: "%(port)s"
+            - name: MySQL Username
+              key: mysql-client/username
+              template: "%(master_username)s"
+            - name: MySQL Password
+              key: mysql-client/password
+              template: "%(master_password)s"

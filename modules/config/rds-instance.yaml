@@ -1,0 +1,166 @@
+contents:
+  description: Configuration for RDS instances
+config:
+  contents:
+    sections:
+      rds-instance:
+        name: RDS Instance
+        description: Configuration for RDS instances
+        sort: 8
+        fields:
+          rds-instance/region_name:
+            name: Region
+            description: Name of AWS region
+            type: clouds
+            default: 
+            required: true
+            sort: 1
+            editable: [ none, destroyed ]
+            env_key: RDS_REGION_NAME
+          rds-instance/availability_zone:
+            name: Zone
+            description: Name of AWS zone to use
+            type: zone
+            default:
+            sort: 2
+            editable: [ none, destroyed ]
+            env_key: RDS_ZONE_NAME
+          rds-instance/multi_az:
+            name: Multi AZ
+            description: Automatically replicate to multiple availability zones
+            type: boolean
+            default: false
+            sort: 3
+            env_key: RDS_MULTI_AZ
+          rds-instance/id:
+            name: Instance ID
+            description: RDS Instance ID
+            type: text
+            default:
+            sort: 4
+            required: true
+            editable: [ none, destroyed ]
+            env_key: RDS_INSTANCE_ID
+          rds-instance/public_dns_name:
+            name: Public DNS Name
+            description: Public DNS hostname to access this RDS Instance
+            type: text
+            default:
+            sort: 5
+            editable: [ ]
+            env_key: RDS_PUBLIC_DNS
+          rds-instance/port:
+            name: Database Port
+            description: Database port used by this RDS Instance
+            type: text
+            default: 3306
+            sort: 6
+            env_key: RDS_PORT
+          rds-instance/instance_class:
+            name: Instance Type
+            description: RDS Instance Class
+            type: rds-instance
+            default: db.m1.small
+            required: true
+            sort: 7
+            env_key: RDS_INSTANCE_CLASS
+          rds-instance/allocated_storage:
+            name: Allocated Storage
+            description: Storage allocated to RDS Instance (minimum of 5 GB)
+            type: text
+            default: 5
+            sort: 8
+          rds-instance/master_username:
+            name: Master Username
+            description: Username for database access
+            type: text
+            default: 
+            required: true
+            sort: 9
+            env_key: RDS_MASTER_USERNAME
+          rds-instance/master_password:
+            name: Master Password
+            description: Password for database access
+            type: text
+            default: 
+            required: true
+            sort: 10
+            env_key: RDS_MASTER_PASSWORD
+          rds-instance/db_name:
+            name: Database Name
+            description: Name of database to be created automatically
+            type: text
+            default: 
+            required: true
+            sort: 11
+            env_key: RDS_DB_NAME
+          rds-instance/engine:
+            name: Database Engine
+            description: Database engine to use for RDS Instance
+            type: text
+            default: mysql
+            sort: 12
+            env_key: RDS_ENGINE
+          rds-instance/engine_version:
+            name: Database Engine Version
+            description: Version of Database engine to use
+            type: text
+            default: 
+            sort: 13
+            env_key: RDS_ENGINE_VERSION
+          rds-instance/license_model:
+            name: License Model
+            description: License model to use for RDS Instance
+            type: text
+            default: 
+            sort: 14             
+          rds-instance/parameter_group:
+            name: Parameter Group
+            description: Parameter group to use for RDS Instance
+            type: text
+            default: default.mysql5.5
+            sort: 15
+            env_key: RDS_PARAM_GROUP
+          rds-instance/security_groups:
+            name: Database Security Groups
+            description: Security Groups to use for Database instance
+            type: list
+            default: ['default']
+            sort: 16
+          rds-instance/auto_minor_version_upgrade:
+            name: Auto Minor Version Upgrade
+            description: Automatically perform minor version upgrades during maint windows
+            type: boolean
+            default: false
+            sort: 17
+          rds-instance/preferred_maintenance_window:
+            name: Preferred Maintenance Window
+            description: Time window for scheduled maintenance
+            type: text
+            default:
+            sort: 18
+          rds-instance/backup_retention_period:
+            name: Backup Retention Period
+            description: Days to retain backups (0 to disable)
+            type: int
+            default: 3
+            sort: 19
+          rds-instance/preferred_backup_window:
+            name: Preferred Backup Window
+            description: Time window for backups
+            type: text
+            default:
+            sort: 20
+          rds-instance/pending_modified_values:
+            name: Pending Modified Values
+            description: Pending configuration changes
+            type: text
+            sort: 21
+            editable: [ ]            
+          rds-instance/status:
+            name: Instance Status
+            description: Status of RDS Instance
+            type: text
+            sort: 22
+            editable: [ ]            
+

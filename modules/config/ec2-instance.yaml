@@ -1,5 +1,5 @@
 contents:
-  description: Configuration for ELBs
+  description: Configuration for EC2 Instances
 config:
   contents:
     sections:
