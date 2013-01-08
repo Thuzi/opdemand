@@ -29,7 +29,6 @@ config:
             description: Heroku Application Name
             type: text
             default:
-            required: true
             sort: 3
             editable: [ none, destroyed ]
           heroku/heroku_public_key:
