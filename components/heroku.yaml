@@ -1,0 +1,8 @@
+name: Heroku Application
+description: Heroku Application
+provider: heroku-app
+modules:
+  config: [ heroku-app, service]
+  export: [ heroku ] 
+  publish: [ heroku ] 
+  monitor: [ refresh ]  

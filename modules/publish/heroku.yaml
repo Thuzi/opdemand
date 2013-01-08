@@ -1,0 +1,11 @@
+contents:
+  description: Heroku URL Publisher
+publish:
+    contents:       
+        fields:
+            - name: Application URL
+              key: heroku/host
+              template: "http://%(heroku/application_name)s.herokuapp.com"
+              timeout: 10
+              healthyafter: 3
+              interval: 30

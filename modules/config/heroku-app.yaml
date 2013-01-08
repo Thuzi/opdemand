@@ -1,0 +1,50 @@
+contents:
+  description: Configuration for Heroku Applications
+config:
+  contents:
+    sections:
+      heroku:
+        name: Heroku Application 
+        description: Heroku Application
+        sort: 1
+        fields:
+          heroku/git_private_key:
+            name: GitHub Private key
+            description: Valid GitHub Private Key
+            type: textarea
+            default:
+            required: true
+            sort: 1
+            editable: [ none, destroyed ]
+          heroku/git_url:
+            name: Git Repository
+            description: URL of Git Repository
+            type: text
+            default:
+            required: true
+            sort: 2
+            editable: [ none, destroyed ]
+          heroku/application_name:
+            name: Application Name 
+            description: Heroku Application Name
+            type: text
+            default:
+            required: true
+            sort: 3
+            editable: [ none, destroyed ]
+          heroku/heroku_public_key:
+            name: Heroku Public Key
+            description: Valid Public Key for Pushing to Heroku
+            type: textarea
+            default:
+            required: true
+            sort: 4
+            editable: [ none, destroyed ]
+          heroku/heroku_private_key:
+            name: Heroku Private Key
+            description: Matching Private Key for Pushing to Heroku
+            type: textarea 
+            default:
+            required: true
+            sort: 5
+            editable: [ none, destroyed ]

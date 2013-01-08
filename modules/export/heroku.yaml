@@ -1,0 +1,8 @@
+contents:
+  description: Export heroku URL
+export:
+    contents:       
+        fields:
+            - name: Application URL
+              key: heroku/host
+              template: "http://%(heroku/application_name)s.herokuapp.com"
