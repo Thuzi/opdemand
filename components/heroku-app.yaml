@@ -3,6 +3,6 @@ description: Heroku Application
 provider: heroku-app
 modules:
   config: [ heroku-app ]
-  export: [ heroku ] 
-  publish: [ heroku ] 
+  export: [ heroku-app ] 
+  publish: [ heroku-app ] 
   monitor: [ refresh ]  
