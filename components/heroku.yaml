@@ -2,7 +2,7 @@ name: Heroku Application
 description: Heroku Application
 provider: heroku-app
 modules:
-  config: [ heroku-app ]
+  config: [ heroku ]
   export: [ heroku ] 
   publish: [ heroku ] 
   monitor: [ refresh ]  
