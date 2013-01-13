@@ -1,5 +1,5 @@
-name: Heroku Application
-description: Heroku Application
+name: Heroku
+description: Heroku
 provider: heroku-app
 modules:
   config: [ heroku-app ]
