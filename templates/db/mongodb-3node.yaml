@@ -1,4 +1,4 @@
-name: MongoDB
+name: MongoDB x 3
 description: MongoDB replica set including 3 EC2 Instances, a Security Group and Key Pair
 components:
   - component: ec2-keypair

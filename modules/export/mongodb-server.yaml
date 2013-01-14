@@ -3,6 +3,16 @@ contents:
 export:
     contents:       
         fields:
+            - name: MongoDB Hostname
+              key: mongodb-client/host
+              template: "%(ec2-instance/public_dns_name)s"
+            - name: MongoDB Username
+              key: mongodb-client/username
+              template: "%(mongodb-server/username)s"
+            - name: MongoDB Password
+              key: mongodb-client/password
+              template: "%(mongodb-server/password)s"
             - name: MongoDB Replica Members
               key: mongodb-server/members
-              template: "%(public_dns_name)s"
+              template: "%(ec2-instance/public_dns_name)s"
+              

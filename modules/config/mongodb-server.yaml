@@ -7,21 +7,21 @@ config:
   contents:
     sections:
       mongodb-server:
-        name: MongoDB
-        description: Configuration for MongoDB database
+        name: MongoDB Server
+        description: Configuration for MongoDB server
         sort: 16
         fields:
           mongodb-server/username:
             name: MongoDB Username
-            description: Username for auto-created database user
+            description: Username for MongoDB client access
             type: text
             sort: 1
             default:
             env_key: MONGODB_SERVER_USERNAME
           mongodb-server/password:
             name: MongoDB Password
-            description: Password for auto-created database user
-            type: text
+            description: Password for MongoDB client access
+            type: password
             sort: 2
             default:
             env_key: MONGODB_SERVER_PASSWORD
