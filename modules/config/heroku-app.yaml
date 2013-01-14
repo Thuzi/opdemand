@@ -1,56 +1,69 @@
 contents:
-  description: Configuration for Heroku Applications
+  description: Configuration for a Heroku Application
 config:
   contents:
     sections:
-      heroku:
-        name: Heroku Application 
-        description: Heroku Application
+      heroku-app:
+        name: Heroku Application
+        description: Configuration for a Heroku Application
         sort: 1
         fields:
-          heroku/git_private_key:
-            name: GitHub Private key
-            description: Valid GitHub Private Key
-            type: textarea
-            default:
-            required: true
-            sort: 1
-            editable: [ none, destroyed ]
-          heroku/git_url:
-            name: Git Repository
-            description: URL of Git Repository
+          heroku-app/name:
+            name: Application Name 
+            description: Name of the Heroku Application (optional)
             type: text
             default:
+            sort: 1
+            editable: [ none, destroyed ]
+          heroku-app/repository_url:
+            name: Git Repository
+            description: Source URL of Git Repository
+            type: repository-url
+            default: git://github.com/gabrtv/nodejs-mongodb-blog.git
             required: true
             sort: 2
             editable: [ none, destroyed ]
-          heroku/application_name:
-            name: Application Name 
-            description: Heroku Application Name
-            type: text
+          heroku-app/private_key:
+            name: Private key
+            description: Private key used for cloning and pushing to Heroku
+            type: textarea
             default:
             sort: 3
             editable: [ none, destroyed ]
-          heroku/heroku_public_key:
-            name: Heroku Public Key
-            description: Valid Public Key for Pushing to Heroku
-            type: textarea
-            default:
-            required: true
-            sort: 4
-            editable: [ none, destroyed ]
-          heroku/heroku_private_key:
-            name: Heroku Private Key
-            description: Matching Private Key for Pushing to Heroku
-            type: textarea 
-            default:
-            required: true
-            sort: 5
-            editable: [ none, destroyed ]
-          heroku/region:
+          heroku-app/region:
             name: Heroku Region
             description: Heroku Region Name
             type: text
             default: heroku-us-east
             sort: 6
             editable: [ ]
+          # heroku-app/dyno_map:
+            # name: Dyno Map
+            # description: Map of worker types and number of dynos
+            # type: map
+            # default: { 'web': 1 }
+            # sort: 4
+          # heroku-app/config:
+            # name: Dyno Map
+            # description: Map of worker types and number of dynos
+            # type: map
+            # default: {}
+            # sort: 5
+          # heroku-app/processes:
+            # name: Processes
+            # description: Map of active process for this application
+            # type: map
+            # default: {}
+            # sort: 6
+          # heroku-app/releases:
+            # name: Releases
+            # description: List of releases to this application
+            # type: list
+            # default: []
+            # sort: 7
+          heroku-app/stack:
+            name: Heroku Stack
+            description: Name of Heroku application stack to use
+            type: text
+            default: cedar
+            sort: 8         

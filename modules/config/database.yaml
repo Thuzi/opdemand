@@ -21,7 +21,7 @@ config:
           database/password:
             name: Database Password
             description: Password used to access the database
-            type: text
+            type: password
             sort: 1
             default:
             env_key: DATABASE_PASSWORD              
