@@ -47,3 +47,10 @@ config:
             required: true
             sort: 5
             editable: [ none, destroyed ]
+          heroku/region:
+            name: Heroku Region
+            description: Heroku Region Name
+            type: text
+            default: heroku-us-east
+            sort: 6
+            editable: [ ]

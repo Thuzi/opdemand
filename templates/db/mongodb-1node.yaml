@@ -1,8 +1,12 @@
 name: MongoDB
-description: MongoDB database including an EC2 Instance, a Security Group and Key Pair
+description: MongoDB database including an EC2 Instance, a Security Group, Elastic IP and Key Pair
 components:
+  - component: ec2-eip
+    id: eip
+    modules:
+      export: [ ec2-eip, mongodb-server ]
   - component: ec2-instance
-    consumes: [ keypair, sg ]
+    consumes: [ keypair, sg, eip ]
     modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, mongodb-server ]
       export: [ mongodb-client ]
