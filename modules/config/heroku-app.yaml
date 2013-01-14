@@ -19,7 +19,7 @@ config:
             name: Git Repository
             description: Source URL of Git Repository
             type: repository-url
-            default: git://github.com/gabrtv/example-nodejs-express.git
+            default: git://github.com/gabrtv/nodejs-mongodb-blog.git
             required: true
             sort: 2
             editable: [ none, destroyed ]
@@ -30,30 +30,30 @@ config:
             default:
             sort: 3
             editable: [ none, destroyed ]
-          heroku-app/dyno_map:
-            name: Dyno Map
-            description: Map of worker types and number of dynos
-            type: map
-            default: { 'web': 1 }
-            sort: 4
-          heroku-app/config:
-            name: Dyno Map
-            description: Map of worker types and number of dynos
-            type: map
-            default: {}
-            sort: 5
-          heroku-app/processes:
-            name: Processes
-            description: Map of active process for this application
-            type: map
-            default: {}
-            sort: 6
-          heroku-app/releases:
-            name: Releases
-            description: List of releases to this application
-            type: list
-            default: []
-            sort: 7
+          # heroku-app/dyno_map:
+            # name: Dyno Map
+            # description: Map of worker types and number of dynos
+            # type: map
+            # default: { 'web': 1 }
+            # sort: 4
+          # heroku-app/config:
+            # name: Dyno Map
+            # description: Map of worker types and number of dynos
+            # type: map
+            # default: {}
+            # sort: 5
+          # heroku-app/processes:
+            # name: Processes
+            # description: Map of active process for this application
+            # type: map
+            # default: {}
+            # sort: 6
+          # heroku-app/releases:
+            # name: Releases
+            # description: List of releases to this application
+            # type: list
+            # default: []
+            # sort: 7
           heroku-app/stack:
             name: Heroku Stack
             description: Name of Heroku application stack to use
