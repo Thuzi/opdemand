@@ -37,30 +37,30 @@ config:
             default: heroku-us-east
             sort: 6
             editable: [ ]
-          # heroku-app/dyno_map:
-            # name: Dyno Map
-            # description: Map of worker types and number of dynos
-            # type: map
-            # default: { 'web': 1 }
-            # sort: 4
-          # heroku-app/config:
-            # name: Dyno Map
-            # description: Map of worker types and number of dynos
-            # type: map
-            # default: {}
-            # sort: 5
-          # heroku-app/processes:
-            # name: Processes
-            # description: Map of active process for this application
-            # type: map
-            # default: {}
-            # sort: 6
-          # heroku-app/releases:
-            # name: Releases
-            # description: List of releases to this application
-            # type: list
-            # default: []
-            # sort: 7
+          heroku-app/dyno_map:
+            name: Dyno Map
+            description: Map of worker types and number of dynos
+            type: map
+            default: { 'web': 1 }
+            sort: 4
+          heroku-app/config:
+            name: Config Variables
+            description: Environment variables passed to the Heroku application
+            type: map
+            default: {}
+            sort: 5
+          heroku-app/processes:
+            name: Processes
+            description: Map of active process for this application
+            type: map
+            default: {}
+            sort: 6
+          heroku-app/releases:
+            name: Releases
+            description: List of releases to this application
+            type: list
+            default: []
+            sort: 7
           heroku-app/stack:
             name: Heroku Stack
             description: Name of Heroku application stack to use
