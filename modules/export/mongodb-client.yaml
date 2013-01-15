@@ -4,8 +4,8 @@ export:
     contents:       
         fields:
             - name: MongoDB Hostname
-              key: mongodb-client/host
-              template: "%(public_dns_name)s"
+              key: mongodb-client/hostname
+              template: "%(ec2-instance/public_dns_name)s"
             - name: MongoDB Port
               key: mongodb-client/port
               template: "%(mongodb-server/port)s"
@@ -15,3 +15,6 @@ export:
             - name: MongoDB Password
               key: mongodb-client/password
               template: "%(mongodb-server/password)s"
+            - name: MongoDB Replica Set Name
+              key: mongodb-client/replset
+              template: "%(mongodb-server/replset)s"
