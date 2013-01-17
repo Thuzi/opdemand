@@ -3,9 +3,6 @@ contents:
 export:
     contents:       
         fields:
-            - name: MongoDB Replica Set Name
-              key: mongodb-server/replset
-              template: "%(mongodb-server/replset)s"
             - name: MongoDB Replica Members
               key: mongodb-server/members
               template: "%(ec2-instance/public_dns_name)s"
