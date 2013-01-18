@@ -1,11 +1,11 @@
 contents:
-  description: SSH client configuration options
+  description: SSH configuration options
 config:
   contents:
     sections:
       ssh:
-        name: SSH Client
-        description: SSH client configuration options
+        name: SSH
+        description: SSH configuration options
         sort: 11
         fields:
           ssh/authorized_keys:
