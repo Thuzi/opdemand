@@ -10,7 +10,7 @@ config:
         fields:
           heroku-app/name:
             name: Application Name 
-            description: Name of the Heroku Application (optional)
+            description: Name of the Heroku Application
             type: text
             default:
             sort: 1
@@ -23,47 +23,54 @@ config:
             required: true
             sort: 2
             editable: [ none, destroyed ]
-          heroku-app/private_key:
-            name: Private key
-            description: Private key used for cloning and pushing to Heroku
-            type: textarea
-            default:
+          heroku-app/repository_branch:
+            name: Git Repository Branch
+            description: Branch, tag or SHA from the source Git Repository
+            type: repository-branch
+            default: master
+            required: true
             sort: 3
-            editable: [ none, destroyed ]
           heroku-app/region:
             name: Heroku Region
             description: Heroku Region Name
             type: text
             default: heroku-us-east
-            sort: 6
-            editable: [ ]
+            sort: 4
+            editable: []
           heroku-app/dyno_map:
             name: Dyno Map
             description: Map of worker types and number of dynos
             type: map
             default: { 'web': 1 }
-            sort: 4
+            sort: 5
           heroku-app/config:
             name: Config Variables
             description: Environment variables passed to the Heroku application
             type: map
             default: {}
-            sort: 5
+            sort: 6
           heroku-app/processes:
             name: Processes
             description: Map of active process for this application
             type: map
             default: {}
-            sort: 6
+            sort: 7
           heroku-app/releases:
             name: Releases
             description: List of releases to this application
             type: list
             default: []
-            sort: 7
+            sort: 8
+          heroku-app/private_key:
+            name: Private key
+            description: Private key used for cloning and pushing to Heroku
+            type: textarea
+            default:
+            sort: 9
+            editable: [ none, destroyed ]
           heroku-app/stack:
             name: Heroku Stack
             description: Name of Heroku application stack to use
             type: text
             default: cedar
-            sort: 8         
+            sort: 10
