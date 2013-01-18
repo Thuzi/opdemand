@@ -5,7 +5,7 @@ export:
         fields:
             - name: MongoDB Hostname
               key: mongodb-client/hostname
-              template: "%(ec2-instance/public_dns_name)s"
+              template: "%(public_dns_name)s"
             - name: MongoDB Port
               key: mongodb-client/port
               template: "%(mongodb-server/port)s"

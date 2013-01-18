@@ -5,5 +5,5 @@ export:
         fields:
             - name: MongoDB Replica Members
               key: mongodb-server/members
-              template: "%(ec2-instance/public_dns_name)s"
+              template: "%(public_dns_name)s"
               
