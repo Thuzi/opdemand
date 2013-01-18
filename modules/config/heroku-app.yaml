@@ -19,7 +19,7 @@ config:
             name: Git Repository
             description: Source URL of Git Repository
             type: repository-url
-            default: git://github.com/gabrtv/nodejs-mongodb-blog.git
+            default:
             required: true
             sort: 2
             editable: [ none, destroyed ]
