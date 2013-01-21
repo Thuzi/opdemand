@@ -11,12 +11,12 @@ config:
         description: Configuration for MongoDB clients
         sort: 17
         fields:
-          mongodb-client/hostname:
-            name: Hostname
-            description: Hostname of the MongoDB server (or replica set member)
-            type: text
+          mongodb-client/hostnames:
+            name: Hostnames
+            description: List of MongoDB server hostnames
+            type: list
             sort: 1
-            env_key: MONGODB_HOST
+            env_key: MONGODB_HOSTS
           mongodb-client/username:
             name: Username
             description: Username for MongoDB client access

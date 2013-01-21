@@ -4,7 +4,7 @@ export:
     contents:       
         fields:
             - name: MongoDB Hostname
-              key: mongodb-client/hostname
+              key: mongodb-client/hostnames
               template: "%(public_dns_name)s"
             - name: MongoDB Port
               key: mongodb-client/port
