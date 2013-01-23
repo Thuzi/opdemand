@@ -38,7 +38,7 @@ config:
                     sleep 1
                   done
                   echo "Ubuntu cloud-init complete, continuing initial instance build..."
-                  sudo apt-get install -yq git
+                  sudo apt-get install -yq --force-yes git 
                   sudo mkdir -p /var/cache/opdemand
                   sudo mkdir -p /var/log/opdemand
                   # clone the deployment repository and checkout the requested revision
