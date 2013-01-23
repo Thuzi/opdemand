@@ -5,3 +5,5 @@ contents:
   description: Provides a static IP address within an Amazon EC2 region
 input:
   region_name: aws/region_name
+output:
+  network/elastic_ip: public_ip
