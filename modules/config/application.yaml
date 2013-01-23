@@ -31,7 +31,7 @@ config:
             name: Repository Revision
             description: Repository branch/revision to pull latest code from
             type: text
-            default: origin/master
+            default: master
             sort: 2
             editable: [ none, destroyed ]
             env_key: APPLICATION_REPOSITORY_REVISION
