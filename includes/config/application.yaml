@@ -1,10 +1,8 @@
-# editable platform contents
+# editable service contents
 contents:
   categories: [ application ]
-# platform configuration
+# service configuration
 config:
-  doctype: config
-  impl: c2core.resolve.Config
   contents:
     sections:
       application:
@@ -43,7 +41,7 @@ config:
             name: Application Name
             description: Friendly name for this application
             type: text
-            default: "%(platform/abbreviation)s"
+            default: "%(service/abbreviation)s"
             sort: 4
           application/username:
             name: Application Username

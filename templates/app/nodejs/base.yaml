@@ -4,7 +4,7 @@ config:
   application/repository_url: git://github.com/opdemand/example-nodejs-express.git
   # puppet configuration
   puppet/classes: [ "opdemand::app::nodejs", "opdemand::web::nginx" ]
-# publish to platform consumers
+# publish to service consumers
 publish:
   - name: Application URL
     description: URL used to access this application

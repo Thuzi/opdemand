@@ -1,0 +1,4 @@
+name: Key Pair
+stack: keypair 
+path: service/aws/keypair
+description: Generic Key Pair

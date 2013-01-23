@@ -1,7 +1,0 @@
-# -*- test-case-name: c2server.tests.platform.AppVanilla4nodeTest -*-
-name: Vanilla Application (4-node with ELB)
-stack: elbx4
-description: >
-             Vanilla Ubuntu platform consisting of a Key Pair, Security
-             Group, four EC2 instances running Nginx with an Elastic Load Balancer in front.
-             Installs generic application workers powered by a configuable GitHub repository.

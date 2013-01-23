@@ -1,4 +1,4 @@
-# -*- test-case-name: c2server.tests.platform.ServiceGenericNnodeTest -*-
+# -*- test-case-name: c2server.tests.service.ServiceGenericNnodeTest -*-
 name: Generic Service (Auto Scaling)
 description: >
              Generic service consisting of a Key Pair, Security Group and an Autoscaling Group

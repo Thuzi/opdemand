@@ -1,0 +1,9 @@
+export:
+    contents: 
+        fields:
+            - name: DB Host
+              key: database/host
+              template: "%(network/access_host)s"
+            - name: DB Port
+              key: database/port
+              template:  "%(network/access_port)s"

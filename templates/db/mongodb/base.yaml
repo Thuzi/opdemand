@@ -11,7 +11,5 @@ config:
   network/access_cidr: 0.0.0.0/0 # SECURITY: change to allow only trusted source networks
   network/access_port: 27017
 # publish to platform consumers
-publish:
-  - name: Database URL
-    description: URL used to access this database
-    template: mongodb://%(network/access_host)s:%(network/access_port)s
+publish_include: [ mongo ]
+export_include: [ db ]

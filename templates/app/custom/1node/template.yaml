@@ -1,0 +1,6 @@
+# -*- test-case-name: c2server.tests.service.AppCustom1nodeTest -*-
+name: Custom Application (1-node)
+stack: 1node
+description: >
+             Custom Ubuntu service consisting of a Key Pair, Security Group and an EC2 instance running Nginx.
+             Installs custom application workers powered by a configuable GitHub repository.

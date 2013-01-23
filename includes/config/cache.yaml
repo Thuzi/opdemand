@@ -1,10 +1,8 @@
-# editable platform contents
+# editable service contents
 contents:
   categories: [ cache ]
-# platform configuration
+# service configuration
 config:
-  doctype: config
-  impl: c2core.resolve.Config
   contents:
     sections:
       cache:
@@ -41,3 +39,9 @@ config:
             type: text
             sort: 4
             default:  
+          cache/size:
+            name: Cache Size
+            description: Cache size in megabytes
+            type: text
+            sort: 5
+            default:

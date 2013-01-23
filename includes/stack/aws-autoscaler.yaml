@@ -1,18 +1,35 @@
-doctype: server
-impl: c2aws.instance.Instance
+doctype: autoscaler
+impl: c2aws.autoscaler.AutoScaler
+contents:
+  name: AutoScaler
+  description: Creates and terminates instances in response to load
 input:
+  # name
+  as_name: as-%(service/short_id)s
   # aws
   region_name: aws/region_name
   zone_name: aws/zone_name
+  availability_zones: autoscaler/availability_zones
+  default_cooldown: autoscaler/default_cooldown
+  desired_capacity: autoscaler/desired_capacity
+  health_check_period: autoscaler/health_check_period
+  health_check_type: autoscaler/health_check_type
+  load_balancers: [ lb/name ]
+  max_size: autoscaler/max_size
+  min_size: autoscaler/min_size
+  #placement_group: autoscaler/placement_group
+  #vpc_zone_identifier: autoscaler/vpc_zone_identifier
+  scale_up_formula: autoscaler/scale_up_formula
+  scale_down_formula: autoscaler/scale_down_formula
   # set dynamically
   keypair_name: aws/key_name
   security_groups: [ aws/security_group_name ]
   # server
   instance_type: server/instance_type
   image_id: server/image_id
-  ssh_public_key: server/ssh_public_key
+output:
+  autoscaler/arn: autoscaling_group_arn
 contents:
-  description: EC2 instance that runs the service
   user_data: |
     #cloud-config
 
@@ -77,7 +94,6 @@ contents:
      - /var/cache/opdemand/ssh-bootstrap
      # clone server repository
      - git clone --recursive %(server/repository_url)s /var/lib/opdemand
-     - cd /var/lib/opdemand && git checkout -f %(server/repository_revision)s
      - |
        for script in `ls /var/lib/opdemand/bin`; do
          ln -fs /var/lib/opdemand/bin/$script /usr/local/bin/$script

@@ -1,35 +1,18 @@
-doctype: autoscaler
-impl: c2aws.autoscaler.AutoScaler
-contents:
-  name: AutoScaler
-  description: Creates and terminates instances in response to load
+doctype: server
+impl: c2aws.instance.Instance
 input:
-  # name
-  as_name: as-%(platform/short_id)s
   # aws
   region_name: aws/region_name
   zone_name: aws/zone_name
-  availability_zones: autoscaler/availability_zones
-  default_cooldown: autoscaler/default_cooldown
-  desired_capacity: autoscaler/desired_capacity
-  health_check_period: autoscaler/health_check_period
-  health_check_type: autoscaler/health_check_type
-  load_balancers: [ lb/name ]
-  max_size: autoscaler/max_size
-  min_size: autoscaler/min_size
-  #placement_group: autoscaler/placement_group
-  #vpc_zone_identifier: autoscaler/vpc_zone_identifier
-  scale_up_formula: autoscaler/scale_up_formula
-  scale_down_formula: autoscaler/scale_down_formula
   # set dynamically
   keypair_name: aws/key_name
   security_groups: [ aws/security_group_name ]
   # server
   instance_type: server/instance_type
   image_id: server/image_id
-output:
-  autoscaler/arn: autoscaling_group_arn
+  ssh_public_key: server/ssh_public_key
 contents:
+  description: EC2 instance that runs the service
   user_data: |
     #cloud-config
 
@@ -66,15 +49,15 @@ contents:
        try:
          if ssh_auth_keys:
            keys = "\n".join(ssh_auth_keys)+"\n"
-           ssh_data.append( ("ubuntu", "/home/ubuntu/.ssh/authorized_keys", keys) )
+           ssh_data.append( ("%(server/admin_user)s", "/home/%(server/admin_user)s/.ssh/authorized_keys", keys) )
          if ssh_known_hosts:
            fingerprints = "\n".join(ssh_known_hosts)+"\n"
-           ssh_data.append( ("ubuntu", "/home/ubuntu/.ssh/known_hosts", fingerprints) )
+           ssh_data.append( ("%(server/admin_user)s", "/home/%(server/admin_user)s/.ssh/known_hosts", fingerprints) )
            ssh_data.append( ("root", "/root/.ssh/known_hosts", fingerprints) )
          if ssh_private_key and str(ssh_private_key[0]).find('--BEGIN') > 0:
              ssh_private_key = ssh_private_key[0]
              key_type = re.findall("^-----BEGIN (...) PRIVATE KEY", ssh_private_key)[0].lower()
-             ssh_data.append( ("ubuntu", "/home/ubuntu/.ssh/id_"+key_type, ssh_private_key))
+             ssh_data.append( ("%(server/admin_user)s", "/home/%(server/admin_user)s/.ssh/id_"+key_type, ssh_private_key))
              ssh_data.append( ("root", "/root/.ssh/id_"+key_type, ssh_private_key))
        except:
          pass # write what we have
@@ -94,7 +77,10 @@ contents:
      - /var/cache/opdemand/ssh-bootstrap
      # clone server repository
      - git clone --recursive %(server/repository_url)s /var/lib/opdemand
+     - cd /var/lib/opdemand && git checkout -f %(server/repository_revision)s
      - |
        for script in `ls /var/lib/opdemand/bin`; do
          ln -fs /var/lib/opdemand/bin/$script /usr/local/bin/$script
        done
+     # disable ssh requiretty
+     - sed -r -e 's/^(Defaults[ ]+requiretty)$/# \1/' -i /etc/sudoers

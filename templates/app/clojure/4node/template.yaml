@@ -1,7 +1,7 @@
-# -*- test-case-name: c2server.tests.platform.AppClojure4nodeTest -*-
+# -*- test-case-name: c2server.tests.service.AppClojure4nodeTest -*-
 name: Clojure Application (4-node with ELB)
 stack: elbx4
 description: >
-             Clojure platform consisting of a Key Pair, Security
+             Clojure service consisting of a Key Pair, Security
              Group, four EC2 instances running Nginx with an Elastic Load Balancer in front.
              Installs Clojure application server workers powered by a configurable GitHub repository.

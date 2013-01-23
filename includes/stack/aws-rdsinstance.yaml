@@ -7,6 +7,6 @@ input:
   # set dynamically
   keypair_name: aws/key_name
   security_groups: [ rds/security_group_name ]
-  rds_name: "%(platform/abbreviation)s-%(platform/short_id)s"
+  rds_name: "%(service/abbreviation)s-%(service/short_id)s"
 contents:
   description: RDS database instance

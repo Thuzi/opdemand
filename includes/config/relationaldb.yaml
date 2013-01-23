@@ -1,10 +1,8 @@
-# editable platform contents
+# editable service contents
 contents:
   categories: [ database ]
-# platform configuration
+# service configuration
 config:
-  doctype: config
-  impl: c2core.resolve.Config
   contents:
     sections:
       database:

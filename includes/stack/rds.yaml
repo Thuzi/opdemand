@@ -1,0 +1,13 @@
+include: [ base, aws, network, server ]
+tiers:
+  - name: AWS RDS Instance
+    description: Provides database service
+    include: [ ]
+    components:
+      - name: Instance
+        include: [ aws, server ]
+        description: EC2 instance that runs the service service
+        type: aws-rdsinstance
+    monitor:
+      protocol: tcp
+      port: "%(network/access_port)s"

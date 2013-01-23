@@ -1,7 +1,7 @@
-# editable platform contents
+# editable service contents
 contents:
   categories: [ lb ]
-# platform configuration
+# service configuration
 config:
   contents:
     sections:

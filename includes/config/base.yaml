@@ -1,23 +1,23 @@
-# platform configuration
+# service configuration
 config:
   doctype: config
-  impl: c2core.resolve.Config
+  impl: c2core.logical.config.Config
   contents:
     sections:
-      platform:
-        name: Platform
-        description: Basic Platform configuration fields
+      service:
+        name: Service
+        description: Basic Service configuration fields
         fields:
-          platform/abbreviation:
-            name: Platform Abbreviation
-            description: Abbreviation for this platform used in AWS names
+          service/abbreviation:
+            name: Service Abbreviation
+            description: Abbreviation for this service used in AWS names
             type: text
             default: base
             sort: 0
             editable: [ none, destroyed ]
-          platform/path:
-            name: Platform Path
-            description: Path to this platform in the deployment repository
+          service/path:
+            name: Service Path
+            description: Path to this service in the deployment repository
             type: text
             default:
             sort: 1

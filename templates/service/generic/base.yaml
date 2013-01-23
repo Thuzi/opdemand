@@ -9,8 +9,8 @@ config:
   network/access_port: 22
   network/admin_cidr: 0.0.0.0/0 # SECURITY: change to allow only trusted source networks
   network/admin_port: 22
-# publish to platform consumers
+# publish to service consumers
 publish:
   - name: Access URL
     description: URL used to access this service
-    template: "%(network/access_protocol)s://%(network/access_host)s:%(network/access_port)s"
+    template: "%(network/access_protocol)s://%(server/admin_user)s@%(network/access_host)s:%(network/access_port)s"

@@ -2,7 +2,7 @@ doctype: load_balancer
 impl: c2aws.loadbalancer.LoadBalancer
 input:
   # name
-  lb_name: lb-%(platform/short_id)s
+  lb_name: lb-%(service/short_id)s
   # aws
   region_name: aws/region_name
   zone_name: aws/zone_name
