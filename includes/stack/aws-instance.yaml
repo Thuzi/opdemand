@@ -11,6 +11,8 @@ input:
   instance_type: server/instance_type
   image_id: server/image_id
   ssh_public_key: server/ssh_public_key
+  # elastic IP support
+  elastic_ip: network/elastic_ip
 contents:
   description: EC2 instance that runs the service
   user_data: |

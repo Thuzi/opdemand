@@ -1,0 +1,7 @@
+# -*- test-case-name: c2server.tests.platform.ServiceGeneric1nodeEipTest -*-
+name: Generic Service (1-node with Elastic IP)
+description: >
+             Generic service consisting of a Key Pair, Security Group and an EC2 instance and an Elastic IP.
+             Triggers fully customizable build and deploy scripts that can be used
+             to create any service.
+stack: 1nodeEIP
