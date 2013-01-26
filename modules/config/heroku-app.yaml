@@ -8,12 +8,20 @@ config:
         description: Configuration for a Heroku Application
         sort: 1
         fields:
+          heroku-app/region:
+            name: Heroku Region
+            description: Heroku Region Name
+            type: clouds
+            default:
+            required: true
+            sort: 1
+            editable: []
           heroku-app/name:
             name: Application Name 
             description: Name of the Heroku Application
             type: text
             default:
-            sort: 1
+            sort: 2
             editable: [ none, destroyed ]
           heroku-app/repository_url:
             name: Git Repository
@@ -21,7 +29,7 @@ config:
             type: repository-url
             default:
             required: true
-            sort: 2
+            sort: 3
             editable: [ none, destroyed ]
           heroku-app/repository_branch:
             name: Git Repository Branch
@@ -29,14 +37,7 @@ config:
             type: repository-branch
             default: master
             required: true
-            sort: 3
-          heroku-app/region:
-            name: Heroku Region
-            description: Heroku Region Name
-            type: text
-            default: heroku-us-east
             sort: 4
-            editable: []
           heroku-app/dyno_map:
             name: Dyno Map
             description: Map of worker types and number of dynos
