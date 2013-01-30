@@ -1,4 +1,4 @@
-name: EC2 Instance
+name: EC2 (Instance)
 description: Amazon EC2 Instance
 provider: ec2-instance
 modules:

@@ -1,4 +1,4 @@
-name: EC2 Security Group
+name: EC2 (Security Group)
 description: Virtual firewall within an EC2 region
 provider: ec2-sg
 modules:

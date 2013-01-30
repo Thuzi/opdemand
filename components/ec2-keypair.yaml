@@ -1,4 +1,4 @@
-name: EC2 Key Pair
+name: EC2 (Key Pair)
 description: Cryptographic Key Pair used to access EC2 Instancess
 provider: ec2-keypair
 modules:

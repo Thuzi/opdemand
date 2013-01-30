@@ -1,4 +1,4 @@
-name: Heroku
+name: Heroku (Application)
 description: Heroku
 provider: heroku-app
 modules:

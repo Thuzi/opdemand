@@ -1,4 +1,4 @@
-name: Elastic Load Balancer
+name: EC2 (Load Balancer)
 description: Elastic Load Balancer to distribute traffic across EC2 Instances
 provider: ec2-elb
 modules:
