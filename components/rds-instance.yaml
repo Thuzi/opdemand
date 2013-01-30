@@ -1,4 +1,4 @@
-name: RDS (DB Instance)
+name: RDS (Instance)
 description: RDS Database Instance
 provider: rds-instance
 modules:
