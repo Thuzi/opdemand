@@ -3,12 +3,9 @@ description: MongoDB replica set including 3 EC2 Instances, a Security Group and
 components:
   - component: ec2-keypair
     id: keypair
-    configure:
-      ec2-keypair/name: mongodb
   - component: ec2-sg
     id: sg
     configure:
-      ec2-sg/name: mongodb
       ec2-sg/rules: [ "0.0.0.0/0,tcp,22,22", "0.0.0.0/0,tcp,27017,27017" ]
   - component: ec2-eip
     id: eip1
