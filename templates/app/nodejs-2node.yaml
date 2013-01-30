@@ -1,5 +1,5 @@
-name: Clojure x 2
-description: Clojure application including an Elastic Load Balancer, 2 EC2 Instances, a Security Group and Key Pair
+name: Node.js Application x 2
+description: Node.js application including an Elastic Load Balancer, 2 EC2 Instances, a Security Group and Key Pair
 components:
   - component: ec2-elb
     consumes: [ instance1, instance2 ]
@@ -11,18 +11,18 @@ components:
     modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, application ]
     configure:
-      puppet/classes: [ "opdemand::common", "opdemand::app::clojure", "opdemand::web::nginx" ]
-      application/repository_url: git://github.com/opdemand/example-clojure-ring.git
-      application/name: clojure
+      puppet/classes: [ "opdemand::common", "opdemand::app::nodejs", "opdemand::web::nginx" ]
+      application/repository_url: git://github.com/opdemand/example-nodejs-express.git
+      application/name: nodejs
   - component: ec2-instance
     id: instance2
     consumes: [ keypair, sg ]
     modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, application ]
     configure:
-      puppet/classes: [ "opdemand::common", "opdemand::app::clojure", "opdemand::web::nginx" ]
-      application/repository_url: git://github.com/opdemand/example-clojure-ring.git
-      application/name: clojure
+      puppet/classes: [ "opdemand::common", "opdemand::app::nodejs", "opdemand::web::nginx" ]
+      application/repository_url: git://github.com/opdemand/example-nodejs-express.git
+      application/name: nodejs
   - component: ec2-sg
     id: sg
     configure:
