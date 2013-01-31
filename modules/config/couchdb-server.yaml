@@ -1,0 +1,46 @@
+contents:
+  categories: [ database, couchdb ]
+  description: Configuration for CouchDB database
+config:
+  contents:
+    sections:
+      couchdb-server:
+        name: CouchDB Server
+        description: Configuration for CouchDB server
+        sort: 17
+        fields:
+          couchdb-server/username:
+            name: CouchDB Username
+            description: Username for CouchDB client access
+            type: text
+            sort: 1
+            default:
+            env_key: COUCHDB_SERVER_USERNAME
+          couchdb-server/password:
+            name: CouchDB Password
+            description: Password for CouchDB client access
+            type: password
+            sort: 2
+            default:
+            env_key: COUCHDB_SERVER_PASSWORD
+          couchdb-server/port:
+            name: CouchDB Server Port
+            description: Port for database listener
+            type: text
+            sort: 3
+            default:
+            env_key: COUCHDB_SERVER_PORT
+          couchdb-server/bind:
+            name: CouchDB Bind Address
+            description: Bind address for the server listener
+            type: text
+            sort: 4
+            default: 0.0.0.0
+            env_key: COUCHDB_SERVER_BIND
+          couchdb-server/allow:
+            name: CouchDB Allow CIDR
+            description: Network CIDR range to allow access
+            type: text
+            sort: 5
+            default: 0.0.0.0/0
+            env_key: COUCHDB_SERVER_ALLOW            

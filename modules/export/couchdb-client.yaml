@@ -1,0 +1,17 @@
+contents:
+  description: Export CouchDB client configuration
+export:
+    contents:       
+        fields:
+            - name: CouchDB Hostname
+              key: couchdb-client/hostname
+              template: "%(public_dns_name)s"
+            - name: CouchDB Port
+              key: couchdb-client/port
+              template: "%(couchdb-server/port)s"
+            - name: CouchDB Username
+              key: couchdb-client/username
+              template: "%(couchdb-server/username)s"
+            - name: CouchDB Password
+              key: couchdb-client/password
+              template: "%(couchdb-server/password)s"

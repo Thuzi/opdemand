@@ -1,0 +1,40 @@
+contents:
+  categories: [ database, couchdb ]
+  description: Configuration for CouchDB clients
+config:
+  contents:
+    sections:
+      couchdb-client:
+        name: CouchDB Client
+        description: Configuration for CouchDB clients
+        sort: 17
+        fields:
+          couchdb-client/hostname:
+            name: CouchDB Hostname
+            description: Hostname for CouchDB client access
+            type: text
+            sort: 1
+            env_key: COUCHDB_HOST
+          couchdb-client/username:
+            name: Username
+            description: Username for CouchDB client access
+            type: text
+            sort: 2
+            default:
+            env_key: COUCHDB_USERNAME
+            required: true
+          couchdb-client/password:
+            name: Password
+            description: Password for CouchDB client access
+            type: text
+            sort: 3
+            default:
+            env_key: COUCHDB_PASSWORD
+            required: true
+          couchdb-client/port:
+            name: Server Port
+            description: Port for CouchDB client access
+            type: text
+            sort: 4
+            default:
+            env_key: COUCHDB_PORT

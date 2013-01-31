@@ -5,13 +5,13 @@ publish:
         fields:
             - name: CouchDB Admin URL
               description: URL used to administer the CouchDB database
-              template: http://%(public_dns_name)s:%(database/port)s/_utils
+              template: http://%(public_dns_name)s:%(couchdb-server/port)s/_utils
               timeout: 10
               healthyafter: 3
               interval: 30
             - name: CouchDB URL
               description: URL used to administer the CouchDB database
-              template: http://%(public_dns_name)s:%(database/port)s/
+              template: http://%(public_dns_name)s:%(couchdb-server/port)s/
               timeout: 10
               healthyafter: 3
               interval: 30
