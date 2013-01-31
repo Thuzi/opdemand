@@ -9,8 +9,6 @@ components:
       publish: [ couchdb ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::database::couchdb" ]
-      database/port: 5984
-      database/type: couchdb
   - component: ec2-sg
     id: sg
     configure:

@@ -28,7 +28,7 @@ config:
             description: Port for database listener
             type: text
             sort: 3
-            default:
+            default: 5984
             env_key: COUCHDB_SERVER_PORT
           couchdb-server/bind:
             name: CouchDB Bind Address
