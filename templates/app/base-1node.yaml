@@ -10,6 +10,7 @@ components:
       publish: [ http ]
     configure:
       ec2-deploy/command: |
+        source .opdemand
         echo Running $DEPLOY_MECHANISM deploy as $DEPLOY_USERNAME...
         sudo apt-get update
         sudo apt-get install -yq apache2
