@@ -15,7 +15,12 @@ components:
     configure:
       ec2-deploy/command: |
         source .opdemand
-        echo Running $DEPLOY_MECHANISM deploy as $DEPLOY_USERNAME...
+        echo Running $DEPLOY_MECHANISM deploy as $DEPLOY_USERNAME...        
+        echo "Waiting for Ubuntu cloud-init to finish"
+        while [ ! -z "`ps auxw |grep cloud-init | grep -v grep`" ] ; do
+          sleep 1
+        done
+        echo "Ubuntu cloud-init complete, continuing initial instance build..."        
         sudo apt-get update
         sudo apt-get install -yq apache2
         echo "##########################################################################"
@@ -27,7 +32,12 @@ components:
     configure:
       ec2-deploy/command: |
         source .opdemand
-        echo Running $DEPLOY_MECHANISM deploy as $DEPLOY_USERNAME...
+        echo Running $DEPLOY_MECHANISM deploy as $DEPLOY_USERNAME...        
+        echo "Waiting for Ubuntu cloud-init to finish"
+        while [ ! -z "`ps auxw |grep cloud-init | grep -v grep`" ] ; do
+          sleep 1
+        done
+        echo "Ubuntu cloud-init complete, continuing initial instance build..."        
         sudo apt-get update
         sudo apt-get install -yq apache2
         echo "##########################################################################"
