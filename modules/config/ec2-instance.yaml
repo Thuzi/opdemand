@@ -22,6 +22,7 @@ config:
             description: Name of AWS zone to use
             type: zone
             default:
+            required: true
             sort: 2
             editable: [ none, destroyed ]
             env_key: EC2_ZONE_NAME
