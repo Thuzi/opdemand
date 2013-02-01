@@ -43,7 +43,7 @@ config:
             name: Repository Revision
             description: Repository revision to pull latest code from 
             type: text
-            default: unstable
+            default: origin/unstable
             sort: 4
             env_key: PUPPET_REPOSITORY_REVISION
           puppet/repository_provider:

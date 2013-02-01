@@ -20,7 +20,7 @@ config:
             name: Repository Revision
             description: Repository revision to pull latest code from
             type: text
-            default: unstable
+            default: origin/unstable
             sort: 2
             env_key: DEPLOY_REPOSITORY_REVISION     
           git-deploy/build_path:
