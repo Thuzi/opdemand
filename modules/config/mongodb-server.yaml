@@ -1,8 +1,6 @@
-# editable service contents
 contents:
   categories: [ database, mongodb ]
   description: Configuration for MongoDB database
-# service configuration
 config:
   contents:
     sections:
@@ -30,7 +28,7 @@ config:
             description: Port for database listener
             type: text
             sort: 3
-            default:
+            default: 27017
             env_key: MONGODB_SERVER_PORT
           mongodb-server/bind:
             name: MongoDB Bind Address

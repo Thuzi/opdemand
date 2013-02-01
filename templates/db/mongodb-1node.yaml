@@ -9,7 +9,6 @@ components:
       publish: [ mongodb ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::database::mongodb" ]
-      mongodb-server/port: 27017
   - component: ec2-sg
     id: sg
     configure:
