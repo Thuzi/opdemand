@@ -26,7 +26,7 @@ config:
           couchdb-client/password:
             name: Password
             description: Password for CouchDB client access
-            type: text
+            type: password
             sort: 3
             default:
             env_key: COUCHDB_PASSWORD

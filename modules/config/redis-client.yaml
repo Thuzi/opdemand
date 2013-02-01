@@ -15,7 +15,7 @@ config:
             type: text
             sort: 1
             default:
-            env_key: REDIS_HOSTNAME
+            env_key: REDIS_HOST
           redis-client/port:
             name: Port
             description: Port used for Redis client access

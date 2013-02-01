@@ -15,7 +15,7 @@ config:
             type: text
             sort: 1
             default:
-            env_key: MEMCACHED_HOSTNAME
+            env_key: MEMCACHED_HOST
           memcached-client/port:
             name: Port
             description: Port used for Memcached client access
