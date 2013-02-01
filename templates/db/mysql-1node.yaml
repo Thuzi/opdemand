@@ -4,12 +4,11 @@ components:
   - component: ec2-instance
     consumes: [ keypair, sg ]
     modules: 
-      config: [ ec2-deploy, git-deploy, ssh, puppet, database ]
-      export: [ database ]
+      config: [ ec2-deploy, git-deploy, ssh, puppet, mysql-server ]
+      export: [ mysql-client ]
+      publish: [ mysql ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::database::mysql" ]
-      database/port: 3306
-      database/type: mysql
   - component: ec2-sg
     id: sg
     configure:

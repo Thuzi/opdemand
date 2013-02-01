@@ -1,0 +1,46 @@
+contents:
+  categories: [ database, mysql ]
+  description: Configuration for MySQL servers
+config:
+  contents:
+    sections:
+      mysql-server:
+        name: MySQL Server
+        description: Configuration for MySQL servers
+        sort: 13
+        fields:
+          mysql-server/port:
+            name: MySQL Port
+            description: TCP port for MySQL server listener
+            type: text
+            sort: 1
+            default: 3306
+            env_key: MYSQL_SERVER_PORT
+          mysql-server/bind:
+            name: MySQL Bind Address
+            description: Bind address used for MySQL server listener
+            type: text
+            sort: 2
+            default: 0.0.0.0
+            env_key: MYSQL_SERVER_BIND          
+          mysql-server/username:
+            name: Username
+            description: Optional username used for MySQL client access
+            type: text
+            sort: 3
+            default:
+            env_key: MYSQL_SERVER_USERNAME              
+          mysql-server/password:
+            name: Password
+            description: Optional password used for MySQL client access
+            type: password
+            sort: 4
+            default:
+            env_key: MYSQL_SERVER_PASSWORD 
+          mysql-server/db_name:
+            name: Database Name
+            description: Optional database name used for MySQL client access
+            type: password
+            sort: 5
+            default:
+            env_key: MYSQL_SERVER_DBNAME          

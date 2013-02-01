@@ -8,10 +8,13 @@ export:
               template: "%(public_dns_name)s"
             - name: MySQL Port
               key: mysql-client/port
-              template: "%(port)s"
+              template: "%(mysql-server/port)s"
             - name: MySQL Username
               key: mysql-client/username
-              template: "%(master_username)s"
+              template: "%(mysql-server/username)s"
             - name: MySQL Password
               key: mysql-client/password
-              template: "%(master_password)s"
+              template: "%(mysql-server/password)s"
+            - name: MySQL DB Name
+              key: mysql-client/db_name
+              template: "%(mysql-server/db_name)s"
