@@ -16,46 +16,41 @@ config:
             description: List of Puppet classes to apply
             type: list
             default: [ "opdemand::common" ]
-            sort: 0
+            sort: 1
             env_key: PUPPET_CLASSES
           puppet/repository_url:
             name: Repository URL
             description: Repository URL containing Puppet code
             type: repository-url
             default: git://github.com/opdemand/puppet-modules.git
-            sort: 1
+            editable: [ none, destroyed ]
+            sort: 2
             env_key: PUPPET_REPOSITORY_URL
           puppet/repository_key:
             name: Repository Key
             description: SSH private key to access the repository
             type: textarea
             default:
-            sort: 2
+            sort: 3
             env_key: PUPPET_REPOSITORY_KEY
           puppet/repository_path:
             name: Repository Path
             description: Path to local copy of repository
             type: text
             default: /usr/share/puppet/modules
-            sort: 3
+            editable: [ none, destroyed ]
+            sort: 4
             env_key: PUPPET_REPOSITORY_PATH
           puppet/repository_revision:
             name: Repository Revision
             description: Repository revision to pull latest code from 
             type: text
             default: origin/unstable
-            sort: 4
-            env_key: PUPPET_REPOSITORY_REVISION
-          puppet/repository_provider:
-            name: Repository Provider
-            description: Provider type for this repository
-            type: text
-            default: git
             sort: 5
-            env_key: PUPPET_REPOSITORY_PROVIDER
+            env_key: PUPPET_REPOSITORY_REVISION
           puppet/debug:
             name: Puppet Debugging
-            description: Debug flag for puppet runs
+            description: Debug flag for Puppet runs
             type: boolean
             default: false
             sort: 6

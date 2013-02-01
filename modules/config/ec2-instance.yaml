@@ -8,12 +8,11 @@ config:
         description: Configuration for EC2 instances
         sort: 8
         fields:
-          # aws settings
           ec2-instance/region_name:
             name: Region
             description: Name of AWS region
             type: clouds
-            default: #us-east-1
+            default:
             required: true
             sort: 1
             editable: [ none, destroyed ]
@@ -54,7 +53,7 @@ config:
             name: Instance Type
             description: EC2 Instance Type
             type: instance
-            default: #c1.medium
+            default:
             required: true
             sort: 6
             editable: [ none, destroyed ]
@@ -100,6 +99,7 @@ config:
             type: text
             default:
             sort: 12
+            editable: [ none, destroyed ]
           ec2-instance/user_data:
             name: User Data
             description: User Data to pass to instance on boot

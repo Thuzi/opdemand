@@ -14,6 +14,7 @@ config:
             description: Git repository URL containing deployment code
             type: repository-url
             default: git://github.com/opdemand/opdemand-ubuntu.git
+            editable: [ none, destroyed ]
             sort: 1
             env_key: DEPLOY_REPOSITORY_URL
           git-deploy/repository_revision:
