@@ -15,7 +15,7 @@ config:
             default:
             required: true
             sort: 1
-            editable: []
+            editable: [ none, destroyed ]
           heroku-app/name:
             name: Application Name 
             description: Name of the Heroku Application
@@ -56,12 +56,14 @@ config:
             type: map
             default: {}
             sort: 7
+            editable: []
           heroku-app/releases:
             name: Releases
             description: List of releases to this application
             type: list
             default: []
             sort: 8
+            editable: []
           heroku-app/private_key:
             name: Private key
             description: Private key used for cloning and pushing to Heroku
@@ -75,3 +77,4 @@ config:
             type: text
             default: cedar
             sort: 10
+            editable: []
