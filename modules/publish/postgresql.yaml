@@ -1,0 +1,11 @@
+contents:
+  description: PostgreSQL Port Access
+publish:
+    contents:
+        fields:
+            - name: PostgreSQL Port
+              description: TCP Port used to access PostgreSQL database services
+              template: tcp://%(public_dns_name)s:%(postgresql-server/port)s
+              timeout: 10 
+              healthyafter: 3
+              interval: 30

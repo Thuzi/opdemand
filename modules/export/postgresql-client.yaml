@@ -1,0 +1,20 @@
+contents:
+  description: Export PostgreSQL client configuration
+export:
+    contents:       
+        fields:
+            - name: PostgreSQL Hostname
+              key: postgresql-client/host
+              template: "%(public_dns_name)s"
+            - name: PostgreSQL Port
+              key: postgresql-client/port
+              template: "%(postgresql-server/port)s"
+            - name: PostgreSQL Username
+              key: postgresql-client/username
+              template: "%(postgresql-server/username)s"
+            - name: PostgreSQL Password
+              key: postgresql-client/password
+              template: "%(postgresql-server/password)s"
+            - name: PostgreSQL Database Name
+              key: postgresql-client/db_name
+              template: "%(postgresql-server/db_name)s"

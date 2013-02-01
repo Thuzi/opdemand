@@ -4,12 +4,11 @@ components:
   - component: ec2-instance
     consumes: [ keypair, sg ]
     modules: 
-      config: [ ec2-deploy, git-deploy, ssh, puppet, database ]
-      export: [ database ]
+      config: [ ec2-deploy, git-deploy, ssh, puppet, postgresql-server ]
+      export: [ postgresql-client ]
+      publish: [ postgresql ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::database::postgresql" ]
-      database/port: 5432
-      database/type: postgresql
   - component: ec2-sg
     id: sg
     configure:
