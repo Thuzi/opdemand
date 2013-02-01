@@ -37,18 +37,21 @@ config:
             type: repository-branch
             default: master
             required: true
+            editable: [ none, destroyed, active ]
             sort: 4
           heroku-app/dyno_map:
             name: Dyno Map
             description: Map of worker types and number of dynos
             type: map
             default: { 'web': 1 }
+            editable: [ none, destroyed, active ]
             sort: 5
           heroku-app/config:
             name: Config Variables
             description: Environment variables passed to the Heroku application
             type: map
             default: {}
+            editable: [ none, destroyed, active ]
             sort: 6
           heroku-app/processes:
             name: Processes
