@@ -1,0 +1,32 @@
+contents:
+  categories: [ cache, redis ]
+  description: Configuration for Redis service
+config:
+  contents:
+    sections:
+      redis-server:
+        name: Redis Server
+        description: Configuration for Redis service
+        sort: 12
+        fields:
+          redis-server/password:
+            name: Password
+            description: Optional password for accessing the Redis service
+            type: password
+            sort: 1
+            default: 
+            env_key: REDIS_SERVER_PASSWORD
+          redis-server/port:
+            name: Port
+            description: TCP port for Redis server listener
+            type: text
+            sort: 2
+            default: 6379
+            env_key: REDIS_SERVER_PORT
+          redis-server/bind:
+            name: Bind Address
+            description: Bind address for Redis server listener
+            type: text
+            sort: 3
+            default: 0.0.0.0
+            env_key: REDIS_SERVER_BIND

@@ -1,0 +1,14 @@
+contents:
+  description: Export Redis client configuration
+export:
+    contents:       
+        fields:
+            - name: Redis Hostname
+              key: redis-client/hostname
+              template: "%(public_dns_name)s"
+            - name: Redis Port
+              key: redis-client/port
+              template: "%(redis-server/port)s"
+            - name: Redis Password
+              key: redis-client/password
+              template: "%(redis-server/password)s"              

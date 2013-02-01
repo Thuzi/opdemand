@@ -1,0 +1,32 @@
+contents:
+  categories: [ cache, redis ]
+  description: Configuration for Redis client access
+config:
+  contents:
+    sections:
+      redis-client:
+        name: Redis Client
+        description: Configuration for Redis client access
+        sort: 14
+        fields:
+          redis-client/hostname:
+            name: Hostname
+            description: Hostname used for Redis client access
+            type: text
+            sort: 1
+            default:
+            env_key: REDIS_HOSTNAME
+          redis-client/port:
+            name: Port
+            description: Port used for Redis client access
+            type: text
+            sort: 2
+            default: 6379
+            env_key: REDIS_PORT
+          redis-client/password:
+            name: Password
+            description: Password used for Redis client access
+            type: password
+            sort: 3
+            default: 
+            env_key: REDIS_PASSWORD

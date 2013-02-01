@@ -4,14 +4,11 @@ components:
   - component: ec2-instance
     consumes: [ keypair, sg ]
     modules: 
-      config: [ ec2-deploy, git-deploy, ssh, puppet, cache ]
-      export: [ cache ]
+      config: [ ec2-deploy, git-deploy, ssh, puppet, redis-server ]
+      export: [ redis-client ]
+      publish: [ redis ]
     configure:
       puppet/classes: [ "opdemand::common", "opdemand::cache::redis" ]
-      cache/username: admin
-      cache/password: changeme123.
-      cache/port: 6379
-      cache/type: redis
   - component: ec2-sg
     id: sg
     configure:
