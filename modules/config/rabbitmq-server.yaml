@@ -1,0 +1,33 @@
+contents:
+  categories: [ mq, rabbitmq ]
+  description: Configuration for RabbitMQ servers
+config:
+  contents:
+    sections:
+      rabbitmq-server:
+        name: RabbitMQ Server
+        description: Configuration for RabbitMQ servers
+        sort: 15
+        fields:
+          rabbitmq-server/port:
+            name: Listener Port
+            description: TCP Port to listen on 
+            type: text
+            sort: 1
+            default: 5672
+            env_key: RABBITMQ_PORT
+          rabbitmq-server/bind:
+            name: Bind Address
+            description: Address to bind to for listening
+            type: text
+            sort: 2
+            default: ""
+            env_key: RABBITMQ_BIND
+          rabbitmq-server/nodename:
+            name: Node Name
+            description: Node name used for clustering
+            type: text
+            sort: 0
+            default:
+            editable: [ none, destroyed ]
+            env_key: RABBITMQ_NODENAME

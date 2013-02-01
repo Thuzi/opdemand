@@ -1,0 +1,17 @@
+contents:
+  description: Export RabbitMQ client configuration
+export:
+    contents:       
+        fields:
+            - name: RabbitMQ Hostname
+              key: rabbitmq-client/host
+              template: "%(public_dns_name)s"
+            - name: RabbitMQ Port
+              key: rabbitmq-client/port
+              template: "%(rabbitmq-server/port)s"
+            - name: RabbitMQ Username
+              key: rabbitmq-client/username
+              template: "%(rabbitmq-server/username)s"
+            - name: RabbitMQ Password
+              key: rabbitmq-client/password
+              template: "%(rabbitmq-server/password)s"

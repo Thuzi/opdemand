@@ -1,0 +1,25 @@
+contents:
+  categories: [ mq, rabbitmq ]
+  description: Configuration for RabbitMQ clients
+config:
+  contents:
+    sections:
+      rabbitmq-client:
+        name: RabbitMQ Client
+        description: Configuration for RabbitMQ messaging
+        sort: 15
+        fields:
+          rabbitmq-client/host:
+            name: Hostname
+            description: Hostname for RabbitMQ client access
+            type: text
+            sort: 1
+            default:
+            env_key: RABBITMQ_HOST
+          rabbitmq-client/port:
+            name: Port
+            description: TCP Port for RabbitMQ client access
+            type: text
+            sort: 2
+            default: 5672
+            env_key: RABBITMQ_PORT
