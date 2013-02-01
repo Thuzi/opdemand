@@ -1,4 +1,4 @@
-name: Ruby Application
+name: Ruby
 description: Ruby application including an EC2 Instance, a Security Group and Key Pair
 components:
   - component: ec2-instance

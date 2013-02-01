@@ -1,5 +1,5 @@
-name: Custom Application
-description: Custom application including an EC2 Instance, a Security Group and Key Pair
+name: Custom
+description: Custom application stack including an EC2 Instance, a Security Group and Key Pair
 components:
   - component: ec2-instance
     consumes: [ keypair, sg ]
