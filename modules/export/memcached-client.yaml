@@ -1,0 +1,11 @@
+contents:
+  description: Export Memcached client configuration
+export:
+    contents:       
+        fields:
+            - name: Memcached Hostname
+              key: memcached-client/hostname
+              template: "%(public_dns_name)s"
+            - name: Memcached Port
+              key: memcached-client/port
+              template: "%(memcached-server/port)s"

@@ -1,0 +1,39 @@
+contents:
+  categories: [ cache, memcached ]
+  description: Configuration for Memcached service
+config:
+  contents:
+    sections:
+      memcached-server:
+        name: Memcached Server
+        description: Configuration for Memcached service
+        sort: 14
+        fields:
+          memcached-server/memory:
+            name: Memory Size
+            description: Size of memory to use in megabytes
+            type: text
+            sort: 1
+            default: 256
+            env_key: MEMCACHED_SERVER_MEMORY
+          memcached-server/port:
+            name: Port
+            description: TCP port for Memcached server listener
+            type: text
+            sort: 2
+            default: 11211
+            env_key: MEMCACHED_SERVER_PORT
+          memcached-server/bind:
+            name: Bind Address
+            description: Bind address for Memcached server listener
+            type: text
+            sort: 3
+            default: 0.0.0.0
+            env_key: MEMCACHED_SERVER_BIND
+          memcached-server/daemon_user:
+            name: Daemon User
+            description: Username to run Memcached daemon (avoid root)
+            type: text
+            sort: 4
+            default: memcache
+            env_key: MEMCACHED_SERVER_DAEMONUSER

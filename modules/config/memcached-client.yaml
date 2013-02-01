@@ -1,0 +1,25 @@
+contents:
+  categories: [ cache, memcached ]
+  description: Configuration for Memcached client access
+config:
+  contents:
+    sections:
+      memcached-client:
+        name: Memcached Client
+        description: Configuration for Memcached client access
+        sort: 14
+        fields:
+          memcached-client/hostname:
+            name: Hostname
+            description: Hostname used for Memcached client access
+            type: text
+            sort: 1
+            default:
+            env_key: MEMCACHED_HOSTNAME
+          memcached-client/port:
+            name: Port
+            description: Port used for Memcached client access
+            type: text
+            sort: 2
+            default: 11211  
+            env_key: MEMCACHED_PORT
