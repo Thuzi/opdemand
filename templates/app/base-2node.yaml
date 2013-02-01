@@ -1,0 +1,39 @@
+name: Base x 2
+description: |
+  Base application stack that includes an Elastic Load Balancer, 2 EC2 Instances, a Security Group and Key Pair.
+  Uses a shell scripts to install an example Apache2 web server.
+components:
+  - component: ec2-elb
+    consumes: [ instance1, instance2 ]
+    modules:
+      publish: [ http ]
+  - component: ec2-instance
+    id: instance1
+    consumes: [ keypair, sg ]
+    modules: 
+      config: [ ec2-deploy ]
+      publish: [ http ]
+    configure:
+      ec2-deploy/command: |
+        echo Running $DEPLOY_MECHANISM deploy as $DEPLOY_USERNAME...
+        sudo apt-get update
+        sudo apt-get install -yq apache2
+        echo "##########################################################################"
+  - component: ec2-instance
+    id: instance2
+    consumes: [ keypair, sg ]
+    modules: 
+      config: [ ec2-deploy ]
+      publish: [ http ]
+    configure:
+      ec2-deploy/command: |
+        echo Running $DEPLOY_MECHANISM deploy as $DEPLOY_USERNAME...
+        sudo apt-get update
+        sudo apt-get install -yq apache2
+        echo "##########################################################################"
+  - component: ec2-sg
+    id: sg
+    configure:
+      ec2-sg/rules: [ "0.0.0.0/0,tcp,22,22", "0.0.0.0/0,tcp,80,80" ]
+  - component: ec2-keypair
+    id: keypair
