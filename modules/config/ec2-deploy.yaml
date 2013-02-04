@@ -15,6 +15,7 @@ config:
             type: text
             default: ssh
             sort: 1
+            editable: []
             env_key: DEPLOY_MECHANISM
           ec2-deploy/username:
             name: Deploy Username
