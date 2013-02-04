@@ -22,6 +22,7 @@ config:
             description: Name of AWS zone to use
             type: zone
             default:
+            required: true
             sort: 2
             editable: [ none, destroyed ]
             env_key: RDS_ZONE_NAME
@@ -33,12 +34,12 @@ config:
             sort: 3
             env_key: RDS_MULTI_AZ
           rds-instance/id:
-            name: Instance ID
+            name: Instance Identifier
             description: RDS Instance ID
             type: text
             default:
-            sort: 4
             required: true
+            sort: 4
             editable: [ none, destroyed ]
             env_key: RDS_INSTANCE_ID
           rds-instance/public_dns_name:
@@ -81,7 +82,7 @@ config:
           rds-instance/master_password:
             name: Master Password
             description: Password for database access
-            type: text
+            type: password
             default: 
             required: true
             sort: 10
