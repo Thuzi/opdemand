@@ -48,7 +48,6 @@ config:
             type: list
             default: []
             sort: 6
-            editable: [ none, destroyed ]
           ec2-elb/source_security_group:
             name: Source Security Group
             description: Name of source security group for ELB traffic
