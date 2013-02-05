@@ -22,7 +22,6 @@ config:
             sort: 2
             default:
             env_key: COUCHDB_USERNAME
-            required: true
           couchdb-client/password:
             name: Password
             description: Password for CouchDB client access
@@ -30,7 +29,6 @@ config:
             sort: 3
             default:
             env_key: COUCHDB_PASSWORD
-            required: true
           couchdb-client/port:
             name: Server Port
             description: Port for CouchDB client access
