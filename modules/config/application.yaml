@@ -81,17 +81,18 @@ config:
             default: production # default to production
             sort: 8
             env_key: APPLICATION_MODE
-          # network config
+          # foreman config
+          application/concurrency:
+            name: Concurrency
+            description: Foreman style concurrecy string
+            type: text
+            default: web=1
+            sort: 9
+            env_key: APPLICATION_CONCURRENCY
           application/port:
-            name: Application Port
-            description: First port this application listener
+            name: Start Port
+            description: First port for application listeners
             type: text
             default: 5000
-            sort: 9
-            env_key: APPLICATION_PORT
-          application/listeners:
-            name: Application Listeners
-            description: Number of listeners for this application
-            type: int
-            default: 1
             sort: 10
+            env_key: APPLICATION_PORT
