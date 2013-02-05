@@ -38,10 +38,3 @@ config:
             default: scripts/deploy_puppet.sh
             sort: 4
             env_key: DEPLOY_SCRIPT_PATH
-          git-deploy/key:
-            name: Deploy Key
-            description: Private key used to trigger deployment commands
-            type:
-            default:
-            sort: 5
-            env_key: DEPLOY_KEY
