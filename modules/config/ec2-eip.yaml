@@ -16,3 +16,17 @@ config:
             required: true
             sort: 1
             editable: [ none, destroyed ]
+          ec2-eip/public_ip:
+            name: Public IP
+            description: Public address of the Elastic IP
+            type: text
+            default:
+            sort: 2
+            editable: []
+          ec2-eip/dns_name:
+            name: Public DNS Name
+            description: Public DNS name for the Elastic IP
+            type: text
+            default:
+            sort: 3
+            editable: []
