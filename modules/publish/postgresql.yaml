@@ -1,5 +1,5 @@
 contents:
-  description: PostgreSQL Port Access
+  description: Publish PostgreSQL Database Port
 publish:
     contents:
         fields:

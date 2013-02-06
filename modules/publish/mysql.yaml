@@ -1,5 +1,5 @@
 contents:
-  description: MySQL Database Port
+  description: Publish MySQL Database Port
 publish:
     contents:
         fields:

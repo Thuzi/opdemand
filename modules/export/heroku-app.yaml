@@ -1,7 +1,7 @@
 contents:
   description: Export Heroku Application URL
 export:
-    contents:       
+    contents:
         fields:
             - name: Application URL
               key: heroku-app/host

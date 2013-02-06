@@ -1,5 +1,5 @@
 contents:
-  description: HTTP application access
+  description: Publish HTTP application URL
 publish:
     contents:
         fields:

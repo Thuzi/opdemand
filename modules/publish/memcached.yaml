@@ -1,5 +1,5 @@
 contents:
-  description: Memcached Port Access
+  description: Publish Memcached Service Port
 publish:
     contents:
         fields:

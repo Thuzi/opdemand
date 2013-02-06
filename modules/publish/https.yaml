@@ -1,5 +1,5 @@
 contents:
-  description: HTTPS application access
+  description: Publish HTTPS application URL
 publish:
     contents:
         fields:

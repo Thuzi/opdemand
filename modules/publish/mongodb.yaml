@@ -1,5 +1,5 @@
 contents:
-  description: MongoDB Port Access
+  description: Publish MongoDB Database Port
 publish:
     contents:
         fields:

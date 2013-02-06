@@ -1,5 +1,5 @@
 contents:
-  description: Heroku URL Publisher
+  description: Publish Heroku Application URL
 publish:
     contents:       
         fields:

@@ -1,5 +1,5 @@
 contents:
-  description: RabbitMQ Port Access
+  description: Publish RabbitMQ Service Port
 publish:
     contents:
         fields:

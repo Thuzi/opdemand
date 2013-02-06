@@ -1,5 +1,5 @@
 contents:
-  description: Export security group names  
+  description: Export Security Group names  
 export:
     contents: 
         fields:
