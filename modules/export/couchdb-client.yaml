@@ -3,6 +3,9 @@ contents:
 export:
     contents:       
         fields:
+            - name: CouchDB URL
+              key: couchdb-client/url
+              template: "http://%(public_dns_name)s:%(couchdb-server/port)s"
             - name: CouchDB Hostname
               key: couchdb-client/hostname
               template: "%(public_dns_name)s"
