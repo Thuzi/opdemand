@@ -57,10 +57,9 @@ config:
           ec2-deploy/key:
             name: Deploy Key
             description: Private key used to trigger deployment commands
-            type: text
+            type: textarea
             default:
             sort: 4
-            required: true
             env_key: DEPLOY_KEY
           ec2-deploy/debug:
             name: Deploy Debugging
