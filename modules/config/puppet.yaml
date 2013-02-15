@@ -23,7 +23,6 @@ config:
             description: Repository URL containing Puppet code
             type: repository-url
             default: git://github.com/opdemand/puppet-modules.git
-            editable: [ none, destroyed ]
             sort: 2
             env_key: PUPPET_REPOSITORY_URL
           puppet/repository_key:
@@ -38,7 +37,6 @@ config:
             description: Path to local copy of repository
             type: text
             default: /usr/share/puppet/modules
-            editable: [ none, destroyed ]
             sort: 4
             env_key: PUPPET_REPOSITORY_PATH
           puppet/repository_revision:
