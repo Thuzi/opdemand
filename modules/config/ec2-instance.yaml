@@ -163,3 +163,9 @@ config:
                  EOF
                - chmod +x /var/cache/opdemand/ssh-bootstrap
                - /var/cache/opdemand/ssh-bootstrap               
+          ec2-instance/tags:
+            name: Tags
+            description: User defined tags stored on the EC2 instance
+            type: map
+            default: {}
+            sort: 14
