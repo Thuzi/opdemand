@@ -20,7 +20,8 @@ config:
             name: ELB Name
             description: Unique name identifier for ELB
             type: text
-            default: opdemand-elb
+            default:
+            required: true
             sort: 2
             editable: [ none, destroyed ]
           ec2-elb/public_dns_name:
