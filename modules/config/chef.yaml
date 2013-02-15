@@ -1,0 +1,55 @@
+# editable service contents
+contents:
+  categories: [ chef ]
+  description: Configuration for Chef Solo configuration management
+# service configuration
+config:
+  contents:
+    sections:
+      chef:
+        name: Chef
+        description: Configuration for Chef configuration management
+        sort: 13
+        fields:
+          chef/recipes:
+            name: Chef Recipies
+            description: List of Chef Recipies to apply
+            type: list
+            default: [ ]
+            sort: 1
+            env_key: CHEF_RECIPIES
+          chef/repository_url:
+            name: Repository URL
+            description: Repository URL containing Chef cookbooks
+            type: repository-url
+            default: 
+            sort: 2
+            env_key: CHEF_REPOSITORY_URL
+          chef/repository_key:
+            name: Repository Key
+            description: SSH private key to access the repository
+            type: textarea
+            default:
+            sort: 3
+            env_key: CHEF_REPOSITORY_KEY
+          chef/repository_path:
+            name: Repository Path
+            description: Path to local copy of repository
+            type: text
+            default: /var/chef-solo/cookbooks
+            sort: 4
+            env_key: CHEF_REPOSITORY_PATH
+          chef/repository_revision:
+            name: Repository Revision
+            description: Repository revision to pull latest code from 
+            type: text
+            default:
+            sort: 5
+            env_key: CHEF_REPOSITORY_REVISION
+          chef/debug:
+            name: Chef Debugging
+            description: Debug flag for Chef runs
+            type: boolean
+            default: false
+            sort: 6
+            env_key: CHEF_DEBUG
