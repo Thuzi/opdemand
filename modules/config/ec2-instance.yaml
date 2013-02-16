@@ -73,7 +73,6 @@ config:
             default:
             required: true
             sort: 8
-            editable: [ none, destroyed ]
           ec2-instance/security_groups:
             name: Security Groups
             description: List of security groups to restrict inbound access
@@ -81,7 +80,6 @@ config:
             default: []
             required: true
             sort: 9
-            editable: [ none, destroyed ]
           ec2-instance/volumes:
             name: Volumes
             description: List of volumes (EBS & Ephemeral)
