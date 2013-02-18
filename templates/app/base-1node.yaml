@@ -9,6 +9,8 @@ components:
       config: [ ec2-deploy ]
       publish: [ http ]
     configure:
+      ec2-instance/tags:
+        Name: Base App
       ec2-deploy/command: |
         source .opdemand
         echo Running $DEPLOY_MECHANISM deploy as $DEPLOY_USERNAME...        

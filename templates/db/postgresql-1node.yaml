@@ -8,6 +8,8 @@ components:
       export: [ postgresql-client ]
       publish: [ postgresql ]
     configure:
+      ec2-instance/tags:
+        Name: PostgreSQL
       puppet/classes: [ "opdemand::common", "opdemand::database::postgresql" ]
   - component: ec2-sg
     id: sg

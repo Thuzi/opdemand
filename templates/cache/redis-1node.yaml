@@ -8,6 +8,8 @@ components:
       export: [ redis-client ]
       publish: [ redis ]
     configure:
+      ec2-instance/tags:
+        Name: Redis
       puppet/classes: [ "opdemand::common", "opdemand::cache::redis" ]
   - component: ec2-sg
     id: sg

@@ -8,6 +8,8 @@ components:
       export: [ couchdb-client ]
       publish: [ couchdb ]
     configure:
+      ec2-instance/tags:
+        Name: CouchDB
       puppet/classes: [ "opdemand::common", "opdemand::database::couchdb" ]
   - component: ec2-sg
     id: sg

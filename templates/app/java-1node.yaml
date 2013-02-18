@@ -7,6 +7,8 @@ components:
       config: [ ec2-deploy, git-deploy, ssh, puppet, application ]
       publish: [ http ]
     configure:
+      ec2-instance/tags:
+        Name: Java App
       puppet/classes: [ "opdemand::common", "opdemand::app::jetty", "opdemand::web::nginx" ]
       application/repository_url: git://github.com/opdemand/example-java-jetty.git
       application/name: jetty

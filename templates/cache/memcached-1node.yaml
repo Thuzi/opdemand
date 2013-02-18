@@ -8,6 +8,8 @@ components:
       export: [ memcached-client ]
       publish: [ memcached ]
     configure:
+      ec2-instance/tags:
+        Name: Memcached
       puppet/classes: [ "opdemand::common", "opdemand::cache::memcached" ]
   - component: ec2-sg
     id: sg

@@ -8,6 +8,8 @@ components:
       export: [ mysql-client ]
       publish: [ mysql ]
     configure:
+      ec2-instance/tags:
+        Name: MySQL
       puppet/classes: [ "opdemand::common", "opdemand::database::mysql" ]
   - component: ec2-sg
     id: sg

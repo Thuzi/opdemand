@@ -8,6 +8,8 @@ components:
       export: [ mongodb-client ]
       publish: [ mongodb ]
     configure:
+      ec2-instance/tags:
+        Name: MongoDB
       puppet/classes: [ "opdemand::common", "opdemand::database::mongodb" ]
   - component: ec2-sg
     id: sg

@@ -11,6 +11,8 @@ components:
     modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, application ]
     configure:
+      ec2-instance/tags:
+        Name: Python App 1
       puppet/classes: [ "opdemand::common", "opdemand::app::python", "opdemand::web::nginx" ]
       application/repository_url: git://github.com/opdemand/example-python-flask.git
       application/name: python
@@ -20,6 +22,8 @@ components:
     modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, application ]
     configure:
+      ec2-instance/tags:
+        Name: Python App 2
       puppet/classes: [ "opdemand::common", "opdemand::app::python", "opdemand::web::nginx" ]
       application/repository_url: git://github.com/opdemand/example-python-flask.git
       application/name: python

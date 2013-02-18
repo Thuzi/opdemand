@@ -27,6 +27,8 @@ components:
       export: [ mongodb-client ]
       publish: [ mongodb ]
     configure:
+      ec2-instance/tags:
+        Name: MongoDB 1
       puppet/classes: [ "opdemand::common", "opdemand::database::mongodb" ]
       mongodb-server/port: 27017
       mongodb-server/replset: rs0
@@ -38,6 +40,8 @@ components:
       export: [ mongodb-client ]
       publish: [ mongodb ]
     configure:
+      ec2-instance/tags:
+        Name: MongoDB 2
       puppet/classes: [ "opdemand::common", "opdemand::database::mongodb" ]
       mongodb-server/port: 27017
       mongodb-server/replset: rs0
@@ -49,6 +53,8 @@ components:
       export: [ mongodb-client ]
       publish: [ mongodb ]
     configure:
+      ec2-instance/tags:
+        Name: MongoDB 3
       puppet/classes: [ "opdemand::common", "opdemand::database::mongodb" ]
       mongodb-server/port: 27017
       mongodb-server/replset: rs0

@@ -165,5 +165,6 @@ config:
             name: Tags
             description: User defined tags stored on the EC2 instance
             type: map
-            default: {}
+            default:
+              Name: Instance
             sort: 14

@@ -11,6 +11,8 @@ components:
     modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, application ]
     configure:
+      ec2-instance/tags:
+        Name: Node.js App 1
       puppet/classes: [ "opdemand::common", "opdemand::app::nodejs", "opdemand::web::nginx" ]
       application/repository_url: git://github.com/opdemand/example-nodejs-express.git
       application/name: nodejs
@@ -20,6 +22,8 @@ components:
     modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, application ]
     configure:
+      ec2-instance/tags:
+        Name: Node.js App 2
       puppet/classes: [ "opdemand::common", "opdemand::app::nodejs", "opdemand::web::nginx" ]
       application/repository_url: git://github.com/opdemand/example-nodejs-express.git
       application/name: nodejs
