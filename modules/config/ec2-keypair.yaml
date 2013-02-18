@@ -30,4 +30,3 @@ config:
             type: textarea
             default:
             sort: 3
-            editable: [ none, destroyed ]
