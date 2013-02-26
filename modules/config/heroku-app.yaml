@@ -30,7 +30,6 @@ config:
             default:
             required: true
             sort: 3
-            editable: [ none, destroyed ]
           heroku-app/repository_branch:
             name: Git Repository Branch
             description: Branch, tag or SHA from the source Git Repository
