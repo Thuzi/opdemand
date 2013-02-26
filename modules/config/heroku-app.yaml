@@ -70,7 +70,6 @@ config:
             type: textarea
             default:
             sort: 9
-            editable: [ none, destroyed ]
           heroku-app/stack:
             name: Heroku Stack
             description: Name of Heroku application stack to use
