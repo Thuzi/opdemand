@@ -1,0 +1,55 @@
+# editable service contents
+contents:
+  categories: [ nginx ]
+  description: Configuration for Nginx web server
+# service configuration
+config:
+  contents:
+    sections:
+      nginx:
+        name: Nginx
+        description: Configuration for Nginx web server
+        sort: 15
+        fields:
+          nginx/app_port:
+            name: Application Port
+            description: Start port for the upstream application
+            type: text
+            default: 5000
+            sort: 1
+            env_key: NGINX_APP_PORT
+          nginx/app_listeners:
+            name: Application Listeners
+            description: Number of upstream listeners incrementing from start port
+            type: text
+            default: 1
+            sort: 2
+            env_key: NGINX_APP_LISTENERS
+          nginx/app_name:
+            name: Application Name
+            description: Name of upstream application
+            type: text
+            default: app
+            sort: 3
+            env_key: NGINX_APP_NAME
+          nginx/public_root:
+            name: Public Root
+            description: Name of directory to expose as public root
+            type: text
+            default: /home/ubuntu/repo/public
+            sort: 4
+            env_key: NGINX_PUBLIC_ROOT
+          nginx/port:
+            name: Port
+            description: Nginx frontend web listener
+            type: text
+            default: 80
+            sort: 5
+            env_key: NGINX_PORT
+          nginx/template:
+            name: Config Template
+            description: Puppet template to use for Nginx configuration
+            type: text
+            default: default
+            sort: 6
+            env_key: NGINX_TEMPLATE_NAME
