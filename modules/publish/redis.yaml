@@ -6,6 +6,7 @@ publish:
             - name: Redis Port
               description: TCP Port used to access the Redis service
               template: tcp://%(public_dns_name)s:%(redis-server/port)s
+              retries: 1
               timeout: 10
               healthyafter: 3
               interval: 30

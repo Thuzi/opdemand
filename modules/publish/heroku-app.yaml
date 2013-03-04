@@ -6,6 +6,7 @@ publish:
             - name: Application URL
               key: heroku-app/host
               template: "http://%(heroku-app/name)s.herokuapp.com"
+              retries: 1
               timeout: 10
               healthyafter: 3
               interval: 30

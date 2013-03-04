@@ -6,6 +6,7 @@ publish:
             - name: MongoDB Port
               description: TCP Port used to access MongoDB database services
               template: tcp://%(public_dns_name)s:%(mongodb-server/port)s
+              retries: 1
               timeout: 10 
               healthyafter: 3
               interval: 30
