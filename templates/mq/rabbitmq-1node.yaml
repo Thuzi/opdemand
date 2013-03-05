@@ -4,7 +4,7 @@ components:
   - component: ec2-instance
     consumes: [ keypair, sg ]
     modules: 
-      config: [ ec2-deploy, git-deploy, ssh, puppet, rabbitmq-server ]
+      config: [ ec2-deploy, git-deploy, ssh, puppet, rabbitmq-server, os ]
       export: [ rabbitmq-client ]
       publish: [ rabbitmq ]      
     configure:

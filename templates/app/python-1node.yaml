@@ -4,7 +4,7 @@ components:
   - component: ec2-instance
     consumes: [ keypair, sg ]
     modules: 
-      config: [ ec2-deploy, git-deploy, ssh, puppet, application, nginx ]
+      config: [ ec2-deploy, git-deploy, ssh, puppet, application, nginx, os ]
       publish: [ http ]
     configure:
       ec2-instance/tags:

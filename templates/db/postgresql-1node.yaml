@@ -4,7 +4,7 @@ components:
   - component: ec2-instance
     consumes: [ keypair, sg ]
     modules: 
-      config: [ ec2-deploy, git-deploy, ssh, puppet, postgresql-server ]
+      config: [ ec2-deploy, git-deploy, ssh, puppet, postgresql-server, os ]
       export: [ postgresql-client ]
       publish: [ postgresql ]
     configure:

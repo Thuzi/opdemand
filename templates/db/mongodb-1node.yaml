@@ -4,7 +4,7 @@ components:
   - component: ec2-instance
     consumes: [ keypair, sg ]
     modules: 
-      config: [ ec2-deploy, git-deploy, ssh, puppet, mongodb-server ]
+      config: [ ec2-deploy, git-deploy, ssh, puppet, mongodb-server, os ]
       export: [ mongodb-client ]
       publish: [ mongodb ]
     configure:

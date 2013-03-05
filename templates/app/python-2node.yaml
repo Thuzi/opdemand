@@ -9,7 +9,7 @@ components:
     id: instance1
     consumes: [ keypair, sg ]
     modules: 
-      config: [ ec2-deploy, git-deploy, ssh, puppet, application, nginx ]
+      config: [ ec2-deploy, git-deploy, ssh, puppet, application, nginx, os ]
     configure:
       ec2-instance/tags:
         Name: Python App 1
@@ -20,7 +20,7 @@ components:
     id: instance2
     consumes: [ keypair, sg ]
     modules: 
-      config: [ ec2-deploy, git-deploy, ssh, puppet, application, nginx ]
+      config: [ ec2-deploy, git-deploy, ssh, puppet, application, nginx, os ]
     configure:
       ec2-instance/tags:
         Name: Python App 2

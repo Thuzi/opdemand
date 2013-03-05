@@ -1,0 +1,48 @@
+# editable service contents
+contents:
+  categories: [ os ]
+  description: Configuration for the operating system
+# service configuration
+config:
+  contents:
+    sections:
+      os:
+        name: Operating System
+        description: Configuration for the operating system
+        sort: 18
+        fields:
+          os/hostname:
+            name: Hostname
+            description: Hostname to use for this system
+            type: text
+            default: ubuntu
+            sort: 1
+            env_key: OS_HOSTNAME
+          os/packages:
+            name: Packages
+            description: Additional packages to install
+            type: list
+            default: [ fail2ban ]
+            sort: 2
+            env_key: OS_PACKAGES
+          os/auto_update:
+            name: Auto Update
+            description: Automatically apply security updates
+            type: boolean
+            default: true
+            sort: 3
+            env_key: OS_AUTO_UPDATE
+          os/daily_logs:
+            name: Daily Logs
+            description: Enable daily log summary emails
+            type: boolean
+            default: false
+            sort: 4
+            env_key: OS_DAILY_LOGS
+          os/admin_email:
+            name: Admin Email
+            description: Email of OS administrator
+            type: text
+            default:
+            sort: 5
+            env_key: OS_ADMIN_EMAIL

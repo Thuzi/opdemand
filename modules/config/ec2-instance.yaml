@@ -111,7 +111,7 @@ config:
             default: |
               #cloud-config
               byobu_by_default: false
-              manage_etc_hosts: True
+              manage_etc_hosts: false
               apt_upgrade: true
               # NOTE: called on first boot only
               runcmd:

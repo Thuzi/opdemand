@@ -4,7 +4,7 @@ components:
   - component: ec2-instance
     consumes: [ keypair, sg ]
     modules: 
-      config: [ ec2-deploy, git-deploy, ssh, puppet, redis-server ]
+      config: [ ec2-deploy, git-deploy, ssh, puppet, redis-server, os ]
       export: [ redis-client ]
       publish: [ redis ]
     configure:
