@@ -34,16 +34,19 @@ config:
               if [ ! -z $DEPLOY_REPOSITORY_URL ]; then              
                 # run build on first deploy, only if necessary
                 if [ ! -e /var/lib/opdemand ]; then
+                  echo -e "\\033[1;33mStarting instance build for Ubuntu 12.04 LTS\\033[0m"
                   echo "Waiting for Ubuntu cloud-init to finish"
                   while [ ! -z "`ps auxw |grep cloud-init | grep -v grep`" ] ; do
                     sleep 1
                   done
                   echo "Ubuntu cloud-init complete, continuing initial instance build..."
-                  sudo apt-get install -yq --force-yes git 
+                  export DEBIAN_FRONTEND=noninteractive
+                  sudo -E apt-get install -yq --force-yes git >/dev/null
                   sudo mkdir -p /var/cache/opdemand
                   sudo mkdir -p /var/log/opdemand
                   # clone the deployment repository and checkout the requested revision
-                  sudo git clone $DEPLOY_REPOSITORY_URL /var/lib/opdemand
+                  echo "Cloning $DEPLOY_REPOSITORY_URL to /var/lib/opdemand..."
+                  sudo git clone $DEPLOY_REPOSITORY_URL /var/lib/opdemand >/dev/null
                   cd /var/lib/opdemand && sudo git checkout -q -f $DEPLOY_REPOSITORY_REVISION
                   # run build script
                   sudo -E /var/lib/opdemand/$BUILD_SCRIPT_PATH
@@ -53,6 +56,7 @@ config:
                 # run the idempotent deploy script
                 exec /var/lib/opdemand/$DEPLOY_SCRIPT_PATH
               fi
+              echo -e "\\033[1;33mDeploy completed.\\033[0m"
             sort: 3
           ec2-deploy/key:
             name: Deploy Key

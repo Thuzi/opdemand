@@ -20,7 +20,7 @@ config:
             name: Repository Revision
             description: Repository revision to pull latest code from
             type: text
-            default: 2013.02.07 # current stable
+            default: 2013.03.10 # current stable
             sort: 2
             env_key: DEPLOY_REPOSITORY_REVISION     
           git-deploy/build_path:
