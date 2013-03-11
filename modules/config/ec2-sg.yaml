@@ -37,7 +37,6 @@ config:
             type: list
             default: [ "0.0.0.0/0,tcp,22,22" ]
             sort: 4
-            editable: [ none, destroyed ]
           ec2-sg/id:
             name: Group ID
             description: ID of EC2 Security Group
