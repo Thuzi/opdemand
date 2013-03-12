@@ -1,12 +1,13 @@
 opdemand
 ========
 
-This is a library of templates used to create cloud components in the
-OpDemand cloud management system.
+The [opdemand][1] project is a library of templates used to create cloud
+components in the OpDemand cloud management system.
 
 See [github][1] for the latest source.
 
-For more about OpDemand, visit [OpDemand][2].
+To learn how to tame your AWS and Heroku infrastructure with the
+OpDemand cloud management system, visit [OpDemand][2].
 
 Using Templates
 ---------------
@@ -21,6 +22,12 @@ The templates have been made open source by [OpDemand][2]. Please read the
 pull requests for improvements, or to add new templates. Thank you for
 using OpDemand!
 
+Documentation
+-------------
+
+Please see our [library][4] of technical resources and documentation. If
+you have a question about using OpDemand that isn't yet answered there, please
+let us know.
 
 About OpDemand
 --------------
@@ -32,3 +39,4 @@ chef, OpDemand gives you control of your cloud.
 [1]: https://github.com/opdemand/opdemand
 [2]: http://www.opdemand.com/
 [3]: http://www.yaml.org/
+[4]: http://www.opdemand.com/docs/
