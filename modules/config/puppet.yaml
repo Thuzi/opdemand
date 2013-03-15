@@ -28,7 +28,7 @@ config:
           puppet/repository_key:
             name: Repository Key
             description: SSH private key to access the repository
-            type: textarea
+            type: repository-key
             default:
             sort: 3
             env_key: PUPPET_REPOSITORY_KEY

@@ -21,7 +21,7 @@ config:
           application/repository_key:
             name: Repository Key
             description: SSH private key to access the repository
-            type: textarea
+            type: repository-key
             default:
             sort: 1
             env_key: APPLICATION_REPOSITORY_KEY
