@@ -21,7 +21,7 @@ config:
             description: Port used for Redis client access
             type: text
             sort: 2
-            default: 6379
+            default:
             env_key: REDIS_PORT
           redis-client/password:
             name: Password
