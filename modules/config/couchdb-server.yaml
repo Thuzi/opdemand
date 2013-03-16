@@ -15,6 +15,7 @@ config:
             type: text
             sort: 1
             default:
+            required: true
             env_key: COUCHDB_SERVER_USERNAME
           couchdb-server/password:
             name: CouchDB Password
@@ -22,6 +23,7 @@ config:
             type: password
             sort: 2
             default:
+            required: true
             env_key: COUCHDB_SERVER_PASSWORD
           couchdb-server/port:
             name: CouchDB Server Port
