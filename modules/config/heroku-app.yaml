@@ -23,56 +23,36 @@ config:
             default:
             sort: 2
             editable: [ none, destroyed ]
-          heroku-app/repository_url:
-            name: Git Repository
-            description: Source URL of Git Repository
-            type: repository-url
-            default:
-            required: true
-            sort: 3
-          heroku-app/repository_branch:
-            name: Git Repository Branch
-            description: Branch, tag or SHA from the source Git Repository
-            type: repository-branch
-            default: master
-            required: true
-            sort: 4
           heroku-app/dyno_map:
             name: Dyno Map
             description: Map of worker types and number of dynos
             type: map
             default: { 'web': 1 }
-            sort: 5
+            sort: 3
           heroku-app/config:
             name: Config Variables
             description: Environment variables passed to the Heroku application
             type: map
             default: {}
-            sort: 6
+            sort: 4
           heroku-app/processes:
             name: Processes
             description: Map of active process for this application
             type: map
             default: {}
-            sort: 7
+            sort: 5
             editable: []
           heroku-app/releases:
             name: Releases
             description: List of releases to this application
             type: list
             default: []
-            sort: 8
+            sort: 6
             editable: []
-          heroku-app/private_key:
-            name: Private key
-            description: Private key used for cloning and pushing to Heroku
-            type: repository-key
-            default:
-            sort: 9
           heroku-app/stack:
             name: Heroku Stack
             description: Name of Heroku application stack to use
             type: text
             default: cedar
-            sort: 10
+            sort: 7
             editable: []

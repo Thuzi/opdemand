@@ -1,0 +1,30 @@
+contents:
+  description: Configuration for Heroku application deployment
+config:
+  contents:
+    sections:
+      heroku-deploy:
+        name: Heroku Deployment
+        description: Configuration for Heroku application deployment
+        sort: 2
+        fields:
+          heroku-deploy/repository_url:
+            name: Git Repository
+            description: URL to access the source Git Repository
+            type: repository-url
+            default:
+            required: true
+            sort: 1
+          heroku-deploy/repository_branch:
+            name: Git Repository Branch
+            description: Branch, tag or SHA from the source Git Repository
+            type: repository-branch
+            default: master
+            required: true
+            sort: 2
+          heroku-deploy/private_key:
+            name: Private key
+            description: Private key for cloning and pushing to Heroku
+            type: repository-key
+            default:
+            sort: 3

@@ -1,8 +1,8 @@
 name: Heroku (Application)
-description: Heroku
+description: Heroku Application with support for automated deployment sourced from a Git repository
 provider: heroku-app
 modules:
-  config: [ heroku-app ]
-  export: [ heroku-app ] 
+  config: [ heroku-app, heroku-deploy ]
+  export: [ heroku-app ]
   publish: [ heroku-app ] 
-  monitor: [ refresh ]  
+  monitor: [ refresh ]
