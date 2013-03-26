@@ -20,7 +20,8 @@ config:
             name: ELB Name
             description: Unique name identifier for ELB (only letters and dashes)
             type: text
-            default:
+            default: "%(slug)s-%(short_id)s"
+            confirm: true
             required: true
             sort: 2
             editable: [ none, destroyed ]

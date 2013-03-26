@@ -20,7 +20,8 @@ config:
             name: Name
             description: Name of EC2 Security Group
             type: text
-            default:
+            default: "%(slug)s-%(short_id)s"
+            confirm: true
             required: true
             sort: 2
             editable: [ none, destroyed ]

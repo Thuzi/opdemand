@@ -18,6 +18,7 @@ config:
             default: 
             sort: 0
             env_key: APPLICATION_REPOSITORY_URL
+            confirm: true
           application/repository_key:
             name: Repository Key
             description: SSH private key to access the repository
