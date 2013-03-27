@@ -16,64 +16,67 @@ config:
             description: Repository URL containing application code
             type: repository-url
             default: 
-            sort: 0
+            sort: 1
             env_key: APPLICATION_REPOSITORY_URL
             confirm: true
-          application/repository_key:
-            name: Repository Key
-            description: SSH private key to access the repository
-            type: repository-key
-            default:
-            sort: 1
-            env_key: APPLICATION_REPOSITORY_KEY
           application/repository_revision:
             name: Repository Revision
-            description: Repository branch/revision to pull latest code from
+            description: Repository branch/tag/SHA to pull from
             type: text
             default: master
             sort: 2
             env_key: APPLICATION_REPOSITORY_REVISION
+            confirm: true
+          application/repository_key:
+            name: Repository Key
+            description: SSH key to access private repositories
+            type: repository-key
+            default:
+            sort: 3
+            env_key: APPLICATION_REPOSITORY_KEY
+            confirm: true
           application/repository_provider:
             name: Repository Provider
             description: Provider type for this repository
             type: text
             default: git
-            sort: 3
+            editable: []
+            sort: 4
             env_key: APPLICATION_REPOSITORY_PROVIDER
           application/name:
             name: Application Name
             description: Friendly name for this application
             type: text
             default: "%(service/abbreviation)s"
-            sort: 4
+            sort: 5
             env_key: APPLICATION_NAME
           application/username:
             name: Application Username
             description: User who owns this application
             type: text
             default: ubuntu
-            sort: 5
+            sort: 6
             env_key: APPLICATION_USERNAME
           application/group:
             name: Application Group
             description: Group who own this application
             type: text
             default: ubuntu
-            sort: 6
+            sort: 7
             env_key: APPLICATION_GROUP
           application/repository_path:
             name: Repository Path
             description: Path to local copy of repository
             type: text
             default: /home/ubuntu/repo
-            sort: 7
+            sort: 8
             env_key: APPLICATION_REPOSITORY_PATH
           application/mode:
             name: Application Mode
             description: Application mode (production, development, etc)
             type: text
             default: production # default to production
-            sort: 8
+            sort: 9
             env_key: APPLICATION_MODE
           # foreman config
           application/concurrency:
@@ -81,12 +84,12 @@ config:
             description: Foreman style concurrecy string
             type: text
             default: web=1
-            sort: 9
+            sort: 10
             env_key: APPLICATION_CONCURRENCY
           application/port:
             name: Start Port
             description: First port for application listeners
             type: text
             default: 5000
-            sort: 10
+            sort: 11
             env_key: APPLICATION_PORT

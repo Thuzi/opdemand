@@ -10,11 +10,12 @@ config:
         fields:
           ssh/authorized_keys:
             name: SSH Authorized Keys
-            description: SSH public key for server adminstrator
+            description: SSH public key for server access
             type: list
             default: []
             sort: 1
             env_key: SSH_AUTHORIZED_KEYS
+            confirm: true
           ssh/known_hosts:
             name: SSH Known Hosts
             description: Fingerprints for SSH known hosts
