@@ -11,7 +11,7 @@ components:
     id: instance1
     consumes: [ keypair, sg ]
     modules: 
-      config: [ ec2-deploy ]
+      config: [ ec2-deploy, ssh ]
     configure:
       ec2-instance/tags:
         Name: Base App 1
@@ -30,7 +30,7 @@ components:
     id: instance2
     consumes: [ keypair, sg ]
     modules: 
-      config: [ ec2-deploy ]
+      config: [ ec2-deploy, ssh ]
     configure:
       ec2-instance/tags:
         Name: Base App 2

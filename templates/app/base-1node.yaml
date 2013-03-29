@@ -6,7 +6,7 @@ components:
   - component: ec2-instance
     consumes: [ keypair, sg ]
     modules: 
-      config: [ ec2-deploy ]
+      config: [ ec2-deploy, ssh ]
       publish: [ http ]
     configure:
       ec2-instance/tags:
