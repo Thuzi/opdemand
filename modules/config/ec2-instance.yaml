@@ -54,7 +54,7 @@ config:
             name: Instance Type
             description: EC2 Instance Type
             type: instance
-            default:
+            default: m1.medium # default to something that starts relatively fast
             required: true
             sort: 6
             editable: [ none, destroyed ]
