@@ -1,0 +1,46 @@
+contents:
+  description: Configuration for IAM server certificates
+config:
+  contents:
+    sections:
+      iam-servercert:
+        name: IAM Server Certificate
+        description: Configuration for IAM server certificates
+        sort: 5
+        fields:
+          iam-servercert/cert_name:
+            name: Name
+            description: Name of IAM Server Certificate
+            type: text
+            default: "%(slug)s-%(short_id)s"
+            confirm: true
+            required: true
+            sort: 1
+            editable: [ none, destroyed ]
+          iam-servercert/cert_body:
+            name: Certificate Body
+            description:
+            type: textarea
+            default:
+            required: true
+            sort: 2
+            editable: [ none, destroyed ]
+          iam-servercert/private_key:
+            name: Private Key
+            description:
+            type: textarea
+            default:
+            sort: 3
+            editable: [ none, destroyed ]
+          iam-servercert/cert_chain:
+            name: Certificate Chain
+            description:
+            type: textarea
+            default:
+            sort: 4
+          iam-servercert/path:
+            name: Path
+            description:
+            type: text
+            default:
+            sort: 5
