@@ -1,0 +1,8 @@
+contents:
+  description: Export key name and material for instance deployments
+export:
+    contents:
+        fields:
+            - name: ARN
+              key: iam-servercert/arn
+              template: "%(arn)s"

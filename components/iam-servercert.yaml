@@ -3,5 +3,5 @@ description: Cryptographic Key Pair used to access EC2 Instancess
 provider: iam-servercert
 modules:
   config: [ service, iam-servercert ]
-  # export: [ iam-servercert ]
+  export: [ iam-servercert ]
   monitor: [ refresh ]
