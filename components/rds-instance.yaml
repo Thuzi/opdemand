@@ -3,5 +3,5 @@ description: RDS Database Instance
 provider: rds-instance
 modules:
   config: [ service, rds-instance ]
-  export: [ mysql-client ]
+  export: [ rds-mysql-client ]
   monitor: [ refresh ]
