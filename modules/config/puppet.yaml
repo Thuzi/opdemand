@@ -43,7 +43,7 @@ config:
             name: Repository Revision
             description: Repository revision to pull latest code from 
             type: text
-            default: 2013.03.10 # current stable
+            default: 2013.03.28 # current stable
             sort: 5
             env_key: PUPPET_REPOSITORY_REVISION
           puppet/debug:
