@@ -47,3 +47,10 @@ config:
             default:
             sort: 5
             editable: [ none, destroyed ]
+          iam-servercert/upload_date:
+            name: Upload Date
+            description: Date when this certificate was uploaded
+            type: text
+            default:
+            sort: 5
+            editable: [ ]

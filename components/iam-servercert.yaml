@@ -1,5 +1,5 @@
 name: IAM (SSL Certificate)
-description: Cryptographic Key Pair used to access EC2 Instancess
+description: Digital server certificate for SSL/HTTPS encrypted communication
 provider: iam-servercert
 modules:
   config: [ service, iam-servercert ]

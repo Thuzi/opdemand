@@ -3,6 +3,6 @@ contents:
 export:
     contents:
         fields:
-            - name: ARN
-              key: iam-servercert/arn
-              template: "%(arn)s"
+            - name: ELB Listener
+              key: ec2-elb/listeners
+              template: "443,80,HTTPS,%(arn)s"
