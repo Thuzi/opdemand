@@ -29,6 +29,7 @@ config:
             type: text
             sort: 3
             default:
+            confirm: true
             env_key: POSTGRES_SERVER_USERNAME              
           postgresql-server/password:
             name: Password
@@ -36,6 +37,7 @@ config:
             type: password
             sort: 4
             default:
+            confirm: true
             env_key: POSTGRES_SERVER_PASSWORD
           postgresql-server/db_name:
             name: Database Name
@@ -43,4 +45,5 @@ config:
             type: text
             sort: 5
             default:
+            confirm: true
             env_key: POSTGRES_SERVER_DBNAME
