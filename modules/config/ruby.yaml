@@ -1,0 +1,33 @@
+contents:
+  categories: [ ruby ]
+  description: Configuration for Ruby Applications
+config:
+  contents:
+    sections:
+      ruby:
+        name: Ruby Application
+        description: Configuration for Ruby Applications
+        sort: 14
+        fields:
+          ruby/version:
+            name: Ruby Version
+            description: Ruby runtime version
+            type: text
+            default: 1.9.3-p392
+            sort: 1
+            env_key: RUBY_VERSION
+          ruby/system_packages:
+            name: Packages
+            description: Additional system packages to install for Ruby
+            type: list
+            default: [ libssl-dev, libsqlite3-dev, libyaml-dev, zlib1g-dev, libxml2-dev, libxslt1-dev, libpq-dev, libmysqlclient-dev, nodejs ]
+            sort: 2
+            env_key: RUBY_SYSTEM_PACKAGES
+          ruby/env_vars:
+            name: Environment Variables
+            description: Custom environment variables
+            type: map
+            default:
+              RAILS_ENV: development
+            sort: 3
+            env_key: RUBY_ENVVARS
