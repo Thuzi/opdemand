@@ -31,14 +31,16 @@ config:
             description: Automatically replicate to multiple availability zones
             type: boolean
             default: false
+            confirm: true
             sort: 3
             env_key: RDS_MULTI_AZ
           rds-instance/id:
             name: Instance Identifier
             description: RDS Instance ID
             type: text
-            default:
+            default: "opdemand-%(short_id)s"
             required: true
+            confirm: true
             sort: 4
             editable: [ none, destroyed ]
             env_key: RDS_INSTANCE_ID
