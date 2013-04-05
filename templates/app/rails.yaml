@@ -15,7 +15,7 @@ components:
       ec2-instance/tags:
         Name: Rails App
       puppet/classes: [ "opdemand::common", "opdemand::app::ruby", "opdemand::web::nginx" ]
-      application/repository_url: git://github.com/gabrtv/example-rails-todo.git
+      application/repository_url: git://github.com/opdemand/example-rails-todo.git
       application/name: rails
   - component: rds-instance
     id: rds      
