@@ -1,7 +1,12 @@
 name: Python
-description: Python application including an EC2 Instance, a Security Group and Key Pair
+description: Python application including an Elastic Load Balancer, EC2 Instance, Security Group and Key Pair
 components:
+  - component: ec2-elb
+    consumes: [ instance1 ]
+    modules:
+      publish: [ http ]
   - component: ec2-instance
+    id: instance1
     consumes: [ keypair, sg ]
     modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, application, nginx, os ]

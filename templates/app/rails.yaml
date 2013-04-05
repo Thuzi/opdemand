@@ -1,5 +1,5 @@
 name: Rails
-description: Ruby on Rails application including an EC2 Instance, RDS Database, Security Group and Key Pair.
+description: Ruby on Rails application including an Elastic Load Balancer, EC2 Instance, RDS Database, Security Group and Key Pair
 components:
   - component: ec2-elb
     consumes: [ instance1 ]
@@ -10,6 +10,7 @@ components:
     consumes: [ keypair, sg, rds ]
     modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, application, ruby, mysql-client, nginx, os ]
+      publish: [ http ]
     configure:
       ec2-instance/tags:
         Name: Rails App
@@ -21,6 +22,6 @@ components:
   - component: ec2-sg
     id: sg
     configure:
-      ec2-sg/rules: [ "0.0.0.0/0,tcp,22,22", "amazon-elb/amazon-elb-sg,tcp,80,80" ]
+      ec2-sg/rules: [ "0.0.0.0/0,tcp,22,22", "0.0.0.0/0,tcp,80,80", "amazon-elb/amazon-elb-sg,tcp,80,80" ]
   - component: ec2-keypair
     id: keypair

@@ -1,7 +1,12 @@
 name: Clojure
-description: Clojure application including an EC2 Instance, a Security Group and Key Pair
+description: Clojure application including an Elastic Load Balancer, EC2 Instances, Security Group and Key Pair
 components:
+  - component: ec2-elb
+    consumes: [ instance1 ]
+    modules:
+      publish: [ http ]
   - component: ec2-instance
+    id: instance1
     consumes: [ keypair, sg ]
     modules: 
       config: [ ec2-deploy, git-deploy, ssh, puppet, application, nginx, os ]
@@ -11,7 +16,7 @@ components:
         Name: Clojure App
       puppet/classes: [ "opdemand::common", "opdemand::app::clojure", "opdemand::web::nginx" ]
       application/repository_url: git://github.com/opdemand/example-clojure-ring.git
-      application/name: clojure 
+      application/name: clojure
   - component: ec2-sg
     id: sg
     configure:
