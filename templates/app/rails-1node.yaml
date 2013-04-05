@@ -1,0 +1,26 @@
+name: Rails
+description: Ruby on Rails application including an EC2 Instance, RDS Database, Security Group and Key Pair.
+components:
+  - component: ec2-elb
+    consumes: [ instance1 ]
+    modules:
+      publish: [ http ]
+  - component: ec2-instance
+    id: instance1
+    consumes: [ keypair, sg, rds ]
+    modules: 
+      config: [ ec2-deploy, git-deploy, ssh, puppet, application, ruby, mysql-client, nginx, os ]
+    configure:
+      ec2-instance/tags:
+        Name: Rails App
+      puppet/classes: [ "opdemand::common", "opdemand::app::ruby", "opdemand::web::nginx" ]
+      application/repository_url: git://github.com/gabrtv/example-rails-todo.git
+      application/name: rails
+  - component: rds-instance
+    id: rds      
+  - component: ec2-sg
+    id: sg
+    configure:
+      ec2-sg/rules: [ "0.0.0.0/0,tcp,22,22", "amazon-elb/amazon-elb-sg,tcp,80,80" ]
+  - component: ec2-keypair
+    id: keypair
