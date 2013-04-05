@@ -3,7 +3,7 @@ contents:
 publish:
     contents:
         fields:
-            - name: Application URL
+            - name: Secure Application URL
               description: URL used to access the application
               template: https://%(public_dns_name)s
               retries: 1
