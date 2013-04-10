@@ -1,5 +1,5 @@
 contents:
-  description: Configuration for ELBs  
+  description: Configuration for ELBs
 config:
   contents:
     sections:
@@ -20,7 +20,7 @@ config:
             name: ELB Name
             description: Unique name identifier for ELB (only letters and dashes)
             type: text
-            default: "opdemand-%(short_id)s"
+            default: "%(slug)s-%(short_id)s"
             confirm: true
             required: true
             sort: 2
