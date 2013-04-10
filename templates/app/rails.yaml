@@ -18,7 +18,11 @@ components:
       application/repository_url: git://github.com/opdemand/example-rails-todo.git
       application/name: rails
   - component: rds-instance
-    id: rds      
+    id: rds
+    consumes: [ rds-sg ]
+  - component: rds-sg
+    id: rds-sg
+    consumes: [ sg ]
   - component: ec2-sg
     id: sg
     configure:
