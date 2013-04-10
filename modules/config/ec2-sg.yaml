@@ -45,3 +45,9 @@ config:
             default:
             sort: 5
             editable: [ none, destroyed ]
+          ec2-sg/owner_id:
+            name: Owner ID
+            description: ID of AWS Owner
+            type: text
+            sort: 6
+            editable: [ ]

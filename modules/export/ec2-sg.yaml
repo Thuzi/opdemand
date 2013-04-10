@@ -6,3 +6,6 @@ export:
             - name: Security Group Name
               key: ec2-instance/security_groups
               template: "%(ec2-sg/name)s"
+            - name: RDS Security Groups
+              key: rds-sg/ec2_groups
+              template: "%(ec2-sg/owner_id)s/%(ec2-sg/name)s"
