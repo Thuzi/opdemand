@@ -1,0 +1,7 @@
+name: RDS (Security Group)
+description: RDS Security Group
+provider: rds-sg
+modules:
+  config: [ service, rds-sg ]
+  export: [ rds-sg ]
+  monitor: [ refresh ]

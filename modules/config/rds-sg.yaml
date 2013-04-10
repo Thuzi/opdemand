@@ -1,0 +1,53 @@
+contents:
+  description: Configuration for RDS security groups  
+config:
+  contents:
+    sections:
+      rds-sg:
+        name: RDS Security Group
+        description: Configuration for RDS security groups
+        sort: 6
+        fields:
+          rds-sg/region_name:
+            name: Region
+            description: Name of AWS region
+            type: clouds
+            default:
+            required: true
+            sort: 1
+            editable: [ none, destroyed ]
+          rds-sg/name:
+            name: Name
+            description: Name of RDS Security Group
+            type: text
+            default: "%(slug)s-%(short_id)s"
+            confirm: true
+            required: true
+            sort: 2
+            editable: [ none, destroyed ]
+          rds-sg/ec2_groups:
+            name: EC2 Groups
+            description: EC2 Security Groups to allow
+            type: list
+            default: [ ]
+            sort: 3
+          rds-sg/ip_ranges:
+            name: IP Ranges
+            description: Security group rules
+            type: list
+            default: [ ]
+            sort: 4
+          rds-sg/description:
+            name: Description
+            description: Description of RDS Security Group
+            type: text
+            default: Managed by OpDemand
+            sort: 5
+            editable: [ none, destroyed ]
+          rds-sg/owner_id:
+            name: Owner ID
+            description: Owner ID of RDS Security Group
+            type: text
+            default:
+            sort: 6
+            editable: [ none, destroyed ]

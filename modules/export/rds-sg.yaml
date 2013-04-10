@@ -1,0 +1,8 @@
+contents:
+  description: Export RDS Security Group names  
+export:
+    contents: 
+        fields:
+            - name: RDS Security Groups
+              key: rds-instance/security_groups
+              template: "%(rds-sg/name)s"
