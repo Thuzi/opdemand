@@ -128,7 +128,8 @@ config:
             name: Database Security Groups
             description: Security Groups to use for Database instance
             type: list
-            default: ['default']
+            default: [ ]
+            required: true
             sort: 16
           rds-instance/auto_minor_version_upgrade:
             name: Auto Minor Version Upgrade
