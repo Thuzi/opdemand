@@ -27,9 +27,7 @@ There are 4 types of OpDemand modules which are all defined using YAML.
 
 #### Config Modules
 
-Config modules define a [set of fields](https://github.com/opdemand/opdemand/blob/master/modules/config/ec2-instance.yaml#L10) that are used to configure an individual service and render configuration widgets in OpDemand's web console.  
-
-The following keys are required for each config field:
+Config modules define a [set of fields](https://github.com/opdemand/opdemand/blob/master/modules/config/ec2-instance.yaml#L10) that are used to configure an individual service and render configuration widgets in OpDemand's web console.  The following keys are required for each config field:
 
 * name
 * description
@@ -60,7 +58,7 @@ The following keys are required for each publish field:
 * description
 * template
 
-The `template` key is used to define the target URL for publishing and health checks. HTTP, HTTPS and TCP style URLS are supported.  Note the use of [Python-style string formatting](http://docs.python.org/2/library/stdtypes.html#string-formatting-operations) in the template URLs.
+The `template` key is used to define the target URL for publishing and health checks. HTTP, HTTPS and TCP style URLs are supported.  Note the use of [Python-style string formatting](http://docs.python.org/2/library/stdtypes.html#string-formatting-operations) in the template URLs.
 
 The following keys are used to define the health checks for each published URL:
 
@@ -75,7 +73,7 @@ Monitor modules define how often the service is refreshed at the cloud provider.
 
 ## Components
 
-Components define how individual services are configured and managed inside OpDemand.  Here the `ec2-instance` component:
+Components define how individual services are configured and managed inside OpDemand.  Here is the `ec2-instance` component:
 
 	name: EC2 (Instance)
 	description: Amazon EC2 Instance
@@ -124,6 +122,18 @@ Templates defines how a stack containing multiple services is configured and man
 	    id: keypair
 
 The `components` key contains an ordered list of component services.  Each component comes with its default modules and configuration.  You can also add modules to a component when defining the template.  For example, see the many additional `config` modules that are added to the `ec2-instance`.
+
+##### Pre-Seeded Configuration
+
+The `configure` section is where configuration values can be pre-seeded.  To pre-seed the Instance's EC2 region and SSH keys, add the following:
+
+	configure:
+	  ec2-instance/region_name: us-west-2
+	  ssh/authorized_keys:
+	    - ssh-rsa <key1>
+	    - ssh-rsa <key2>
+	    
+Note that the syntax for the `ec2-instance/region_name` and `ssh/authorized_keys` fields are defined by the `ec2-instance` and `ssh` config modules.
 
 #### Template Linker
 
