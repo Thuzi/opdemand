@@ -1,0 +1,7 @@
+name: EBS (Volume)
+description: Block storage device hosted on Amazon EBS
+provider: ebs-volume
+modules:
+  config: [ service, ebs-volume ]
+  export: [ ebs-volume ]
+  monitor: [ refresh ]  

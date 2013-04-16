@@ -1,0 +1,8 @@
+contents:
+  description: Export Volume for Instance Attachment
+export:
+    contents: 
+        fields:
+            - name: EC2 Instance Volume
+              key: ec2-instance/volumes
+              template: "/dev/sdf=%(ebs-volume/id)s"
