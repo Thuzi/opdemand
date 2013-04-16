@@ -93,7 +93,7 @@ Components define how individual services are configured and managed inside OpDe
 
 ## Templates
 
-Templates defines how a stack containing multiple services is configured and managed inside OpDemand.  Templates specify components, which modules they use and any pre-seeded configuration values.  
+Templates define how a stack containing multiple services is configured and managed inside OpDemand.  Templates specify components, which modules they use and any pre-seeded configuration values.  
 
 	name: Node.js
 	description: Node.js application including an Elastic Load Balancer, EC2 Instance, Security Group and Key Pair
